@@ -1,0 +1,32 @@
+-- WETLANDS 24-27: https://mmo-gs.com/blog/wow-classic-20-30-alliance-leveling-guide/?utm_source=chatgpt.com
+LevelingGuide = {
+  steps = {
+    { action="accept", quest=279,  name="Claws from the Deep",       npc="Karl Boran",       coords={x=8.3,y=58.6} },
+    { action="accept", quest=484, name="Young Crocolisk Skins",     npc="James Halloran",         coords={x=8.5,y=55.7} },
+    { action="accept", quest=288,  name="The Third Fleet",             npc="First Mate Fitzsimmons", coords={x=10.9, y=59.6} },
+    { action="accept", quest=463,  name="The Greenwarden",             npc="First Mate Fitzsimmons", coords={x=10.9, y=59.6} },
+    { action="info", note="Setze Menethil Harbor als Heimatort.", coords={x=10.7,y=60.9}},
+    { action="info", note="Kaufe Flagon of Mead von Innkeeper Helbrek.", coords={x=10.7,y=60.9}},
+    { action="turnin", quest=942, name="The Absent Minded Prospector", npc="Archaeologist Flagongut", coords={x=10.8, y=60.4} },
+    { action="accept", quest=943, name="The Absent Minded Prospector", npc="Archaeologist Flagongut", coords={x=10.8, y=60.4} },
+    { action="turnin", quest=288, name="The Third Fleet", npc="First Mate Fitzsimmons", coords={x=10.9, y=59.6} },
+    { action="accept", quest=289, name="The Cursed Crew", npc="First Mate Fitzsimmons", coords={x=10.9, y=59.6} },
+    { action="accept", quest=470, name="Digging Through the Ooze", npc="Sida", coords={x=11.8, y=58.0} },
+    { action="accept", quest=473, name="Report to Captain Stoutfist", npc="Valstag Ironjaw", coords={x=10.1, y=56.9} },
+    { action="info", note="Buy a Bronze Tube and a Gyrochronatom from Neal Allen in the fortress. Enter the fortress and go left.", coords={x=10.7,y=56.7}},
+    { action="turnin", quest=473, name="Report to Captain Stoutfist", npc="Captain Stoutfist", coords={x=9.9, y=57.5} },
+    { action="accept", quest=464, name="War Banners", npc="Captain Stoutfist", coords={x=9.9, y=57.5} },
+    { action="accept", quest=55204, name="Report From Stoutfist", npc="Captain Stoutfist", coords={x=9.9, y=57.5}, note="TurtleWoW specfic." },
+    { action="accept", quest=305, name="In Search of The Excavation Team", npc="Tarrel Rockweaver", coords={x=11.5, y=52.1} },    
+    { action="kill", quest=279, name="Claws from the Deep", mob="Bluegill Murloc", coords={x=15.8, y=41.0}, note="Also kill Gobler to pick up Gobbler's Head." },
+    { action="collect", quest=279, name="Claws from the Deep", item="Gobbler's Head", coords={x=15.8, y=41.0} },
+    { action="info", note="Go to Whelgar's Excavation Site.", coords={x=35.0, y=42.0}},
+    { action="accept", quest=294, name="Ormer's Revenge", npc="Ormer Ironbraid", coords={x=38.2, y=50.9} }, 
+    { action="turnin", quest=305, name="In Search of The Excavation Team", npc="Merrin Rockweaver", coords={x=38.9,y=52.3} },
+    { action="accept", quest=306, name="In Search of The Excavation Team", npc="Merrin Rockweaver", coords={x=38.9,y=52.3} },
+    { action="collect", quest=228, item="Flagongut’s Fossil", coords={x=38.9,y=52.3}, note="Pick up Flagongut’s Fossil." },
+    { action="kill", quest=294, name="Ormer's Revenge", mob={"Mottled Raptor","Mottled Screecher"}, coords={x=23.0, y=50.0} },
+    { action="info", note="You should be close to level 25 now. If not, grind until you are.", {x=23.0, y=50.0} },
+    { action="turnin", quest=294, name="Ormer's Revenge", npc="Ormer Ironbraid", coords={x=38.2, y=50.9} }, 
+  }
+}

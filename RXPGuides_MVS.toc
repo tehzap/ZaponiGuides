@@ -1,0 +1,6 @@
+## Interface: 11200
+## Title: RXPGuides MVS
+## Notes: Minimal Viable Solution for TurtleWoW
+## SavedVariables: RXPGuidesMVS_Progress
+Wetlands 24-27.lua
+RXPGuides_MVS.lua
