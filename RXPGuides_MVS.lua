@@ -77,28 +77,36 @@ local guide = LevelingGuide
 -- formatStep muss vor updateGuideText stehen!
 local function formatStep(step)
 	local txt = ""
+	local icon = ""
+	
+	-- Quest-Icons für Classic 1.12 (Unicode-Zeichen statt Texturen)
 	if step.action == "accept" then
-		txt = "Quest annehmen: " .. (step.name or "") .. " (ID: " .. (step.quest or "") .. ") bei " .. (step.npc or "")
+		icon = "|cffFFD700!|r "  -- Gelbes Ausrufezeichen
+		txt = icon .. "|cff00ff00Accept:|r " .. (step.name or "") .. " |cff888888(ID: " .. (step.quest or "") .. ")|r bei |cffadd8e6" .. (step.npc or "") .. "|r"
 	elseif step.action == "turnin" then
-		txt = "Quest abgeben: " .. (step.name or "") .. " bei " .. (step.npc or "")
+		icon = "|cffFFD700?|r "  -- Gelbes Fragezeichen
+		txt = icon .. "|cffffff00Turn-in:|r " .. (step.name or "") .. " bei |cffadd8e6" .. (step.npc or "") .. "|r"
 	elseif step.action == "kill" then
+		icon = "|cffFF0000†|r "  -- Rotes Kreuz (Töten)
 		local mobText = ""
 		if type(step.mob) == "table" then
 			mobText = table.concat(step.mob, ", ")
 		else
 			mobText = step.mob or ""
 		end
-		txt = "Töte: " .. mobText .. (step.note and " - " .. step.note or "")
+		txt = icon .. "|cffff4444Kill:|r |cffffd700" .. mobText .. "|r" .. (step.note and " |cff888888- " .. step.note .. "|r" or "")
 	elseif step.action == "collect" then
+		icon = "|cff00FF00●|r "  -- Grüner Punkt für Items
 		local itemText = ""
 		if type(step.item) == "table" then
 			itemText = table.concat(step.item, ", ")
 		else
 			itemText = step.item or ""
 		end
-		txt = "Sammle: " .. itemText .. (step.note and " - " .. step.note or "")
+		txt = icon .. "|cff9966ffCollect:|r |cffffffff" .. itemText .. "|r" .. (step.note and " |cff888888- " .. step.note .. "|r" or "")
 	elseif step.action == "info" then
-		txt = step.note or ""
+		icon = "|cff87CEEB→|r "  -- Hellblauer Pfeil für Info
+		txt = icon .. "|cff00ccffInfo:|r " .. (step.note or "")
 	end
 	if step.coords then
 		txt = txt .. string.format(" [%.1f, %.1f]", step.coords.x, step.coords.y)
@@ -129,11 +137,11 @@ local function updateGuideText()
 		local mainText = autoWrap(formatStep(step), maxChars)
 		-- Fortschrittsanzeige für kill-Schritte (mob als Tabelle oder String)
 		if step.action == "kill" and step.quest then
-            mainText = mainText .. "\nFortschritt:"
+            mainText = mainText .. "\n|cffffff00⚔|r |cffffff00Progress:|r"
 			local questName = cleanQuestName(step.name)
 			if type(step.mob) == "table" then
 				for _, mobName in ipairs(step.mob) do
-					local mobProgress = "(Kein Fortschritt)"
+					local mobProgress = "no progress"
 					for i=1, GetNumQuestLogEntries() do
 						local title = cleanQuestName(GetQuestLogTitle(i))
 						if title == questName then
@@ -156,7 +164,7 @@ local function updateGuideText()
 				end
 			else
 				local mobName = step.mob or ""
-				local mobProgress = "(Kein Fortschritt)"
+				local mobProgress = "(no progress)"
 				for i=1, GetNumQuestLogEntries() do
 					local title = cleanQuestName(GetQuestLogTitle(i))
 					if title == questName then
@@ -181,11 +189,11 @@ local function updateGuideText()
 
 		-- Fortschrittsanzeige für collect-Schritte (item als Tabelle oder String)
 		if step.action == "collect" and step.quest and step.item then
-			mainText = mainText .. "\nFortschritt:"
+			mainText = mainText .. "\n|cff00ff00●|r |cffffff00Progress:|r"
 			local questName = cleanQuestName(step.name)
 			if type(step.item) == "table" then
 				for _, itemName in ipairs(step.item) do
-					local itemProgress = "(Kein Fortschritt)"
+					local itemProgress = "(no progress)"
 					for i=1, GetNumQuestLogEntries() do
 						local title = cleanQuestName(GetQuestLogTitle(i))
 						if title == questName then
@@ -245,7 +253,7 @@ local function updateGuideText()
 		if step and step.action == "accept" and step.quest then
             local isCompleted = (type(RXPGuidesMVS_Progress.completedQuests) == "table" and step.quest) and RXPGuidesMVS_Progress.completedQuests[step.quest] or nil
             if isCompleted then
-                mainText = mainText .. "\nStatus: |cff00ff00Erledigt|r"
+                mainText = mainText .. "\n|cff00ff00✓|r |cff00ff00Status: Erledigt|r"
             else
                 local questAccepted = false
                 local questName = cleanQuestName(step.name)
@@ -257,9 +265,9 @@ local function updateGuideText()
                     end
                 end
                 if questAccepted then
-                    mainText = mainText .. "\nStatus: |cff00ff00Angenommen|r"
+                    mainText = mainText .. "\n|cff00ff00✓|r |cff00ff00Status: Angenommen|r"
                 else
-                    mainText = mainText .. "\nStatus: |cffff0000Nicht angenommen|r"
+                    mainText = mainText .. "\n|cffff0000✗|r |cffff0000Status: Nicht angenommen|r"
                 end
             end
         end
@@ -268,7 +276,7 @@ local function updateGuideText()
         if step and step.action == "turnin" and step.quest then
             local isCompleted = (type(RXPGuidesMVS_Progress.completedQuests) == "table" and step.quest) and RXPGuidesMVS_Progress.completedQuests[step.quest] or nil
             if isCompleted then
-                mainText = mainText .. "\nStatus: |cff00ff00Erledigt|r"
+                mainText = mainText .. "\n|cff00ff00✓|r |cff00ff00Status: Erledigt|r"
             else
                 local questName = cleanQuestName(step.name)
                 local questComplete = false
@@ -297,11 +305,11 @@ local function updateGuideText()
                 end
 
                 if not questInLog then
-                    mainText = mainText .. "\nStatus: |cffff0000Quest nicht im Log|r"
+                    mainText = mainText .. "\n|cffff0000✗|r |cffff0000Status: Quest nicht im Log|r"
                 elseif questComplete then
-                    mainText = mainText .. "\nStatus: |cff00ff00Bereit zur Abgabe|r"
+                    mainText = mainText .. "\n|cff00ff00✓|r |cff00ff00Status: Bereit zur Abgabe|r"
                 else
-                    mainText = mainText .. "\nStatus: |cffffff00Noch nicht fertig|r"
+                    mainText = mainText .. "\n|cffffff00○|r |cffffff00Status: Noch nicht fertig|r"
                 end
             end
         end
