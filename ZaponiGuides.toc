@@ -1,6 +1,6 @@
 ## Interface: 11200
-## Title: RXPGuides MVS
+## Title: ZaponiGuides
 ## Notes: Minimal Viable Solution for TurtleWoW
-## SavedVariables: RXPGuidesMVS_Progress
+## SavedVariables: ZaponiGuides_Progress
 Wetlands 24-27.lua
-RXPGuides_MVS.lua
+ZaponiGuides.lua

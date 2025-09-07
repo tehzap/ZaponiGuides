@@ -1,5 +1,5 @@
 -- Erstelle das Hauptfenster (Frame) und setze grundlegende Eigenschaften
-local frame = CreateFrame("Frame", "RXPGuidesMVSFrame", UIParent) -- Haupt-Frame für das Addon
+local frame = CreateFrame("Frame", "ZaponiGuides", UIParent) -- Haupt-Frame für das Addon
 frame:SetWidth(400) -- Breite des Fensters
 frame:SetHeight(300) -- Höhe des Fensters
 frame:SetPoint("CENTER", UIParent, "CENTER", 0, 0) -- Positioniere das Fenster in der Mitte des Bildschirms
@@ -94,7 +94,7 @@ local function formatStep(step)
 		else
 			mobText = step.mob or ""
 		end
-		txt = icon .. "|cffff4444Kill:|r |cffffd700" .. mobText .. "|r" .. (step.note and " |cff888888- " .. step.note .. "|r" or "")
+		txt = icon .. "|cffff4444Kill:|r |cffffd700" .. mobText .. "|r"
 	elseif step.action == "collect" then
 		icon = "|cff00FF00●|r "  -- Grüner Punkt für Items
 		local itemText = ""
@@ -103,7 +103,7 @@ local function formatStep(step)
 		else
 			itemText = step.item or ""
 		end
-		txt = icon .. "|cff9966ffCollect:|r |cffffffff" .. itemText .. "|r" .. (step.note and " |cff888888- " .. step.note .. "|r" or "")
+		txt = icon .. "|cff9966ffCollect:|r |cffffffff" .. itemText .. "|r"
 	elseif step.action == "info" then
 		icon = "|cff87CEEB→|r "  -- Hellblauer Pfeil für Info
 		txt = icon .. "|cff00ccffInfo:|r " .. (step.note or "")
@@ -127,12 +127,12 @@ local function updateGuideText()
 		return
 	end
 	local steps = guide.steps
-	if type(RXPGuidesMVS_Progress.currentStep) ~= "number" or RXPGuidesMVS_Progress.currentStep < 1 or RXPGuidesMVS_Progress.currentStep > table.getn(steps) then
-		RXPGuidesMVS_Progress.currentStep = 1
+	if type(ZaponiGuides_Progress.currentStep) ~= "number" or ZaponiGuides_Progress.currentStep < 1 or ZaponiGuides_Progress.currentStep > table.getn(steps) then
+		ZaponiGuides_Progress.currentStep = 1
 	end
 	local step = nil
-	if steps[RXPGuidesMVS_Progress.currentStep] then
-		step = steps[RXPGuidesMVS_Progress.currentStep]
+	if steps[ZaponiGuides_Progress.currentStep] then
+		step = steps[ZaponiGuides_Progress.currentStep]
 		--DEFAULT_CHAT_FRAME:AddMessage("[DEBUG] Aktueller Schritt #"..RXPGuidesMVS_Progress.currentStep..": "..step.action.." Quest "..step.quest.." - "..step.name)
 		local mainText = autoWrap(formatStep(step), maxChars)
 		-- Fortschrittsanzeige für kill-Schritte (mob als Tabelle oder String)
@@ -251,7 +251,7 @@ local function updateGuideText()
 		--]]
 		-- Status für 'accept'-Schritte: Angenommen oder Nicht angenommen
 		if step and step.action == "accept" and step.quest then
-            local isCompleted = (type(RXPGuidesMVS_Progress.completedQuests) == "table" and step.quest) and RXPGuidesMVS_Progress.completedQuests[step.quest] or nil
+            local isCompleted = (type(ZaponiGuides_Progress.completedQuests) == "table" and step.quest) and ZaponiGuides_Progress.completedQuests[step.quest] or nil
             if isCompleted then
                 mainText = mainText .. "\n|cff00ff00✓|r |cff00ff00Status: Erledigt|r"
             else
@@ -274,7 +274,7 @@ local function updateGuideText()
 
         -- Status für 'turnin'-Schritte: Bereit zur Abgabe, Noch nicht fertig, oder Nicht im Log
         if step and step.action == "turnin" and step.quest then
-            local isCompleted = (type(RXPGuidesMVS_Progress.completedQuests) == "table" and step.quest) and RXPGuidesMVS_Progress.completedQuests[step.quest] or nil
+            local isCompleted = (type(ZaponiGuides_Progress.completedQuests) == "table" and step.quest) and ZaponiGuides_Progress.completedQuests[step.quest] or nil
             if isCompleted then
                 mainText = mainText .. "\n|cff00ff00✓|r |cff00ff00Status: Erledigt|r"
             else
@@ -355,8 +355,8 @@ nextButton:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -10, 10)
 nextButton:SetText("Weiter")
 nextButton:SetScript("OnClick", function()
 	local steps = guide and guide.steps or nil
-	if steps and RXPGuidesMVS_Progress.currentStep < table.getn(steps) then
-		RXPGuidesMVS_Progress.currentStep = RXPGuidesMVS_Progress.currentStep + 1
+	if steps and ZaponiGuides_Progress.currentStep < table.getn(steps) then
+		ZaponiGuides_Progress.currentStep = ZaponiGuides_Progress.currentStep + 1
 		updateGuideText()
 	end
 end)
@@ -368,8 +368,8 @@ prevButton:SetPoint("BOTTOMLEFT", frame, "BOTTOMLEFT", 10, 10)
 prevButton:SetText("Zurück")
 prevButton:SetScript("OnClick", function()
 	local steps = guide and guide.steps or nil
-	if steps and RXPGuidesMVS_Progress.currentStep > 1 then
-		RXPGuidesMVS_Progress.currentStep = RXPGuidesMVS_Progress.currentStep - 1
+	if steps and ZaponiGuides_Progress.currentStep > 1 then
+		ZaponiGuides_Progress.currentStep = ZaponiGuides_Progress.currentStep - 1
 		updateGuideText()
 	end
 end)
@@ -382,7 +382,7 @@ end)
 frame:SetScript("OnShow", updateGuideText)
 
 
-local rawText = "Willkommen zu RXPGuides MVS für TurtleWoW! Hier könnte Ihr Guide stehen. Dies ist ein Beispieltext, der automatisch umgebrochen wird, wenn er zu lang ist."
+local rawText = "Willkommen zu ZaponiGuides für TurtleWoW! Hier könnte Ihr Guide stehen. Dies ist ein Beispieltext, der automatisch umgebrochen wird, wenn er zu lang ist."
 
 
 frame:SetScript("OnSizeChanged", updateGuideText)
@@ -410,16 +410,16 @@ local function PrintTable(tbl, indent)
     end
 end
 function PrintSavedVariables()
-    DEFAULT_CHAT_FRAME:AddMessage("--- RXPGuidesMVS_Progress ---")
-    PrintTable(RXPGuidesMVS_Progress)
+    DEFAULT_CHAT_FRAME:AddMessage("--- ZaponiGuides_Progress ---")
+    PrintTable(ZaponiGuides_Progress)
 end
 
-DEFAULT_CHAT_FRAME:AddMessage("[RXPGuidesMVS] Addon geladen. Typ RXPGuidesMVS_Progress: "..type(RXPGuidesMVS_Progress))
-if type(RXPGuidesMVS_Progress) == "table" then
-    DEFAULT_CHAT_FRAME:AddMessage("[RXPGuidesMVS] completedQuests Typ: "..type(RXPGuidesMVS_Progress.completedQuests))
-    if type(RXPGuidesMVS_Progress.completedQuests) == "table" then
-        local keys = "[RXPGuidesMVS] completedQuests Keys (beim Laden): "
-        for k, v in pairs(RXPGuidesMVS_Progress.completedQuests) do
+DEFAULT_CHAT_FRAME:AddMessage("[ZaponiGuides] Addon geladen. Typ ZaponiGuides_Progress: "..type(ZaponiGuides_Progress))
+if type(ZaponiGuides_Progress) == "table" then
+    DEFAULT_CHAT_FRAME:AddMessage("[ZaponiGuides] completedQuests Typ: "..type(ZaponiGuides_Progress.completedQuests))
+    if type(ZaponiGuides_Progress.completedQuests) == "table" then
+        local keys = "[ZaponiGuides] completedQuests Keys (beim Laden): "
+        for k, v in pairs(ZaponiGuides_Progress.completedQuests) do
             keys = keys .. "("..type(k)..":"..tostring(k)..") "
         end
         DEFAULT_CHAT_FRAME:AddMessage(keys)
@@ -431,13 +431,13 @@ end
 local startupFrame = CreateFrame("Frame")
 startupFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
 startupFrame:SetScript("OnEvent", function()
-    if type(RXPGuidesMVS_Progress) ~= "table" then RXPGuidesMVS_Progress = {} end
-    if RXPGuidesMVS_Progress.currentStep == nil then RXPGuidesMVS_Progress.currentStep = 1 end
-    if RXPGuidesMVS_Progress.completedQuests == nil then RXPGuidesMVS_Progress.completedQuests = {} end
+    if type(ZaponiGuides_Progress) ~= "table" then ZaponiGuides_Progress = {} end
+    if ZaponiGuides_Progress.currentStep == nil then ZaponiGuides_Progress.currentStep = 1 end
+    if ZaponiGuides_Progress.completedQuests == nil then ZaponiGuides_Progress.completedQuests = {} end
     -- RXPGuidesMVS_Progress.currentStep wurde bereits initialisiert
-    DEFAULT_CHAT_FRAME:AddMessage("[RXPGuidesMVS] completedQuests nach PLAYER_ENTERING_WORLD Typ: "..type(RXPGuidesMVS_Progress.completedQuests))
-    local keys = "[RXPGuidesMVS] completedQuests Keys (nach Event): "
-    for k, v in pairs(RXPGuidesMVS_Progress.completedQuests) do
+    DEFAULT_CHAT_FRAME:AddMessage("[ZaponiGuides] completedQuests nach PLAYER_ENTERING_WORLD Typ: "..type(ZaponiGuides_Progress.completedQuests))
+    local keys = "[ZaponiGuides] completedQuests Keys (nach Event): "
+    for k, v in pairs(ZaponiGuides_Progress.completedQuests) do
         keys = keys .. "("..type(k)..":"..tostring(k)..") "
     end
     DEFAULT_CHAT_FRAME:AddMessage(keys)
@@ -448,9 +448,9 @@ startupFrame:SetScript("OnEvent", function()
         if event == "QUEST_TURNED_IN" then
             local questName = GetTitleText()
             if questName and type(guide) == "table" and type(guide.steps) == "table" then
-                local step = guide.steps[RXPGuidesMVS_Progress.currentStep]
+                local step = guide.steps[ZaponiGuides_Progress.currentStep]
                 if step and step.action == "turnin" and step.name == questName and step.quest then
-                    RXPGuidesMVS_Progress.completedQuests[step.quest] = true
+                    ZaponiGuides_Progress.completedQuests[step.quest] = true
                 end
             end
         end
