@@ -3,4 +3,9 @@
 ## Notes: Minimal Viable Solution for TurtleWoW
 ## SavedVariables: ZaponiGuides_Progress
 Wetlands 24-27.lua
+Duskwood 28-30.lua
+Wetlands 30.lua
+Hillsbrad 30-31.lua
+Thousand Needles 31-32.lua
+Balor 28-29.lua
 ZaponiGuides.lua

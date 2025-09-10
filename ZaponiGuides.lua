@@ -71,8 +71,46 @@ end
 
 
 -- Lade den Guide aus Duskwood.lua
-local guide = LevelingGuide
--- Kein lokales currentStep, wir nutzen direkt RXPGuidesMVS_Progress.currentStep
+-- local guide = LevelingGuide
+-- Funktion zum Laden eines neuen Guides
+local guideMapping = {
+	["Wetlands 24-27.lua"] = function() return LevelingGuide_Wetlands end,
+	["Duskwood 28-30.lua"] = function() return LevelingGuide_Duskwood end,
+	["Wetlands 30.lua"] = function() return LevelingGuide_Wetlands_2 end,
+	["Hillsbrad 30-31.lua"] = function() return LevelingGuide_Hillsbrad end,
+	["Thousand Needles 31-32.lua"] = function() return LevelingGuide_Thousand_Needles end,
+	["Balor 28-29.lua"] = function() return LevelingGuide_Balor end,
+}
+
+function ZaponiGuides:LoadGuide(filename)
+	if not filename then
+		DEFAULT_CHAT_FRAME:AddMessage("[ZaponiGuides] Kein Dateiname für neuen Guide angegeben.")
+		return
+	end
+	local loader = guideMapping[filename]
+	if not loader then
+		DEFAULT_CHAT_FRAME:AddMessage("[ZaponiGuides] Kein Guide-Mapping für: " .. filename)
+		return
+	end
+	local loadedGuide = loader()
+	if type(loadedGuide) ~= "table" then
+		DEFAULT_CHAT_FRAME:AddMessage("[ZaponiGuides] Guide konnte nicht geladen werden: " .. filename)
+		return
+	end
+	LevelingGuide = loadedGuide
+	guide = LevelingGuide
+		if ZaponiGuides_Progress.currentGuide ~= filename then
+			ZaponiGuides_Progress.currentStep = 1
+		end
+	ZaponiGuides_Progress.currentGuide = filename
+	DEFAULT_CHAT_FRAME:AddMessage("[ZaponiGuides] Neuer Guide geladen: " .. filename)
+end
+-- Beim Start den zuletzt verwendeten Guide laden, falls vorhanden
+local function tryLoadLastGuide()
+	if ZaponiGuides_Progress and ZaponiGuides_Progress.currentGuide then
+		ZaponiGuides:LoadGuide(ZaponiGuides_Progress.currentGuide)
+	end
+end
 
 -- formatStep muss vor updateGuideText stehen!
 local function formatStep(step)
@@ -105,8 +143,7 @@ local function formatStep(step)
 		end
 		txt = icon .. "|cff9966ffCollect:|r |cffffffff" .. itemText .. "|r"
 	elseif step.action == "info" then
-		icon = "|cff87CEEB→|r "  -- Hellblauer Pfeil für Info
-		txt = icon .. "|cff00ccffInfo:|r " .. (step.note or "")
+		txt = "|cff00ccffInfo:|r "  -- Hellblauer Pfeil für Info
 	end
 	if step.coords then
 		txt = txt .. string.format(" [%.1f, %.1f]", step.coords.x, step.coords.y)
@@ -133,6 +170,11 @@ local function updateGuideText()
 	local step = nil
 	if steps[ZaponiGuides_Progress.currentStep] then
 		step = steps[ZaponiGuides_Progress.currentStep]
+		-- Prüfe, ob ein nextGuide-Feld existiert und lade automatisch den nächsten Guide
+		if step.nextGuide and type(step.nextGuide) == "string" and ZaponiGuides and ZaponiGuides.LoadGuide then
+			ZaponiGuides:LoadGuide(step.nextGuide)
+			return
+		end
 		--DEFAULT_CHAT_FRAME:AddMessage("[DEBUG] Aktueller Schritt #"..RXPGuidesMVS_Progress.currentStep..": "..step.action.." Quest "..step.quest.." - "..step.name)
 		local mainText = autoWrap(formatStep(step), maxChars)
 		-- Fortschrittsanzeige für kill-Schritte (mob als Tabelle oder String)
@@ -148,7 +190,7 @@ local function updateGuideText()
 							local numObjectives = GetNumQuestLeaderBoards(i)
 							for obj=1, numObjectives do
 								local desc, type, done = GetQuestLogLeaderBoard(obj, i)
-								if type == "monster" and desc and mobName and string.find(string.lower(desc or ""), string.lower(mobName or ""), 1, true) then
+								if (type == "monster" or type == "object" or type == "item") and desc and mobName and string.find(string.lower(desc or ""), string.lower(mobName or ""), 1, true) then
 									local startPos, endPos = string.find(desc or "", "%d+/%d+")
 									local numbers = nil
 									if startPos and endPos then
@@ -171,7 +213,7 @@ local function updateGuideText()
 						local numObjectives = GetNumQuestLeaderBoards(i)
 						for obj=1, numObjectives do
 							local desc, type, done = GetQuestLogLeaderBoard(obj, i)
-							if type == "monster" and desc and mobName and string.find(string.lower(desc or ""), string.lower(mobName or ""), 1, true) then
+							if (type == "monster" or type == "object" or type == "item") and desc and mobName and string.find(string.lower(desc or ""), string.lower(mobName or ""), 1, true) then
 								local startPos, endPos = string.find(desc or "", "%d+/%d+")
 								local numbers = nil
 								if startPos and endPos then
@@ -265,9 +307,9 @@ local function updateGuideText()
                     end
                 end
                 if questAccepted then
-                    mainText = mainText .. "\n|cff00ff00✓|r |cff00ff00Status: Angenommen|r"
+                    mainText = mainText .. "\n|cff00ff00✓|r|cff00ff00Status: Accepted|r"
                 else
-                    mainText = mainText .. "\n|cffff0000✗|r |cffff0000Status: Nicht angenommen|r"
+                    mainText = mainText .. "\n|cffff0000✗|r|cffff0000Status: Not Accepted|r"
                 end
             end
         end
@@ -305,11 +347,11 @@ local function updateGuideText()
                 end
 
                 if not questInLog then
-                    mainText = mainText .. "\n|cffff0000✗|r |cffff0000Status: Quest nicht im Log|r"
+                    mainText = mainText .. "\n|cffff0000✗|r|cffff0000Status: Quest nicht im Log|r"
                 elseif questComplete then
-                    mainText = mainText .. "\n|cff00ff00✓|r |cff00ff00Status: Bereit zur Abgabe|r"
+                    mainText = mainText .. "\n|cff00ff00✓|r|cff00ff00Status: Ready|r"
                 else
-                    mainText = mainText .. "\n|cffffff00○|r |cffffff00Status: Noch nicht fertig|r"
+                    mainText = mainText .. "\n|cffffff00○|r|cffffff00Status: Noch nicht fertig|r"
                 end
             end
         end
@@ -352,7 +394,7 @@ local nextButton = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
 nextButton:SetWidth(80)
 nextButton:SetHeight(22)
 nextButton:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -10, 10)
-nextButton:SetText("Weiter")
+nextButton:SetText("Next")
 nextButton:SetScript("OnClick", function()
 	local steps = guide and guide.steps or nil
 	if steps and ZaponiGuides_Progress.currentStep < table.getn(steps) then
@@ -365,7 +407,7 @@ local prevButton = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
 prevButton:SetWidth(80)
 prevButton:SetHeight(22)
 prevButton:SetPoint("BOTTOMLEFT", frame, "BOTTOMLEFT", 10, 10)
-prevButton:SetText("Zurück")
+prevButton:SetText("Previous")
 prevButton:SetScript("OnClick", function()
 	local steps = guide and guide.steps or nil
 	if steps and ZaponiGuides_Progress.currentStep > 1 then
@@ -394,6 +436,7 @@ local startupFrame = CreateFrame("Frame")
 startupFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
 startupFrame:SetScript("OnEvent", function()
 	frame:Show()
+	tryLoadLastGuide()
 	updateGuideText()
 	startupFrame:UnregisterEvent("PLAYER_ENTERING_WORLD")
 end)
@@ -426,8 +469,6 @@ if type(ZaponiGuides_Progress) == "table" then
     end
 end
 
--- Initialisierung erst nach PLAYER_ENTERING_WORLD
--- completedQuests wird entfernt
 local startupFrame = CreateFrame("Frame")
 startupFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
 startupFrame:SetScript("OnEvent", function()

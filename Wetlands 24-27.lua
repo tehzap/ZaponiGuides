@@ -1,5 +1,5 @@
 -- WETLANDS 24-27: https://mmo-gs.com/blog/wow-classic-20-30-alliance-leveling-guide/?utm_source=chatgpt.com
-LevelingGuide = {
+LevelingGuide_Wetlands = {
   steps = {
     { action="accept", quest=279,  name="Claws from the Deep",       npc="Karl Boran",       coords={x=8.3,y=58.6} },
     { action="accept", quest=484, name="Young Crocolisk Skins",     npc="James Halloran",         coords={x=8.5,y=55.7} },
@@ -78,9 +78,46 @@ LevelingGuide = {
     { action="turnin", quest=275, name="Blisters on The Land", npc="Rethiel the Greenwarden", coords={x=56.4, y=40.4} },
     { action="turnin", quest=40682, name="Raptor Ridge", npc="Dagdag Mossbelt", coords={x=55.4, y=35.7}, note="TurtleWoW specfic." },
     { action="info", note="Grind until your Hearthstone is up again.", coords={x=55.4, y=35.7} },
-    { action="info", note="Go north to the Arathi Highlands. and jump down the bridge. Open the Waterlogged Letter.", coords={x=44.3, y=92.9} },
-    { action="info", note="Jump down the bridge and open the Waterlogged Letter.", coords={x=44.3, y=92.9} },
-    -- { action="accept", quest=286, name="Return the Statuette", npc="Half-buried Barrel", coords={x=13.9, y=34.8} },
-    --and jump down the bridge. Click on the Waterlogged Letter to start Sully Balloo's Letter.
+    { action="info", name="Go to Arathi", note="Go north to the Arathi Highlands.", coords={x=51.5, y=7.2} },
+    { action="info", name="Pick up Waterlogged Letter", note="Jump down the bridge and pick up the Waterlogged Letter.", coords={x=44.3, y=92.9} },
+    { action="info", name="Open Waterlogged Letter", note="Jump down the bridge and pick up the Waterlogged Letter.", coords={x=44.3, y=92.9} },
+    { action="accept", quest=637, name="Sully Balloo's Letter", npc="Waterlogged Envelope", note="Open the Waterlogged Letter to start Sully Balloo's Letter." },
+    { action="info", note="Teleport to Menethil Harbor.", coords={x=10.7,y=60.9}},
+    { action="turnin", quest=289, name="The Cursed Crew", npc="First Mate Fitzsimmons", coords={x=10.9, y=59.6} },
+    { action="accept", quest=290, name="Lifting the Curse", npc="First Mate Fitzsimmons", coords={x=10.9, y=59.6} },
+    { action="turnin", quest=471, name="Apprentice's Duties", npc="James Halloran", coords={x=8.5,y=55.7} },
+    { action="turnin", quest=286, name="Return the Statuette", npc="Karl Boran", coords={x=8.3,y=58.6} },
+    -- TODO: Folgende Quests so einsortieren, dass sie mit der Raptor-Kill- / Sida's Bag Quest gleichzeitig erledigt werden.
+    { action="turnin", quest=55204, name="Report From Stoutfist", npc="Captain Snowbeard", coords={x=27.4,y=66.5}, note="TurtleWoW specfic." },
+    { action="accept", quest=55205, name="Report From Snowbeard", npc="Captain Snowbeard", coords={x=27.4,y=66.5}, note="TurtleWoW specfic." },
+    { action="accept", quest=55201, name="Retaking The Roadways", npc="Captain Snowbeard", coords={x=27.4,y=66.5}, note="TurtleWoW specfic." },
+    { action="accept", quest=55200, name="Preparations for Adventure!", npc="Samuel Vickers", coords={x=31.0,y=64.3}, note="TurtleWoW specfic." },
+    { action="collect", quest=55201, name="Retaking The Roadways", item="Mottled Talon", coords={x=23.3,y=54.3}, note="Kill Mottled Raptors to collect Mottled Talons." },
+    { action="collect", quest=55200, name="Preparations for Adventure!", item={"Sticky Ooze-Tar","Simple Wood"},coords={x=43.8,y=25.2}, note="Kill Oozes to collect Sticky Ooze-Tar." },
+    { action="info", note="Buy 5x Simple Wood from Neal Allen in the fortress. Enter the fortress and go left. TurtleWoW specfic.", coords={x=10.7,y=56.7}},
+    { action="turnin", quest=55205, name="Report From Snowbeard", npc="Captain Stoutfist", coords={x=9.9, y=57.5}, note="TurtleWoW specfic." },
+    { action="accept", quest=55206, name="Hunting Dragonmaw", npc="Captain Snowbeard", coords={x=27.4,y=66.5}, note="TurtleWoW specfic." },
+    { action="turnin", quest=55201, name="Retaking The Roadways", npc="Captain Snowbeard", coords={x=27.4,y=66.5}, note="TurtleWoW specfic." },
+    { action="turnin", quest=55200, name="Preparations for Adventure!", npc="Samuel Vickers", coords={x=31.0,y=64.3}, note="TurtleWoW specfic." },
+    { action="info", name="Fly to Ironforge", note="Fly to Ironforge.", coords={x=9.5, y=59.7}},
+    --[[
+    2) Buy Bronze Tube if you haven’t yet.
+    3) If you have the Book: The Powers Below, turn in “The Powers Below”.
+    4) Turn in  “An Old Colleague”, buy 4 Minor Mana Potions and 2 Elixirs of Minor Fortitude and accept/turn in Ineptitude + Chemicals = Fun, SKIP the next part.
+    --]]
+    { action="turnin", quest=637, name="Sully Balloo's Letter", npc="Sara Balloo", coords={x=63.4,y=67.2} },
+    { action="accept", quest=683, name="Sara Balloo's Plea", npc="Sara Balloo", coords={x=63.4,y=67.2} },
+    { action="turnin", quest=683, name="Sara Balloo's Plea", npc="King Magni Bronzebeard", coords={x=39.0,y=56.1} },
+    { action="accept", quest=686, name="A King's Tribute", npc="King Magni Bronzebeard", coords={x=39.0,y=56.1} },
+    { action="turnin", quest=686, name="A King's Tribute", npc="Grand Mason Marblesten", coords={x=39.0,y=87.9} },
+    { action="accept", quest=689, name="A King's Tribute", npc="Grand Mason Marblesten", coords={x=39.0,y=87.9} },
+    { action="info", name="Fly to Stormwind", note="Fly to Stormwind.", coords={x=55.2, y=47.7}},
+    { action="accept", quest=335, name="A Noble Brew", npc="Zardeth of the Black Claw", coords={x=40.1,y=85.0} },
+    --{ action="info", name="Fly to Lakeshire", note="Fly to Lakeshire.", coords={x=73.4, y=70.4}},
+    { action="accept", quest=41798, name="My Darling Wife", npc="Ronald Gillian", coords={x=51.6,y=57.8}, note="TurtleWoW specfic." },
+    { action="accept", quest=41799, name="A Hydromancer's Curiosity", npc="Marine Hornby", coords={x=28.7,y=11.5}, note="TurtleWoW specfic." },
+    { action="info", name="Go to Steelwing.", note="Go to Steelwing and fly to Balor.", coords={x=21.5, y=41.5}, note="TurtleWoW specfic." },
+      -- Automatischer Übergang zum nächsten Guide
+    { nextGuide = "Duskwood 28-30.lua" },
   }
 }
