@@ -1,0 +1,90 @@
+LevelingGuide_Stranglethorn = {
+  steps = {
+    { action="turnin", quest=1180, name="Goblin Sponsorship", npc="Wharfmaster Lozgil", coords={x=26.4,y=73.6} },
+    { action="accept", quest=1181, name="Goblin Sponsorship", npc="Wharfmaster Lozgil", coords={x=26.4,y=73.6} },
+    { action="info", name="Bank", note="Go to the Bank and deposit Farren's Report and Fizzle Brassbolts' Letter.", coords={x=49.3,y=52.3} },
+    { action="accept", quest=605, name="Singing Blue Shards", npc="Crank Fizzlebub", coords={x=27.1,y=77.2} },
+    { action="accept", quest=189, name="Bloodscalp Ears", npc="Kebok", coords={x=27.0,y=77.1} },
+    { action="accept", quest=198, name="Supplies to Private Thorsen", npc="Krazek", coords={x=26.9,y=77.2} },
+    { action="accept", quest=201, name="Investigate the Camp", npc="Krazek", coords={x=26.9,y=77.2} },
+    { action="accept", quest=616, name="The Haunted Isle", npc="Krazek", coords={x=26.9,y=77.2} },
+    { action="turnin", quest=616, name="The Haunted Isle", npc="Baron Revilgaz", coords={x=27.2,y=76.9} },
+    { action="accept", quest=578, name="The Stone of the Tides", npc="Baron Revilgaz", coords={x=27.2,y=76.9} },
+    { action="turnin", quest=1181, name="Goblin Sponsorship", npc="Baron Revilgaz", coords={x=27.2,y=76.9} },
+    { action="accept", quest=575, name="Supply and Demand", npc="Drizzlik", coords={x=28.3,y=77.6} },
+    { action="info", name="Get Flight Path", note="Get the Booty Bay Flight Path.", coords={x=27.5,y=77.8} },
+    { action="info", name="Darkshire", note="Fly to Darkshire.", coords={x=67.5,y=51.2} },
+    { action="info", name="Stranglethorn", note="Go to Stranglethorn.", coords={x=67.5,y=51.2} },
+    { action="accept", quest=203, name="The Second Rebellion", npc="Sergeant Yohwa", coords={x=28.3,y=77.6} },
+    { action="accept", quest=204, name="Bad Medicine", npc="Sergeant Yohwa", coords={x=28.3,y=77.6} },
+    { action="accept", quest=210, name="Krazek's Cookery", npc="Corporal Kaleb", coords={x=37.7,y=3.3} },
+    { action="turnin", quest=215, name="Jungle Secrets", npc="Lieutenant Doren", coords={x=38.0,y=3.0} },
+    { action="accept", quest=200, name="Bookie Herod", npc="Lieutenant Doren", coords={x=38.0,y=3.0} },
+    { action="turnin", quest=198, name="Supplies to Private Thorsen", npc="Private Thorsen", coords={x=38.0,y=4.0}, note="Every so often Private Thorsen patrols south and will fight 2 guards. If you see him turn in quest." },
+    { action="accept", quest=215, name="Jungle Secrets", npc="Private Thorsen", coords={x=38.0,y=4.0}, note="If you escort him to safety you can accept this quest." },
+    { action="turnin", quest=215, name="Jungle Secrets", npc="Lieutenant Doren", coords={x=38.0,y=3.0} },
+    { action="accept", quest=200, name="Bookie Herod", npc="Lieutenant Doren", coords={x=38.0,y=3.0} },
+    { action="turnin", quest=201, name="Investigate the Camp", npc="Barnil Stonepot", coords={x=35.7,y=10.5}, note="Locate the hunters camp." },
+    { action="accept", quest=583, name="Welcome to the Jungle", npc="Barnil Stonepot", coords={x=35.7,y=10.5} },
+    { action="turnin", quest=5762, name="Hemet Nesingwary", npc="Hemet Nesingwary", coords={x=35.7,y=10.8} },
+    { action="turnin", quest=583, name="Welcome to the Jungle", npc="Hemet Nesingwary", coords={x=35.7,y=10.8} },
+    { action="accept", quest=194, name="Raptor Mastery", npc="Hemet Nesingwary", coords={x=35.7,y=10.8} },
+    { action="accept", quest=185, name="Tiger Mastery", npc="Ajeck Rouack", coords={x=35.6,y=10.6} },
+    { action="accept", quest=190, name="Panther Mastery", npc="Sir S. J. Erlgadin", coords={x=35.6,y=10.5} },
+    { action="kill", quest=185, name="Tiger Mastery", mob="Young Stranglethorn Tiger", coords={x=34.5,y=11.9} },
+    { action="collect", quest=575, name="Supply and Demand", item="Large River Crocolisk Skin", coords={x=32.0,y=11.0}, note="Kill River Crocolisks to collect Large River Crocolisk Skins." },
+    { action="turnin", quest=185, name="Tiger Mastery", npc="Ajeck Rouack", coords={x=35.6,y=10.6} },
+    { action="accept", quest=186, name="Tiger Mastery", npc="Ajeck Rouack", coords={x=35.6,y=10.6} },
+    { action="kill", quest=190, name="Panther Mastery", mob="Young Panther", coords={x=39.2,y=8.0} },
+    { action="collect", quest=605, name="Singing Blue Shards", item="Singing Crystal Shard", coords={x=36.3,y=8.2}, note="Kill Basilisks for Singing Crystal Shards." },
+    { action="turnin", quest=200, name="Bookie Herod", npc="Bookie Herod's Records", coords={x=43.7,y=9.4}, note="Upstairs in the house." },
+    { action="accept", quest=328, name="The Hidden Key", npc="Bookie Herod's Records", coords={x=43.7,y=9.4} },
+    { action="collect", quest=204, name="Bad Medicine", item={"Jungle Remedy","Venom Fern Extract"}, coords={x=44.0,y=9.0}, note="Kill Kurzen Medicine Men to pick up Jungle Remedy. Loot Kurzen Supplies for Venom Fern Extract." },
+    { action="kill", quest=203, name="The Second Rebellion", mob="Kurzen Jungle Fighter", coords={x=44.0,y=9.0} },
+    { action="turnin", quest=203, name="The Second Rebellion", npc="Sergeant Yohwa", coords={x=37.9,y=3.4} },
+    { action="turnin", quest=204, name="Bad Medicine", npc="Sergeant Yohwa", coords={x=37.9,y=3.4} },
+    { action="turnin", quest=190, name="Panther Mastery", npc="Sir S. J. Erlgadin", coords={x=35.6,y=10.5} },
+    { action="accept", quest=191, name="Panther Mastery", npc="Sir S. J. Erlgadin", coords={x=35.6,y=10.5} },
+    { action="kill", quest=191, name="Panther Mastery", mob="Panther", coords={x=29.0,y=12.0} },
+    { action="kill", quest=186, name="Tiger Mastery", mob="Stranglethorn Tiger", coords={x=29.7,y=11.0} },
+    { action="kill", quest=194, name="Raptor Mastery", mob="Stranglethorn Raptor", coords={x=26.6,y=16.1} },
+    { action="turnin", quest=191, name="Panther Mastery", npc="Sir S. J. Erlgadin", coords={x=35.6,y=10.5} },
+    { action="turnin", quest=186, name="Tiger Mastery", npc="Ajeck Rouack", coords={x=35.6,y=10.6} },
+    { action="accept", quest=187, name="Tiger Mastery", npc="Ajeck Rouack", coords={x=35.6,y=10.6} },
+    { action="turnin", quest=194, name="Raptor Mastery", npc="Hemet Nesingwary", coords={x=35.7,y=10.8} },
+    { action="kill", quest=187, name="Tiger Mastery", mob="Elder Stranglethorn Tiger", coords={x=32.0,y=18.0} },
+    { action="collect", quest=189, name="Bloodscalp Ears", item="Bloodscalp Ear", coords={x=32.0,y=18.0}, note="Kill Bloodscalp Trolls for Bloodscalp Ears." },
+    
+    -- Return to Nesingwary's
+    { action="turnin", quest=187, name="Tiger Mastery", npc="Ajeck Rouack", coords={x=35.6,y=10.6} },
+    
+    -- Bal'lal Ruins
+    { action="collect", quest=189, name="Bloodscalp Ears", item="Bloodscalp Ear", coords={x=30.0,y=19.0}, note="Finish collecting 15 Bloodscalp Ears." },
+    
+    -- Northwest of Bal'lal
+    { action="collect", quest=605, name="Singing Blue Shards", item="Singing Crystal Shard", coords={x=26.0,y=18.0}, note="Finish collecting 10 Singing Crystal Shards." },
+    
+    -- The Stone of the Tides
+    { action="turnin", quest=578, name="The Stone of the Tides", npc="Stone of the Tides", coords={x=21.0,y=23.0}, note="Discover the island off the coast." },
+    
+    -- Teleport/Travel to Ironforge
+    { action="info", name="Teleport to Ironforge", note="Use Teleport: Ironforge or Hearth to Menethil then fly to Ironforge.", coords={x=0.0,y=0.0} },
+    
+    -- Ironforge
+    { action="info", name="Learn Spells", note="Learn new spells from class trainers.", coords={x=30.0,y=67.0} },
+    { action="turnin", quest=637, name="Sully Balloo's Letter", npc="Sara Balloo", coords={x=39.1,y=56.2} },
+    { action="accept", quest=683, name="Sara Balloo's Plea", npc="Sara Balloo", coords={x=39.1,y=56.2} },
+    { action="turnin", quest=683, name="Sara Balloo's Plea", npc="King Magni Bronzebeard", coords={x=39.1,y=56.2} },
+    { action="accept", quest=686, name="A King's Tribute", npc="King Magni Bronzebeard", coords={x=39.1,y=56.2} },
+    { action="turnin", quest=686, name="A King's Tribute", npc="Grand Mason Marblesten", coords={x=38.5,y=87.0} },
+    { action="accept", quest=689, name="A King's Tribute", npc="Grand Mason Marblesten", coords={x=38.5,y=87.0} },
+    
+    -- Bank
+    { action="info", name="Bank", note="Deposit: Krazek's Crock Pot, Singing Crystal Shards, Bloodscalp Ears, Large River Crocolisk Skins, Stranglethorn Pages, Extra Cloth.", coords={x=35.0,y=40.8} },
+    
+    -- Fly to Southshore
+    { action="info", name="Fly to Southshore", note="Fly from Ironforge to Southshore.", coords={x=55.5,y=47.8} },
+    
+    { nextGuide = "Hillsbrad 32-33.lua" },
+  }
+}

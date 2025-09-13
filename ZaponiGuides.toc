@@ -7,5 +7,6 @@ Duskwood 28-30.lua
 Wetlands 30.lua
 Hillsbrad 30-31.lua
 Thousand Needles 31-32.lua
+Stranglethorn 32.lua
 Balor 28-29.lua
 ZaponiGuides.lua

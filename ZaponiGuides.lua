@@ -79,6 +79,7 @@ local guideMapping = {
 	["Wetlands 30.lua"] = function() return LevelingGuide_Wetlands_2 end,
 	["Hillsbrad 30-31.lua"] = function() return LevelingGuide_Hillsbrad end,
 	["Thousand Needles 31-32.lua"] = function() return LevelingGuide_Thousand_Needles end,
+	["Stranglethorn 32.lua"] = function() return LevelingGuide_Stranglethorn end,
 	["Balor 28-29.lua"] = function() return LevelingGuide_Balor end,
 }
 
