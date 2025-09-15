@@ -74,13 +74,19 @@ end
 -- local guide = LevelingGuide
 -- Funktion zum Laden eines neuen Guides
 local guideMapping = {
+	["Undead 1-6.lua"] = function() return LevelingGuide_Undead end,
+	["Durotar 1-12.lua"] = function() return LevelingGuide_Durotar end,
 	["Wetlands 24-27.lua"] = function() return LevelingGuide_Wetlands end,
 	["Duskwood 28-30.lua"] = function() return LevelingGuide_Duskwood end,
 	["Wetlands 30.lua"] = function() return LevelingGuide_Wetlands_2 end,
 	["Hillsbrad 30-31.lua"] = function() return LevelingGuide_Hillsbrad end,
 	["Thousand Needles 31-32.lua"] = function() return LevelingGuide_Thousand_Needles end,
 	["Stranglethorn 32.lua"] = function() return LevelingGuide_Stranglethorn end,
-	["Balor 28-29.lua"] = function() return LevelingGuide_Balor end,
+	["Hillsbrad 32-33.lua"] = function() return LevelingGuide_Hillsbrad_2 end,
+	["Balor 33-34.lua"] = function() return LevelingGuide_Balor end,
+	["Stranglethorn 36-37.lua"] = function() return LevelingGuide_Stranglethorn_2 end,
+	["Alterac 37-38.lua"] = function() return LevelingGuide_Alterac end,
+	["Arathi 38-39.lua"] = function() return LevelingGuide_Arathi end,
 }
 
 function ZaponiGuides:LoadGuide(filename)
@@ -160,8 +166,15 @@ local function updateGuideText()
 	local pxPerChar = 8
 	local maxChars = math.floor(frame:GetWidth() / pxPerChar)
 	guideText:SetWidth(frame:GetWidth() - 30)
+	
+	-- Tod-Status anzeigen
+	local deathStatus = ""
+	if ZaponiGuides_Progress and ZaponiGuides_Progress.isDead then
+		deathStatus = "|cffff0000💀 Du bist tot! Suche deinen Leichnam oder geiste zu einem Geistheiler.|r\n\n"
+	end
+	
 	if not guide or not guide.steps then
-		guideText:SetText("Guide konnte nicht geladen werden.")
+		guideText:SetText(deathStatus .. "Guide konnte nicht geladen werden.")
 		return
 	end
 	local steps = guide.steps
@@ -191,19 +204,48 @@ local function updateGuideText()
 							local numObjectives = GetNumQuestLeaderBoards(i)
 							for obj=1, numObjectives do
 								local desc, type, done = GetQuestLogLeaderBoard(obj, i)
-								if (type == "monster" or type == "object" or type == "item") and desc and mobName and string.find(string.lower(desc or ""), string.lower(mobName or ""), 1, true) then
-									local startPos, endPos = string.find(desc or "", "%d+/%d+")
-									local numbers = nil
-									if startPos and endPos then
-										numbers = string.sub(desc, startPos, endPos)
+								if (type == "monster" or type == "object" or type == "item") and desc and mobName then
+									local lowerDesc = string.lower(desc or "")
+									local lowerMobName = string.lower(mobName or "")
+									-- Prüfe ob der Mob-Name GENAU in der Beschreibung vorkommt
+									if string.find(lowerDesc, lowerMobName, 1, true) then
+										-- Zusätzliche Prüfung: Stelle sicher, dass es der richtige Mob ist
+										local isExactMatch = false
+										-- Prüfe verschiedene Formate
+										if string.find(lowerDesc, "^" .. lowerMobName .. " ") or 
+										   string.find(lowerDesc, "^" .. lowerMobName .. ":") or
+										   string.find(lowerDesc, "^" .. lowerMobName .. " slain") or
+										   string.find(lowerDesc, "^" .. lowerMobName .. " killed") then
+											isExactMatch = true
+										end
+										
+										if isExactMatch then
+											local startPos, endPos = string.find(desc or "", "%d+/%d+")
+											local numbers = nil
+											if startPos and endPos then
+												numbers = string.sub(desc, startPos, endPos)
+											end
+											mobProgress = numbers or desc
+											break
+										end
 									end
-									mobProgress = numbers or desc
-									break
 								end
+							end
+							if mobProgress ~= "no progress" then
+								break
 							end
 						end
 					end
-					mainText = mainText .. "\n- " .. mobName .. ": " .. mobProgress
+					-- Debug-Ausgabe entfernt, nur Zahlen anzeigen
+					local displayProgress = mobProgress
+					if mobProgress ~= "no progress" then
+						-- Extrahiere nur die Zahlen (z.B. "3/8") aus dem kompletten Text
+						local startPos, endPos = string.find(mobProgress, "%d+/%d+")
+						if startPos and endPos then
+							displayProgress = string.sub(mobProgress, startPos, endPos)
+						end
+					end
+					mainText = mainText .. "\n- " .. mobName .. ": " .. displayProgress
 				end
 			else
 				local mobName = step.mob or ""
@@ -357,7 +399,7 @@ local function updateGuideText()
             end
         end
 		-- TomTom-Kommandotext wird nicht mehr angezeigt
-		guideText:SetText(mainText)
+		guideText:SetText(deathStatus .. mainText)
 		-- TomTom-Pfeil für aktuellen Schritt anzeigen, falls Koordinaten vorhanden
 		if TomTom and TomTom.RemoveAllWaypoints then
 			TomTom:RemoveAllWaypoints()
@@ -370,7 +412,7 @@ local function updateGuideText()
 			TomTom:AddMFWaypoint(continent, zone, x, y, { title = title, crazy = true })
 		end
 	else
-		guideText:SetText("Kein Schritt vorhanden.")
+		guideText:SetText(deathStatus .. "Kein Schritt vorhanden.")
 	end
 end
 
@@ -486,6 +528,9 @@ startupFrame:SetScript("OnEvent", function()
     -- Event-Frame für Quest-Abgabe jetzt initialisieren
     local eventFrame = CreateFrame("Frame")
     eventFrame:RegisterEvent("QUEST_TURNED_IN")
+    eventFrame:RegisterEvent("PLAYER_DEAD")
+    eventFrame:RegisterEvent("PLAYER_ALIVE")
+    eventFrame:RegisterEvent("PLAYER_UNGHOST")
     eventFrame:SetScript("OnEvent", function(self, event)
         if event == "QUEST_TURNED_IN" then
             local questName = GetTitleText()
@@ -495,6 +540,20 @@ startupFrame:SetScript("OnEvent", function()
                     ZaponiGuides_Progress.completedQuests[step.quest] = true
                 end
             end
+        elseif event == "PLAYER_DEAD" then
+            DEFAULT_CHAT_FRAME:AddMessage("|cffff0000[ZaponiGuides] Du bist gestorben! RIP|r")
+            -- Optional: Guide-Text mit Tod-Hinweis erweitern
+            if ZaponiGuides_Progress then
+                ZaponiGuides_Progress.isDead = true
+            end
+            updateGuideText()
+        elseif event == "PLAYER_ALIVE" or event == "PLAYER_UNGHOST" then
+            DEFAULT_CHAT_FRAME:AddMessage("|cff00ff00[ZaponiGuides] Du lebst wieder! Willkommen zurück!|r")
+            -- Tod-Status zurücksetzen
+            if ZaponiGuides_Progress then
+                ZaponiGuides_Progress.isDead = false
+            end
+            updateGuideText()
         end
     end)
     frame:Show()

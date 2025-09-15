@@ -1,0 +1,50 @@
+-- Balor 28-29 Guide
+-- Hier beginnt dein Abenteuer in Balor für Level 28-29!
+-- Folge den Schritten und genieße das Leveln.
+
+LevelingGuide_Balor = {
+  steps = {
+    { action="accept", quest=41786, name="Suspicions From Sea", npc="Elindra Swiftluck", coords={x=38.27,y=70.89}, note="TurtleWoW specific." },
+    { action="info", name="Get Flight Path", note="Get the Balor Flight Path. TurtleWoW specfic.", coords={x=69.6,y=78.4} },
+    { action="turnin", quest=41798, name="My Darling Wife", npc="Verona Gillian", coords={x=69.4,y=77.5}, note="TurtleWoW specific." },
+    { action="accept", quest=41692, name="Assessing The Situation", npc="Verona Gillian", coords={x=69.4,y=77.5}, note="TurtleWoW specific." },
+    { action="turnin", quest=41799, name="A Hydromancer's Curiosity", npc="Hydromancer Finnigan", coords={x=69.4,y=77.5}, note="TurtleWoW specific." },
+    { action="accept", quest=41709, name="Ceaseless Storms", npc="Hydromancer Finnigan", coords={x=69.4,y=77.5}, note="TurtleWoW specific." },
+    { action="accept", quest=41708, name="Stinging Lullaby", npc="Kinrial", coords={x=69.55,y=77.0}, note="TurtleWoW specific." },
+    { action="accept", quest=41707, name="Fungal Fever", npc="Kinrial", coords={x=69.55,y=77.0}, note="TurtleWoW specific." },
+    --{ action="accept", quest=41842, name="Antiquities", npc="Noppsy Spickerspan", coords={x=69.6,y=76.7}, note="TurtleWoW specific." },
+    { action="accept", quest=41783, name="Forgotten Stories", npc="Noppsy Spickerspan", coords={x=69.6,y=76.7}, note="TurtleWoW specific." },
+    { action="collect", quest=41707, name="Fungal Fever", item={"Enriched Spore","Writhing Mushroom Mycelia"}, coords={x=43.4,y=81.1}, note="In the cave, where the tracks lead. Kill Mushroom Beasts to collect Enriched Spores. Kill Hyphaneus to collect Writhing Mushroom Mycelia. Enter the cave and take the right turn to find him. TurtleWoW specific." },
+    { action="accept", quest=41705, name="Poor Porcelain Doll", npc="Dying Woman", coords={x=40.3,y=69.6}, note="TurtleWoW specific." },
+    { action="collect", quest=41783, name="Forgotten Stories", item="Sermon of the Church", coords={x=39.9,y=69.9}, note="Pick up the book Sermon of the Church from the ground. TurtleWoW specific." },
+    { action="collect", quest=41783, name="Forgotten Stories", item="Grahan Records", coords={x=34.4,y=64.3}, note="Up in the first floor open the Dusty Wardrobe to collect Grahan Records. TurtleWoW specific." },
+    { action="accept", quest=41704, name="Put Them To Rest", npc="Lord Olivert Grahan", coords={x=35.6,y=65.9}, note="TurtleWoW specific." },
+    { action="kill", quest=41704, name="Put Them To Rest", mob={"Lingering Peasant", "Ghostly Farmhand","Spectral Worker"}, coords={x=53.6,y=47.5}, note="TurtleWoW specific." },
+    { action="collect", quest=41783, name="Forgotten Stories", item="Tremond's Journal", coords={x=63.3,y=37.0}, note="Kill Lighthouse Keeper Tremond to pick up Tremond's Journal. TurtleWoW specific." },
+    { action="turnin", quest=41786, name="Suspicions From Sea", npc="Drak'thul", coords={x=54.6,y=19.1}, note="TurtleWoW specific." },
+    { action="accept", quest=41836, name="Lady Who?", npc="Drak'thul", coords={x=54.6,y=19.1}, note="TurtleWoW specific." },
+    { action="accept", quest=41835, name="Legion or Not, Here I Come", npc="Drak'thul", coords={x=54.6,y=19.1}, note="TurtleWoW specific." },
+    { action="collect", quest=41709, name="Ceaseless Storms", item="Pearlescent Shard", coords={x=45.4,y=35.5}, note="Click the altar to pick up Pearlescent Shard. TurtleWoW specific." },
+    { action="turnin", quest=41692, name="Assessing The Situation", npc="Muddy Journal", coords={x=49.2,y=47.2}, note="Click Muddy Journal on the ground. Up on the plateau. TurtleWoW specific." },
+    { action="collect", quest=41708, name="Stinging Lullaby", item={"Mistbark Venom Sac","Enormous Venom Sac"}, coords={x=34.1,y=45.1}, note="Kill Mistbark Spiders to collect Mistbark Venom Sacs. Kill Mother Mistbark to collect Enormous Venom Sac. Enter the cave and take the right turn to find her. TurtleWoW specific." },
+    { action="turnin", quest=41704, name="Put Them To Rest", npc="Lord Olivert Grahan", coords={x=35.6,y=65.9}, note="TurtleWoW specific." },
+    { action="kill", quest=41704, name="Legion or Not, Here I Come", mob={"Untamed Imp", "Thirsting Felhunter","Mistress of Pain"}, coords={x=38.8,y=78.2}, note="Enter the cave and go straight to kill Lady Harelyss for the following step. TurtleWoW specific." },
+    { action="kill", quest=41836, name="Lady Who?", mob={"Lady Harelyss","Harelyss' Soul","Rusty Sealed Lockbox"}, coords={x=34.4,y=72.6}, note="TurtleWoW specific." },
+    { action="collect", quest=41705, name="Poor Porcelain Doll", item="Etched Porcellain Doll", coords={x=49.9,y=73.8}, note="Kill Ooozes in the cave to pick up Etched Porcellain Doll. TurtleWoW specific." },
+    { action="turnin", quest=41705, name="Poor Porcelain Doll", npc="Dying Woman", coords={x=40.3,y=69.6}, note="TurtleWoW specific." },
+    { action="turnin", quest=41836, name="Lady Who?", npc="Drak'thul", coords={x=54.6,y=19.1}, note="TurtleWoW specific." },
+    { action="turnin", quest=41835, name="Legion or Not, Here I Come", npc="Drak'thul", coords={x=54.6,y=19.1}, note="TurtleWoW specific." },
+    { action="accept", quest=41837, name="Storm, Twilight and Hammer", npc="Drak'thul", coords={x=54.6,y=19.1}, note="TurtleWoW specific." },
+    { action="kill", quest=41837, name="Storm, Twilight and Hammer", mob={"Gro'tul Deathrattle","Second Key Fragment"}, coords={x=29.8,y=57.8}, note="TurtleWoW specific." },
+    { action="turnin", quest=41837, name="Storm, Twilight and Hammer", npc="Alfin Grahan", coords={x=35.4,y=65.1}, note="TurtleWoW specific." },
+    { action="turnin", quest=41709, name="Ceaseless Storms", npc="Hydromancer Finnigan", coords={x=69.4,y=77.5}, note="TurtleWoW specific." },
+    --{ action="accept", quest=41709, name="", npc="Piece Of A Bigger Picture", coords={x=69.4,y=77.5}, note="TurtleWoW specific." },
+    { action="turnin", quest=41708, name="Stinging Lullaby", npc="Kinrial", coords={x=69.55,y=77.0}, note="TurtleWoW specific." },
+    { action="turnin", quest=41707, name="Fungal Fever", npc="Kinrial", coords={x=69.55,y=77.0}, note="TurtleWoW specific." },
+    { action="turnin", quest=41783, name="Forgotten Stories", npc="Noppsy Spickerspan", coords={x=69.6,y=76.7}, note="TurtleWoW specific." },
+    -- mit diesem Schritt werden nun Desolace 33-35 und Dustwallow 35-36 geskippt (auch noch nicht programmiert!)
+    -- der Skip ist notwendig, da ich bereits kurz vor Level 37 bin
+    { action="info", name="Booty Bay", note="Fly to Booty Bay.", coords={x=49.3,y=52.3} },
+    { nextGuide = "Stranglethorn 36-37.lua" }
+    }
+}

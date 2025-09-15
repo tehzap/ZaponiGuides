@@ -53,38 +53,18 @@ LevelingGuide_Stranglethorn = {
     { action="accept", quest=187, name="Tiger Mastery", npc="Ajeck Rouack", coords={x=35.6,y=10.6} },
     { action="turnin", quest=194, name="Raptor Mastery", npc="Hemet Nesingwary", coords={x=35.7,y=10.8} },
     { action="kill", quest=187, name="Tiger Mastery", mob="Elder Stranglethorn Tiger", coords={x=32.0,y=18.0} },
-    { action="collect", quest=189, name="Bloodscalp Ears", item="Bloodscalp Ear", coords={x=32.0,y=18.0}, note="Kill Bloodscalp Trolls for Bloodscalp Ears." },
-    
-    -- Return to Nesingwary's
+    { action="collect", quest=189, name="Bloodscalp Ears", item="Bloodscalp Ear", coords={x=33.8,y=17.2}, note="Kill Bloodscalp Trolls for Bloodscalp Ears." },
     { action="turnin", quest=187, name="Tiger Mastery", npc="Ajeck Rouack", coords={x=35.6,y=10.6} },
-    
-    -- Bal'lal Ruins
-    { action="collect", quest=189, name="Bloodscalp Ears", item="Bloodscalp Ear", coords={x=30.0,y=19.0}, note="Finish collecting 15 Bloodscalp Ears." },
-    
-    -- Northwest of Bal'lal
-    { action="collect", quest=605, name="Singing Blue Shards", item="Singing Crystal Shard", coords={x=26.0,y=18.0}, note="Finish collecting 10 Singing Crystal Shards." },
-    
-    -- The Stone of the Tides
-    { action="turnin", quest=578, name="The Stone of the Tides", npc="Stone of the Tides", coords={x=21.0,y=23.0}, note="Discover the island off the coast." },
-    
-    -- Teleport/Travel to Ironforge
-    { action="info", name="Teleport to Ironforge", note="Use Teleport: Ironforge or Hearth to Menethil then fly to Ironforge.", coords={x=0.0,y=0.0} },
-    
-    -- Ironforge
-    { action="info", name="Learn Spells", note="Learn new spells from class trainers.", coords={x=30.0,y=67.0} },
-    { action="turnin", quest=637, name="Sully Balloo's Letter", npc="Sara Balloo", coords={x=39.1,y=56.2} },
-    { action="accept", quest=683, name="Sara Balloo's Plea", npc="Sara Balloo", coords={x=39.1,y=56.2} },
-    { action="turnin", quest=683, name="Sara Balloo's Plea", npc="King Magni Bronzebeard", coords={x=39.1,y=56.2} },
-    { action="accept", quest=686, name="A King's Tribute", npc="King Magni Bronzebeard", coords={x=39.1,y=56.2} },
-    { action="turnin", quest=686, name="A King's Tribute", npc="Grand Mason Marblesten", coords={x=38.5,y=87.0} },
-    { action="accept", quest=689, name="A King's Tribute", npc="Grand Mason Marblesten", coords={x=38.5,y=87.0} },
-    
-    -- Bank
-    { action="info", name="Bank", note="Deposit: Krazek's Crock Pot, Singing Crystal Shards, Bloodscalp Ears, Large River Crocolisk Skins, Stranglethorn Pages, Extra Cloth.", coords={x=35.0,y=40.8} },
-    
-    -- Fly to Southshore
-    { action="info", name="Fly to Southshore", note="Fly from Ironforge to Southshore.", coords={x=55.5,y=47.8} },
-    
+    { action="info", quest=578, name="The Stone of the Tides", coords={x=21.5,y=21.9}, note="Discover the Haunted Island for The Stone of the Tides." },
+    { action="info", name="Ironforge", note="Use Teleport: Ironforge or use Hearthstone to Menethil and then fly to Ironforge.", coords={x=21.5,y=21.9} },
+    { action="turnin", quest=637, name="Sully Balloo's Letter", npc="Sara Balloo", coords={x=63.4,y=67.2} },
+    { action="accept", quest=683, name="Sara Balloo's Plea", npc="Sara Balloo", coords={x=63.4,y=67.2} },
+    { action="turnin", quest=683, name="Sara Balloo's Plea", npc="King Magni Bronzebeard", coords={x=39.0,y=56.1} },
+    { action="accept", quest=686, name="A King's Tribute", npc="King Magni Bronzebeard", coords={x=39.0,y=56.1} },
+    { action="turnin", quest=686, name="A King's Tribute", npc="Grand Mason Marblesten", coords={x=39.0,y=87.9} },
+    { action="accept", quest=689, name="A King's Tribute", npc="Grand Mason Marblesten", coords={x=39.0,y=87.9} },
+    { action="info", name="Bank", note="Deposit to Bank: Krazek's Crock Pot, Singing Crystal Shards, Bloodscalp Ears, Large River Crocolisk Skins, Stranglethorn Pages, extra Cloth.", coords={x=35.6,y=60.7} },
+    { action="info", name="Southshore", note="Fly to Southshore.", coords={x=55.5,y=47.8} },
     { nextGuide = "Hillsbrad 32-33.lua" },
   }
 }

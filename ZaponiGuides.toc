@@ -1,12 +1,18 @@
 ## Interface: 11200
 ## Title: ZaponiGuides
 ## Notes: Minimal Viable Solution for TurtleWoW
-## SavedVariables: ZaponiGuides_Progress
+## SavedVariablesPerCharacter: ZaponiGuides_Progress
+Undead 1-6.lua
+Durotar 1-12.lua
 Wetlands 24-27.lua
 Duskwood 28-30.lua
 Wetlands 30.lua
 Hillsbrad 30-31.lua
 Thousand Needles 31-32.lua
 Stranglethorn 32.lua
-Balor 28-29.lua
+Hillsbrad 32-33.lua
+Balor 33-34.lua
+Stranglethorn 36-37.lua
+Alterac 37-38.lua
+Arathi 38-39.lua
 ZaponiGuides.lua
