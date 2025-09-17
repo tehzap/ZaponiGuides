@@ -87,6 +87,7 @@ local guideMapping = {
 	["Stranglethorn 36-37.lua"] = function() return LevelingGuide_Stranglethorn_2 end,
 	["Alterac 37-38.lua"] = function() return LevelingGuide_Alterac end,
 	["Arathi 38-39.lua"] = function() return LevelingGuide_Arathi end,
+	["Badlands 39-40.lua"] = function() return LevelingGuide_Badlands end,
 }
 
 function ZaponiGuides:LoadGuide(filename)

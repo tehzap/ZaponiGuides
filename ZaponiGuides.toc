@@ -15,4 +15,5 @@ Balor 33-34.lua
 Stranglethorn 36-37.lua
 Alterac 37-38.lua
 Arathi 38-39.lua
+Badlands 39-40.lua
 ZaponiGuides.lua
