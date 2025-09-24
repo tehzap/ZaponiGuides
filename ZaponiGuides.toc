@@ -16,4 +16,6 @@ Stranglethorn 36-37.lua
 Alterac 37-38.lua
 Arathi 38-39.lua
 Badlands 39-40.lua
+Stranglethorn 40-42.lua
+Swamp of Sorrows 42-43.lua
 ZaponiGuides.lua

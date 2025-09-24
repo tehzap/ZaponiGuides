@@ -88,6 +88,8 @@ local guideMapping = {
 	["Alterac 37-38.lua"] = function() return LevelingGuide_Alterac end,
 	["Arathi 38-39.lua"] = function() return LevelingGuide_Arathi end,
 	["Badlands 39-40.lua"] = function() return LevelingGuide_Badlands end,
+	["Stranglethorn 40-42.lua"] = function() return LevelingGuide_Stranglethorn_3 end,
+	["Swamp of Sorrows 42-43.lua"] = function() return LevelingGuide_SwampOfSorrows end,
 }
 
 function ZaponiGuides:LoadGuide(filename)
@@ -128,10 +130,10 @@ local function formatStep(step)
 	-- Quest-Icons für Classic 1.12 (Unicode-Zeichen statt Texturen)
 	if step.action == "accept" then
 		icon = "|cffFFD700!|r "  -- Gelbes Ausrufezeichen
-		txt = icon .. "|cff00ff00Accept:|r " .. (step.name or "") .. " |cff888888(ID: " .. (step.quest or "") .. ")|r bei |cffadd8e6" .. (step.npc or "") .. "|r"
+		txt = icon .. "|cff00ff00Accept:|r " .. (step.name or "") .. " |cff888888(ID: " .. (step.quest or "") .. ")|r at |cffadd8e6" .. (step.npc or "") .. "|r"
 	elseif step.action == "turnin" then
 		icon = "|cffFFD700?|r "  -- Gelbes Fragezeichen
-		txt = icon .. "|cffffff00Turn-in:|r " .. (step.name or "") .. " bei |cffadd8e6" .. (step.npc or "") .. "|r"
+		txt = icon .. "|cffffff00Turn-in:|r " .. (step.name or "") .. " at |cffadd8e6" .. (step.npc or "") .. "|r"
 	elseif step.action == "kill" then
 		icon = "|cffFF0000†|r "  -- Rotes Kreuz (Töten)
 		local mobText = ""
