@@ -103,7 +103,7 @@ LevelingGuide_Stranglethorn_3 = {
     { action="info", name="Travel to Stormwind", note="Use Teleport: Stormwind or fly to Stormwind.", coords={x=74.6,y=51.0} },
     { action="accept", quest=1477, name="Vital Supplies", npc="High Sorcerer Andromath", coords={x=48.7,y=87.6}, note="Atop Wizard's Sanctum in Mage Quarter." },
     { action="info", name="Darkshire", note="Fly to Darkshire.", coords={x=71.0,y=72.5} },
-    { action="turnin", quest=1477, name="Vital Supplies", npc="Watchmaster Sorigal", coords={x=75.8,y=46.2} },
+    { action="turnin", quest=1477, name="Vital Supplies", npc="Watchmaster Sorigal", coords={x=75.8,y=46.2}, note="This Quest has to be turned-in within 1 hour." },
     { action="accept", quest=1395, name="Supplies for Nethergarde", npc="Watchmaster Sorigal", coords={x=75.8,y=46.2} },
     { action="info", name="Swamp of Sorrows", note="Go to the Deadwind Pass.", coords={x=91.2,y=41.5} },
     { action="info", name="Swamp of Sorrows", note="Go to the Swamp of Sorrows.", coords={x=59.8,y=41.1} },

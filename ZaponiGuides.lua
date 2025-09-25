@@ -90,6 +90,8 @@ local guideMapping = {
 	["Badlands 39-40.lua"] = function() return LevelingGuide_Badlands end,
 	["Stranglethorn 40-42.lua"] = function() return LevelingGuide_Stranglethorn_3 end,
 	["Swamp of Sorrows 42-43.lua"] = function() return LevelingGuide_SwampOfSorrows end,
+	["Tanaris 43-44.lua"] = function() return LevelingGuide_Tanaris end,
+	["Gilneas 44.lua"] = function() return LevelingGuide_Gilneas end,
 }
 
 function ZaponiGuides:LoadGuide(filename)
