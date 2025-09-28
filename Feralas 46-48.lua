@@ -36,61 +36,32 @@ LevelingGuide_Feralas = {
     { action="collect", quest=2869, name="Against the Hatecrest", item="Hatecrest Naga Scale", coords={x=26.9,y=54.0}, note="Kill Hatecrest Naga to pick up Hatecrest Naga Scales." },
     { action="turnin", quest=2869, name="Against the Hatecrest", npc="Latronicus Moonspear", coords={x=30.4,y=46.2} },
     { action="accept", quest=2870, name="Against Lord Shalzaru", npc="Latronicus Moonspear", coords={x=30.4,y=46.2} },
-    
-    -- Level 45 milestone
-    { action="info", name="Level 45", note="You should reach Level 45 around this time. Use Alterac Swiss and Morning Glory Dew for food/water", coords={x=30,y=43} },
-    
-    -- Isle of Dread - Lord Shalzaru
-    { action="info", name="Travel to Isle of Dread", note="Run southwest to the cave on southern island", coords={x=28,y=70} },
-    { action="kill", quest=2870, name="Against Lord Shalzaru", mob="Lord Shalzaru", coords={x=28,y=70} },
-    
-    -- Return to Feathermoon
-    { action="turnin", quest=2870, name="Against Lord Shalzaru", npc="Latronicus Moonspear", coords={x=30,y=46} },
-    { action="accept", quest=2871, name="Delivering the Relic", npc="Latronicus Moonspear", coords={x=30,y=46} },
-    { action="turnin", quest=2871, name="Delivering the Relic", npc="Vestia Moonspear", coords={x=30,y=46} },
-    
-    -- Screecher Spirits
-    { action="kill", quest=3520, name="Screecher Spirits", mob="Rogue Vale Screecher", coords={x=33,y=43} },
-    
-    -- Wrecked Row Boat
-    { action="info", name="Travel south for boat wreckage", note="Run all the way south underwater", coords={x=45,y=65} },
-    { action="interact", quest=4125, name="The Missing Courier", target="Wrecked Row Boat", coords={x=45,y=65} },
-    { action="turnin", quest=4125, name="The Missing Courier", npc="Wrecked Row Boat", coords={x=45,y=65} },
-    { action="accept", quest=4127, name="Boat Wreckage", npc="Wrecked Row Boat", coords={x=45,y=65} },
-    
-    -- Hearthstone back
-    { action="info", name="Hearthstone to Feathermoon", note="Use Hearthstone to return to Feathermoon Stronghold", coords={x=30,y=43} },
-    { action="turnin", quest=4127, name="Boat Wreckage", npc="Ginro Hearthkindle", coords={x=31,y=45} },
-    { action="accept", quest=4129, name="The Knife Revealed", npc="Ginro Hearthkindle", coords={x=31,y=45} },
-    { action="turnin", quest=4129, name="The Knife Revealed", npc="Quintis Jonespyre", coords={x=32,y=43} },
-    { action="accept", quest=4130, name="Psychometric Reading", npc="Quintis Jonespyre", coords={x=32,y=43} },
-    { action="turnin", quest=4130, name="Psychometric Reading", npc="Ginro Hearthkindle", coords={x=31,y=45} },
-    { action="accept", quest=4131, name="The Woodpaw Gnolls", npc="Ginro Hearthkindle", coords={x=31,y=45} },
-    
-    -- Feral Scar Vale - Yeti farming
-    { action="info", name="Travel to Feral Scar Vale", note="Run east up the hill and southeast to cave", coords={x=55,y=55} },
-    { action="collect", quest=2821, name="The Mark of Quality", item="Thick Yeti Hide", coords={x=55,y=55} },
-    
-    -- OOX-22/FE (optional)
-    { action="info", name="OOX-22/FE Distress Beacon", note="If OOX-22/FE Distress Beacon drops, use it and complete robot quest (skip escort)", coords={x=55,y=55} },
-    
-    -- Ruins of Isildien - Gordunni ogres
-    { action="info", name="Travel to Ruins of Isildien", note="Grind southeast to Ruins of Isildien", coords={x=60,y=64} },
-    { action="kill", quest=2982, name="The High Wilderness", mob={"Gordunni Warlock","Gordunni Shaman","Gordunni Brute"}, coords={x=60,y=64} },
-    
-    -- Hippogryph Egg
-    { action="info", name="Travel to Fray Feather Highlands", note="Run south to hill passage", coords={x=58,y=75} },
-    { action="interact", quest=0, name="Hippogryph Egg", target="Hippogryph Egg", coords={x=58,y=77} },
-    
-    -- Sprite Darter quest chain (GROUP 2+)
-    { action="info", name="Grimtotem Camp (GROUP 2+)", note="GROUP 2+ REQUIRED: Run northeast to Grimtotem Camp", coords={x=66,y=46} },
-    { action="accept", quest=2969, name="Freedom for All Creatures", npc="Kindal Moonweaver", coords={x=66,y=45} },
-    { action="kill", quest=2969, name="Freedom for All Creatures", mob="Sprite Darter", coords={x=66,y=46} },
-    { action="turnin", quest=2969, name="Freedom for All Creatures", npc="Kindal Moonweaver", coords={x=66,y=45} },
-    { action="accept", quest=2970, name="Doling Justice", npc="Kindal Moonweaver", coords={x=66,y=45} },
-    
-    -- Grimtotem Compound
+    { action="info", name="Against Lord Shalzaru", note="Enter the cave.", coords={x=25.8,y=67.0} },
+    { action="collect", quest=2870, name="Against Lord Shalzaru", item="Mysterious Relic", coords={x=28.1,y=70.2}, note="Kill Lord Shalzaru to pick up Mysterious Relic." },
+    { action="turnin", quest=2870, name="Against Lord Shalzaru", npc="Latronicus Moonspear", coords={x=30.4,y=46.2} },
+    { action="accept", quest=2871, name="Delivering the Relic", npc="Latronicus Moonspear", coords={x=30.4,y=46.2} },
+    { action="turnin", quest=2871, name="Delivering the Relic", npc="Vestia Moonspear", coords={x=30.1,y=45.1} },
+    { action="kill", quest=3520, name="Screecher Spirits", mob="Screecher Spirits Collected", coords={x=46.3,y=48.9}, note="Kill Rogue Vale Screechers and use Yeh'kinya's Bramble on their corpses. Then click the summoned Screecher Spirit." },
+    { action="turnin", quest=4125, name="The Missing Courier", coords={x=45.4,y=65.0}, note="Click Wrecked Row Boat to turn-in the Quest." },
+    { action="accept", quest=4127, name="Boat Wreckage", npc="Wrecked Row Boat", coords={x=45.4,y=65.0} },
+    { action="info", name="Hearthstone", note="Use Hearthstone to return to Feathermoon.", coords={x=45,y=65} },
+    { action="turnin", quest=4127, name="Boat Wreckage", npc="Ginro Hearthkindle", coords={x=31.9,y=45.1}, note="He is upstairs." },
+    { action="accept", quest=4129, name="The Knife Revealed", npc="Ginro Hearthkindle", coords={x=31.9,y=45.1} },
+    { action="turnin", quest=4129, name="The Knife Revealed", npc="Quintis Jonespyre", coords={x=32.4,y=43.8}, note="Atop the tower." },
+    { action="accept", quest=4130, name="Psychometric Reading", npc="Quintis Jonespyre", coords={x=32.4,y=43.8}, note="Wait for RPG to accept the Quest." },
+    { action="turnin", quest=4130, name="Psychometric Reading", npc="Ginro Hearthkindle", coords={x=31.9,y=45.1}, note="He is upstairs." },
+    { action="accept", quest=4131, name="The Woodpaw Gnolls", npc="Ginro Hearthkindle", coords={x=31.9,y=45.1} },
+    { action="collect", quest=2821, name="The Mark of Quality", item="Thick Yeti Hide", coords={x=55.5,y=56.2}, note="Kill Feral Scar Yetis to pick up Thick Yeti Hides." },
+    { action="accept", quest=2766, name="Find OOX-22/FE!", note="If OOX-22/FE Distress Beacon has dropped, use it to accept the Quest.", coords={x=55.5,y=56.2} },
+    { action="turnin", quest=2766, name="Find OOX-22/FE!", npc="Homing Robot OOX-22/FE", coords={x=31.9,y=45.1} },
+    { action="kill", quest=2982, name="The High Wilderness", mob={"Gordunni Warlock","Gordunni Shaman","Gordunni Brute"}, coords={x=61.7,y=69.4}, note="Shamans can be found in this cave." },
+    { action="info", name="Hippogryph Egg", note="Click Hippogryph Egg to pick it up for later.", coords={x=58.0,y=76.3} },
+    { action="accept", quest=2969, name="Freedom for All Creatures", npc="Kindal Moonweaver", coords={x=65.9,y=45.7} },
+    { action="info", quest=2969, name="Freedom for All Creatures", note="Click Cage Door to release Captured Sprite Darters.", coords={x=66.7,y=46.8} },
+    { action="turnin", quest=2969, name="Freedom for All Creatures", npc="Kindal Moonweaver", coords={x=65.9,y=45.7} },
+    { action="accept", quest=2970, name="Doling Justice", npc="Kindal Moonweaver", coords={x=65.9,y=45.7} },
     { action="kill", quest=2970, name="Doling Justice", mob={"Grimtotem Naturalist","Grimtotem Raider","Grimtotem Shaman"}, coords={x=68,y=40} },
+    
     { action="turnin", quest=2970, name="Doling Justice", npc="Jer'kai Moonweaver", coords={x=66,y=45} },
     { action="accept", quest=2972, name="Doling Justice", npc="Jer'kai Moonweaver", coords={x=66,y=45} },
     

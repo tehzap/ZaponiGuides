@@ -1,3 +1,6 @@
+-- Initialize ZaponiGuides namespace
+ZaponiGuides = {}
+
 -- Erstelle das Hauptfenster (Frame) und setze grundlegende Eigenschaften
 local frame = CreateFrame("Frame", "ZaponiGuides", UIParent) -- Haupt-Frame für das Addon
 frame:SetWidth(400) -- Breite des Fensters
@@ -460,6 +463,97 @@ prevButton:SetScript("OnClick", function()
 		ZaponiGuides_Progress.currentStep = ZaponiGuides_Progress.currentStep - 1
 		updateGuideText()
 	end
+end)
+
+-- Load Guide Button
+local loadGuideButton = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
+loadGuideButton:SetWidth(90)
+loadGuideButton:SetHeight(22)
+loadGuideButton:SetPoint("BOTTOM", frame, "BOTTOM", 0, 10)
+loadGuideButton:SetText("Load Guide")
+
+-- Guide Selection Frame (initially hidden)
+local guideSelectionFrame = CreateFrame("Frame", nil, UIParent)
+guideSelectionFrame:SetWidth(300)
+guideSelectionFrame:SetHeight(400)
+guideSelectionFrame:SetPoint("CENTER", UIParent, "CENTER", 0, 0)
+guideSelectionFrame:SetBackdrop({
+	bgFile = "Interface/Tooltips/UI-Tooltip-Background",
+	edgeFile = "Interface/Tooltips/UI-Tooltip-Border",
+	tile = true, tileSize = 16, edgeSize = 16,
+	insets = {left = 4, right = 4, top = 4, bottom = 4}
+})
+guideSelectionFrame:SetBackdropColor(0,0,0,0.9)
+guideSelectionFrame:SetBackdropBorderColor(0.8,0.8,0.8,1)
+guideSelectionFrame:EnableMouse(true)
+guideSelectionFrame:SetMovable(true)
+guideSelectionFrame:RegisterForDrag("LeftButton")
+guideSelectionFrame:SetScript("OnDragStart", function() guideSelectionFrame:StartMoving() end)
+guideSelectionFrame:SetScript("OnDragStop", function() guideSelectionFrame:StopMovingOrSizing() end)
+guideSelectionFrame:Hide()
+guideSelectionFrame:SetFrameStrata("DIALOG")
+
+-- Title for guide selection
+local guideSelectionTitle = guideSelectionFrame:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
+guideSelectionTitle:SetPoint("TOP", guideSelectionFrame, "TOP", 0, -10)
+guideSelectionTitle:SetText("Select Guide")
+
+-- Close button for guide selection
+local closeButton = CreateFrame("Button", nil, guideSelectionFrame, "UIPanelCloseButton")
+closeButton:SetPoint("TOPRIGHT", guideSelectionFrame, "TOPRIGHT", -5, -5)
+closeButton:SetScript("OnClick", function() guideSelectionFrame:Hide() end)
+
+-- Scroll frame for guide list (WoW 1.12 compatible)
+local scrollFrame = CreateFrame("ScrollFrame", "ZaponiGuidesScrollFrame", guideSelectionFrame, "UIPanelScrollFrameTemplate")
+scrollFrame:SetPoint("TOPLEFT", guideSelectionFrame, "TOPLEFT", 10, -35)
+scrollFrame:SetPoint("BOTTOMRIGHT", guideSelectionFrame, "BOTTOMRIGHT", -30, 10)
+
+local scrollChild = CreateFrame("Frame", "ZaponiGuidesScrollChild", scrollFrame)
+scrollChild:SetWidth(250)
+scrollFrame:SetScrollChild(scrollChild)
+
+-- Function to create guide selection buttons
+local function createGuideButtons()
+	local guideButtons = {}
+	local yOffset = 0
+	
+	-- Manual order (pairs() doesn't guarantee order in Lua 5.1)
+	local guideList = {
+		"Undead 1-6.lua", "Durotar 1-12.lua", "Wetlands 24-27.lua", "Duskwood 28-30.lua",
+		"Wetlands 30.lua", "Hillsbrad 30-31.lua", "Thousand Needles 31-32.lua", "Stranglethorn 32.lua",
+		"Hillsbrad 32-33.lua", "Balor 33-34.lua", "Stranglethorn 36-37.lua", "Alterac 37-38.lua",
+		"Arathi 38-39.lua", "Badlands 39-40.lua", "Stranglethorn 40-42.lua", "Swamp of Sorrows 42-43.lua",
+		"Tanaris 43-44.lua", "Gilneas 44-46.lua", "Feralas 46-48.lua"
+	}
+	
+	for i, filename in ipairs(guideList) do
+		if guideMapping[filename] then -- Only show if guide exists
+			local displayName = string.gsub(filename, "%.lua$", "")
+			local button = CreateFrame("Button", nil, scrollChild, "UIPanelButtonTemplate")
+			button:SetWidth(240)
+			button:SetHeight(25)
+			button:SetPoint("TOPLEFT", scrollChild, "TOPLEFT", 5, yOffset)
+			button:SetText(displayName)
+			
+			-- Create local copy for closure (WoW 1.12 fix)
+			local guideFilename = filename
+			button:SetScript("OnClick", function()
+				ZaponiGuides:LoadGuide(guideFilename)
+				guideSelectionFrame:Hide()
+			end)
+			
+			table.insert(guideButtons, button)
+			yOffset = yOffset - 30
+		end
+	end
+	
+	scrollChild:SetHeight(math.abs(yOffset) + 10)
+end
+
+-- Load Guide Button click handler
+loadGuideButton:SetScript("OnClick", function()
+	createGuideButtons()
+	guideSelectionFrame:Show()
 end)
 
 
