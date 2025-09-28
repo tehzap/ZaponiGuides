@@ -1,6 +1,3 @@
--- Initialize ZaponiGuides namespace
-ZaponiGuides = {}
-
 -- Erstelle das Hauptfenster (Frame) und setze grundlegende Eigenschaften
 local frame = CreateFrame("Frame", "ZaponiGuides", UIParent) -- Haupt-Frame für das Addon
 frame:SetWidth(400) -- Breite des Fensters
@@ -464,7 +461,7 @@ prevButton:SetScript("OnClick", function()
 		updateGuideText()
 	end
 end)
-
+--------------------------
 -- Load Guide Button
 local loadGuideButton = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
 loadGuideButton:SetWidth(90)
@@ -555,7 +552,7 @@ loadGuideButton:SetScript("OnClick", function()
 	createGuideButtons()
 	guideSelectionFrame:Show()
 end)
-
+--------------------------
 
 frame:SetScript("OnShow", updateGuideText)
 

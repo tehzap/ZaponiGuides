@@ -60,15 +60,10 @@ LevelingGuide_Feralas = {
     { action="info", quest=2969, name="Freedom for All Creatures", note="Click Cage Door to release Captured Sprite Darters.", coords={x=66.7,y=46.8} },
     { action="turnin", quest=2969, name="Freedom for All Creatures", npc="Kindal Moonweaver", coords={x=65.9,y=45.7} },
     { action="accept", quest=2970, name="Doling Justice", npc="Kindal Moonweaver", coords={x=65.9,y=45.7} },
-    { action="kill", quest=2970, name="Doling Justice", mob={"Grimtotem Naturalist","Grimtotem Raider","Grimtotem Shaman"}, coords={x=68,y=40} },
-    
-    { action="turnin", quest=2970, name="Doling Justice", npc="Jer'kai Moonweaver", coords={x=66,y=45} },
-    { action="accept", quest=2972, name="Doling Justice", npc="Jer'kai Moonweaver", coords={x=66,y=45} },
-    
-    -- Woodpaw Hills
-    { action="info", name="Travel to Woodpaw Hills", note="Grind southeast to Woodpaw Hills", coords={x=73,y=56} },
-    { action="interact", quest=4131, name="The Woodpaw Gnolls", target="Large Leather Backpacks", coords={x=73,y=56} },
-    { action="turnin", quest=4131, name="The Woodpaw Gnolls", npc="Large Leather Backpacks", coords={x=73,y=56} },
+    { action="kill", quest=2970, name="Doling Justice", mob={"Grimtotem Naturalist","Grimtotem Raider","Grimtotem Shaman"}, coords={x=67.5,y=46.4} },
+    { action="turnin", quest=2970, name="Doling Justice", npc="Jer'kai Moonweaver", coords={x=65.9,y=45.6} },
+    { action="accept", quest=2972, name="Doling Justice", npc="Jer'kai Moonweaver", coords={x=65.9,y=45.6} },
+    { action="turnin", quest=4131, name="The Woodpaw Gnolls", npc="Large Leather Backpacks", coords={x=73,y=56}, note="Click Large Leather Backpacks to turn-in the Quest." },
     { action="accept", quest=4135, name="The Writhing Deep", npc="Large Leather Backpacks", coords={x=73,y=56} },
     
     -- The Writhing Deep
