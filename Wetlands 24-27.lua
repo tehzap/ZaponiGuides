@@ -1,4 +1,3 @@
--- WETLANDS 24-27: https://mmo-gs.com/blog/wow-classic-20-30-alliance-leveling-guide/?utm_source=chatgpt.com
 LevelingGuide_Wetlands = {
   steps = {
     { action="accept", quest=279,  name="Claws from the Deep",       npc="Karl Boran",       coords={x=8.3,y=58.6} },

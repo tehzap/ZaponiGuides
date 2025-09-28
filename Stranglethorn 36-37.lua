@@ -1,6 +1,3 @@
--- Stranglethorn 36-37 Guide
--- Based on https://www.sageguide.net/36-37_stranglethorn
-
 LevelingGuide_Stranglethorn_2 = {
   steps = {
     -- In Booty Bay - Bank

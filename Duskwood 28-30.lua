@@ -1,5 +1,3 @@
--- https://mmo-gs.com/blog/wow-classic-20-30-alliance-leveling-guide/?utm_source=chatgpt.com
-
 LevelingGuide_Duskwood = {
   steps = {
     { action="collect", item="Tear of Tilloa", coords={x=78.3,y=36.0}, note="Pick up Tear of Tilloa on the way to Darkshire." },

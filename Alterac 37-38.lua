@@ -1,9 +1,5 @@
--- Alterac 37-38 Guide
--- Based on https://www.sageguide.net/37-38_alterac
-
 LevelingGuide_Alterac = {
   steps = {
-    -- Start: Run northwest to Dalaran
     { action="info", name="Alterac Mountains", note="Go to the Alterac Mountains.", coords={x=29.7,y=26.7} },
     { action="turnin", quest=602, name="Magical Analysis", npc="Archmage Ansirem Runeweaver", coords={x=18.9,y=78.5} },
     { action="accept", quest=603, name="Ansirem's Key", npc="Archmage Ansirem Runeweaver", coords={x=18.9,y=78.5} },

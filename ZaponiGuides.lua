@@ -70,9 +70,7 @@ local function autoWrap(text, maxLineLength)
 end
 
 
--- Lade den Guide aus Duskwood.lua
--- local guide = LevelingGuide
--- Funktion zum Laden eines neuen Guides
+-- Guide-Mapping
 local guideMapping = {
 	["Undead 1-6.lua"] = function() return LevelingGuide_Undead end,
 	["Durotar 1-12.lua"] = function() return LevelingGuide_Durotar end,
@@ -91,7 +89,8 @@ local guideMapping = {
 	["Stranglethorn 40-42.lua"] = function() return LevelingGuide_Stranglethorn_3 end,
 	["Swamp of Sorrows 42-43.lua"] = function() return LevelingGuide_SwampOfSorrows end,
 	["Tanaris 43-44.lua"] = function() return LevelingGuide_Tanaris end,
-	["Gilneas 44.lua"] = function() return LevelingGuide_Gilneas end,
+	["Gilneas 44-46.lua"] = function() return LevelingGuide_Gilneas end,
+	["Feralas 46-48.lua"] = function() return LevelingGuide_Feralas end,
 }
 
 function ZaponiGuides:LoadGuide(filename)
@@ -106,7 +105,7 @@ function ZaponiGuides:LoadGuide(filename)
 	end
 	local loadedGuide = loader()
 	if type(loadedGuide) ~= "table" then
-		DEFAULT_CHAT_FRAME:AddMessage("[ZaponiGuides] Guide konnte nicht geladen werden: " .. filename)
+		DEFAULT_CHAT_FRAME:AddMessage("[ZaponiGuides] Guide could not be loaded: " .. filename)
 		return
 	end
 	LevelingGuide = loadedGuide
@@ -115,16 +114,15 @@ function ZaponiGuides:LoadGuide(filename)
 			ZaponiGuides_Progress.currentStep = 1
 		end
 	ZaponiGuides_Progress.currentGuide = filename
-	DEFAULT_CHAT_FRAME:AddMessage("[ZaponiGuides] Neuer Guide geladen: " .. filename)
+	DEFAULT_CHAT_FRAME:AddMessage("[ZaponiGuides] New Guide loaded: " .. filename)
 end
--- Beim Start den zuletzt verwendeten Guide laden, falls vorhanden
+
 local function tryLoadLastGuide()
 	if ZaponiGuides_Progress and ZaponiGuides_Progress.currentGuide then
 		ZaponiGuides:LoadGuide(ZaponiGuides_Progress.currentGuide)
 	end
 end
 
--- formatStep muss vor updateGuideText stehen!
 local function formatStep(step)
 	local txt = ""
 	local icon = ""
@@ -465,10 +463,6 @@ prevButton:SetScript("OnClick", function()
 end)
 
 
--- updateGuideText vor Button-Definitionen positionieren, nur eine Definition
-
-
-
 frame:SetScript("OnShow", updateGuideText)
 
 
@@ -478,7 +472,6 @@ local rawText = "Willkommen zu ZaponiGuides für TurtleWoW! Hier könnte Ihr Gui
 frame:SetScript("OnSizeChanged", updateGuideText)
 
 
--- Zeige das Fenster an
 -- Zeige das Fenster erst nach vollständigem Laden der Daten
 local startupFrame = CreateFrame("Frame")
 startupFrame:RegisterEvent("PLAYER_ENTERING_WORLD")

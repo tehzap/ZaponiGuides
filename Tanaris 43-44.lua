@@ -1,6 +1,3 @@
--- Tanaris 43-44 Guide
--- Based on https://www.sageguide.net/43-44_tanaris
-
 LevelingGuide_Tanaris = { 
   steps = {
     -- Arrival in Gadgetzan
@@ -49,37 +46,8 @@ LevelingGuide_Tanaris = {
     { action="turnin", quest=8366, name="Southsea Shakedown", npc="Security Chief Bilgewhizzle", coords={x=67.1,y=23.9} },
     { action="turnin", quest=2873, name="Stoley's Shipment", npc="Stoley", coords={x=67.1,y=24.0} },
     { action="accept", quest=2874, name="Deliver to MacKinley", npc="Stoley", coords={x=67.1,y=24.0} },
-    { nextGuide = "Gilneas 44.lua" },   
-    
     --{ action="info", name="Ship Schedule", note="If you found Ship Schedule, use it to accept and complete Ship Schedules quest", coords={x=67.1,y=24.0} },
     --{ action="info", name="Grind", note="Grind until Level 44 and 15 bars.", coords={x=75.8,y=45.6} },
-
-    { action="info", quest=992, name="Gadgetzan Water Survey", target="Untapped Dowsing Widget", coords={x=39,y=29} },
-    
-    -- Return to Gadgetzan
-    { action="info", name="Return to Gadgetzan", note="Run east back to Gadgetzan", coords={x=52,y=28} },
-    { action="turnin", quest=992, name="Gadgetzan Water Survey", npc="Senior Surveyor Fizzledowser", coords={x=50,y=27} },
-    
-    -- Travel to Theramore
-    { action="info", name="Fly to Theramore", note="Fly from Gadgetzan to Theramore Isle", coords={x=51,y=29} },
-    
-    -- Gizmorium Shipping Crate
-    { action="info", name="Travel to Gizmorium Crate", note="Run southwest to find the Gizmorium Shipping Crate", coords={x=54,y=56} },
-    { action="interact", quest=1187, name="Razzeric's Tweaking", target="Gizmorium Shipping Crate", coords={x=54,y=56} },
-    
-    -- Mage quest (Mages only)
-    { action="info", name="Mage quest", note="Mages: If you completed Rituals of Power in SM Library, visit Tabetha", coords={x=46,y=57} },
-    
-    -- Dustwallow Marsh - Cortello's Riddle
-    { action="info", name="Travel to Bloodfen Burrow", note="Run southwest to Bloodfen Burrow cave", coords={x=31,y=66} },
-    { action="interact", quest=625, name="Cortello's Riddle", target="Musty Scroll", coords={x=31,y=66} },
-    { action="turnin", quest=625, name="Cortello's Riddle", npc="Musty Scroll", coords={x=31,y=66} },
-    { action="accept", quest=626, name="Cortello's Riddle", npc="Musty Scroll", coords={x=31,y=66} },
-    
-    -- Final preparations
-    { action="info", name="Gadgetzan", note="Use Hearthstone to return to Gadgetzan", coords={x=52,y=28} },
-    { action="info", name="Fly to Feathermoon", note="Fly from Gadgetzan to Feathermoon Stronghold in Feralas", coords={x=51,y=29} },
-    
-    { nextGuide = "Feralas 44-46.lua" }
+    { nextGuide = "Gilneas 44-46.lua" },
   }
 }

@@ -1,6 +1,3 @@
--- Badlands 39-40 Guide
--- Based on https://www.sageguide.net/39-40_badlands
-
 LevelingGuide_Badlands = {
   steps = {
     { action="info", name="Badlands", note="Go to the Badlands.", coords={x=47.2,y=81.8} },

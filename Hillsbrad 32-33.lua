@@ -1,6 +1,3 @@
--- Hillsbrad 32-33 Guide
--- Based on https://www.sageguide.net/32-33_hillsbrad
-
 LevelingGuide_Hillsbrad_2 = {
   steps = {
     { action="accept", quest=564, name="Costly Menace", npc="Darren Malvew", coords={x=52.4,y=55.9} },

@@ -1,7 +1,3 @@
--- Horde 1-12 Guide
--- Based on Sevenleaves/Tactics Leveling Guide
--- For Orc and Troll starting areas
-
 LevelingGuide_Durotar = {
   steps = {
     -- Valley of Trials (Level 1-6)

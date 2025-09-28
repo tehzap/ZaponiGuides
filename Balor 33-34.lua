@@ -1,7 +1,3 @@
--- Balor 28-29 Guide
--- Hier beginnt dein Abenteuer in Balor für Level 28-29!
--- Folge den Schritten und genieße das Leveln.
-
 LevelingGuide_Balor = {
   steps = {
     { action="accept", quest=41786, name="Suspicions From Sea", npc="Elindra Swiftluck", coords={x=38.27,y=70.89}, note="TurtleWoW specific." },

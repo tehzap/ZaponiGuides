@@ -1,6 +1,3 @@
--- Stranglethorn 40-42 Guide
--- Based on https://www.sageguide.net/40-42_stranglethorn
-
 LevelingGuide_Stranglethorn_3 = {
   steps = {
     { action="accept", quest=617, name="Akiris by the Bundle", npc="Privateer Bloads", coords={x=26.8,y=76.4} },

@@ -1,6 +1,3 @@
--- Swamp of Sorrows 42-43 Guide
--- Based on https://www.sageguide.net/42-43_swamp_of_sorrows
-
 LevelingGuide_SwampOfSorrows = {
   steps = {
     { action="turnin", quest=624, name="Cortello's Riddle", npc="A Soggy Scroll", coords={x=22.8,y=48.1}, note="Click A Soggy Scroll to turn-in the Quest." },

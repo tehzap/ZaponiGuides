@@ -1,6 +1,3 @@
--- Arathi 38-39 Guide
--- Based on https://www.sageguide.net/38-39_arathi
-
 LevelingGuide_Arathi = {
   steps = {
     { action="accept", quest=691, name="Worth Its Weight in Gold", npc="Apprentice Kryten", coords={x=46.2,y=47.7} },

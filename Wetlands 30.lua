@@ -1,4 +1,3 @@
--- WETLANDS 30: https://www.sageguide.net/28-30_duskwood
 LevelingGuide_Wetlands_2 = {
   steps = {
     { action="turnin", quest=270, name="The Doomed Fleet", npc="Glorin Steelbrow", coords={x=10.6,y=60.6} },

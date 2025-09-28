@@ -1,0 +1,68 @@
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Jupyter Notebooks
+*.ipynb
+*.ipynb_checkpoints/
+
+# Python files
+*.py
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# HTML files (development tools)
+*.html
+
+# Backup files
+*.bak
+*.backup
+*.tmp
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows
+desktop.ini
+
+# Git files
+*.orig
+
+# Log files
+*.log
+
+# Archive files
+*.zip
+*.rar
+*.7z
+*.tar.gz
+
+# IDE files
+*.swp
+*.swo
+*~
+
+# Node.js (if any)
+node_modules/
+npm-debug.log*
+
+# Temporary files
+temp/
+tmp/
+
+# Development tools
+scrape_questid.ipynb
+guide_generator.html
+guide_generator.py
+quest_fetcher.py
+
+# Documentation that's not needed for addon
+README.md
