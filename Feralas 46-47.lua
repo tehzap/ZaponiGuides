@@ -63,56 +63,34 @@ LevelingGuide_Feralas = {
     { action="kill", quest=2970, name="Doling Justice", mob={"Grimtotem Naturalist","Grimtotem Raider","Grimtotem Shaman"}, coords={x=67.5,y=46.4} },
     { action="turnin", quest=2970, name="Doling Justice", npc="Jer'kai Moonweaver", coords={x=65.9,y=45.6} },
     { action="accept", quest=2972, name="Doling Justice", npc="Jer'kai Moonweaver", coords={x=65.9,y=45.6} },
-    { action="turnin", quest=4131, name="The Woodpaw Gnolls", npc="Large Leather Backpacks", coords={x=73,y=56}, note="Click Large Leather Backpacks to turn-in the Quest." },
-    { action="accept", quest=4135, name="The Writhing Deep", npc="Large Leather Backpacks", coords={x=73,y=56} },
-    
-    -- The Writhing Deep
-    { action="info", name="Travel to The Writhing Deep", note="Run southeast to the hive", coords={x=73,y=63} },
-    { action="interact", quest=4135, name="The Writhing Deep", target="Zukk'ash Pod", coords={x=73,y=63} },
-    { action="turnin", quest=4135, name="The Writhing Deep", npc="Zukk'ash Pod", coords={x=73,y=63} },
-    { action="accept", quest=4265, name="Freed from the Hive", npc="Zukk'ash Pod", coords={x=73,y=63} },
-    
-    -- Grind to Level 45 
-    { action="info", name="Grind to Level 45", note="Grind nearby until Level 45 and 17 bars", coords={x=73,y=63} },
-    
-    -- Return to Feathermoon
-    { action="info", name="Hearthstone to Feathermoon", note="Use Hearthstone to return to Feathermoon Stronghold", coords={x=30,y=43} },
-    { action="turnin", quest=2821, name="The Mark of Quality", npc="Pratt McGrubben", coords={x=30,y=42} },
-    { action="accept", quest=7733, name="Improved Quality", npc="Pratt McGrubben", coords={x=30,y=42} },
-    { action="info", name="Repair and Sell", note="Repair and sell items at Dulciea Frostmoon", coords={x=31,y=43} },
-    { action="turnin", quest=2982, name="The High Wilderness", npc="Angelas Moonbreeze", coords={x=31,y=45} },
-    { action="turnin", quest=4265, name="Freed from the Hive", npc="Ginro Hearthkindle", coords={x=31,y=45} },
-    { action="accept", quest=4266, name="A Hero's Welcome", npc="Ginro Hearthkindle", coords={x=31,y=45} },
-    { action="turnin", quest=4266, name="A Hero's Welcome", npc="Shandris Feathermoon", coords={x=30,y=46} },
-    { action="accept", quest=4267, name="Rise of the Silithid", npc="Shandris Feathermoon", coords={x=30,y=46} },
-    
-    -- Equipment rewards
-    { action="info", name="Equipment Reward", note="Rogues: Equip Ceremonial Elven Blade offhand. Others: Sanctimonial Rod for eating/drinking", coords={x=30,y=46} },
-    { action="accept", quest=3445, name="The Sunken Temple", npc="Angelas Moonbreeze", coords={x=31,y=45} },
-    
-    -- Level 46 milestone  
-    { action="info", name="Level 46", note="You should reach Level 46 here", coords={x=30,y=43} },
-    
-    -- Travel to Darnassus/Rut'theran Village
-    { action="info", name="Travel to Darnassus", note="Druids: Use Teleport Moonglade then fly. Mages: Use Teleport Darnassus. Others: Fly to Rut'theran Village", coords={x=30,y=43} },
-    
-    -- Darnassus turn-ins
-    { action="turnin", quest=4267, name="Rise of the Silithid", npc="Gracina Spiritmight", coords={x=43,y=76} },
-    { action="turnin", quest=2972, name="Doling Justice", npc="Tyrande Whisperwind", coords={x=43,y=76} },
-    
-    -- Rut'theran Village quests
-    { action="accept", quest=3661, name="Favored of Elune?", npc="Erelas Ambersky", coords={x=42,y=76} },
-    { action="turnin", quest=2939, name="In Search of Knowledge", npc="Daryn Lightwind", coords={x=42,y=76} },
-    { action="interact", quest=2940, name="Feralas: A History", target="Feralas: A History", coords={x=42,y=76} },
-    { action="turnin", quest=2940, name="Feralas: A History", npc="Daryn Lightwind", coords={x=42,y=76} },
-    { action="accept", quest=2941, name="The Borrower", npc="Daryn Lightwind", coords={x=42,y=76} },
-    
-    -- Learn new spells (class-specific)
-    { action="info", name="Learn new spells", note="Learn your level 44 and 46 spells from class trainers in Darnassus", coords={x=43,y=76} },
-    
-    -- Travel to Hinterlands
-    { action="info", name="Travel to Hinterlands", note="Take boat to Menethil Harbor, then fly to Southshore, then run northeast to Hinterlands", coords={x=42,y=76} },
-    
-    { nextGuide = "Hinterlands 46-47.lua" }
+    { action="turnin", quest=4131, name="The Woodpaw Gnolls", npc="Large Leather Backpacks", coords={x=73.3,y=56.3}, note="Click Large Leather Backpacks to turn-in the Quest." },
+    { action="accept", quest=4135, name="The Writhing Deep", npc="Large Leather Backpacks", coords={x=73.3,y=56.3} },
+    { action="info", name="The Writhing Deep", note="Enter the hive at the bottom and take the southwest path.", coords={x=73.3,y=63.8} },
+    { action="turnin", quest=4135, name="The Writhing Deep", npc="Zukk'ash Pod", coords={x=72.1,y=63.7}, note="Click Zukk'ash Pod to turn-in the Quest." },
+    { action="accept", quest=4265, name="Freed from the Hive", npc="Zukk'ash Pod", coords={x=72.1,y=63.7} },
+    { action="note", quest=4265, name="Freed from the Hive", coords={x=72.1,y=63.7}, note="Wait for the Quest to complete.", },
+    { action="info", name="Feathermoon", note="Use Hearthstone to return to Feathermoon.", coords={x=72.1,y=63.7} },
+    { action="turnin", quest=2821, name="The Mark of Quality", npc="Pratt McGrubben", coords={x=30.6,y=42.7} },
+    { action="accept", quest=7733, name="Improved Quality", npc="Pratt McGrubben", coords={x=30.6,y=42.7} },
+    { action="turnin", quest=2982, name="The High Wilderness", npc="Angelas Moonbreeze", coords={x=31.8,y=45.6} },
+    { action="accept", quest=3445, name="The Sunken Temple", npc="Angelas Moonbreeze", coords={x=31.8,y=45.6} },
+    { action="turnin", quest=4265, name="Freed from the Hive", npc="Ginro Hearthkindle", coords={x=31.9,y=45.1}, note="He is upstairs." },
+    { action="accept", quest=4266, name="A Hero's Welcome", npc="Ginro Hearthkindle", coords={x=31.9,y=45.1} },
+    { action="turnin", quest=4266, name="A Hero's Welcome", npc="Shandris Feathermoon", coords={x=30.3,y=46.2} },
+    { action="accept", quest=4267, name="Rise of the Silithid", npc="Shandris Feathermoon", coords={x=30.3,y=46.2} },
+    { action="info", name="Darnassus", note="Use Teleport: Darnassus or fly to Darnasssus.", coords={x=30,y=43} },
+    { action="turnin", quest=4267, name="Rise of the Silithid", npc="Gracina Spiritmight", coords={x=41.8,y=85.6}, note="She is upstairs." },
+    { action="turnin", quest=2972, name="Doling Justice", npc="Tyrande Whisperwind", coords={x=39.1,y=81.6} },
+    { action="info", name="Auberdine", note="Leave Darnassus through the pink portal.", coords={x=30.5,y=41.4} },
+    { action="accept", quest=3661, name="Favored of Elune?", npc="Erelas Ambersky", coords={x=55.5,y=92.1} },
+    { action="turnin", quest=2939, name="In Search of Knowledge", npc="Daryn Lightwind", coords={x=55.4,y=92.2}, note="She is upstairs." },
+    { action="info", quest=2940, name="Feralas: A History", note="Click the book Feralas: A History on the ground to accept the Quest.", coords={x=55.2,y=91.4} },
+    { action="turnin", quest=2940, name="Feralas: A History", npc="Daryn Lightwind", coords={x=55.4,y=92.2} },
+    { action="accept", quest=2941, name="The Borrower", npc="Daryn Lightwind", coords={x=55.4,y=92.2} },
+    { action="info", name="Auberdine", note="Fly to Auberdine.", coords={x=58.4,y=94.0} },
+    { action="info", name="Menethil", note="Take the boat to Stormwind.", coords={x=32.4,y=43.8} },
+    { action="info", name="Southshore", note="Fly to Southshore.", coords={x=71.0,y=72.5} },
+    { action="info", name="Hinterlands", note="Go to the Hinterlands.", coords={x=89.6,y=25.2} },
+    { nextGuide = "Hinterlands 47.lua" }
   }
 }

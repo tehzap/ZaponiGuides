@@ -90,7 +90,8 @@ local guideMapping = {
 	["Swamp of Sorrows 42-43.lua"] = function() return LevelingGuide_SwampOfSorrows end,
 	["Tanaris 43-44.lua"] = function() return LevelingGuide_Tanaris end,
 	["Gilneas 44-46.lua"] = function() return LevelingGuide_Gilneas end,
-	["Feralas 46-48.lua"] = function() return LevelingGuide_Feralas end,
+	["Feralas 46-47.lua"] = function() return LevelingGuide_Feralas end,
+	["Hinterlands 47.lua"] = function() return LevelingGuide_Hinterlands end,
 }
 
 function ZaponiGuides:LoadGuide(filename)
@@ -364,7 +365,7 @@ local function updateGuideText()
         if step and step.action == "turnin" and step.quest then
             local isCompleted = (type(ZaponiGuides_Progress.completedQuests) == "table" and step.quest) and ZaponiGuides_Progress.completedQuests[step.quest] or nil
             if isCompleted then
-                mainText = mainText .. "\n|cff00ff00✓|r |cff00ff00Status: Erledigt|r"
+                mainText = mainText .. "\n|cff00ff00✓|r |cff00ff00Status: Ready|r"
             else
                 local questName = cleanQuestName(step.name)
                 local questComplete = false
@@ -393,11 +394,11 @@ local function updateGuideText()
                 end
 
                 if not questInLog then
-                    mainText = mainText .. "\n|cffff0000✗|r|cffff0000Status: Quest nicht im Log|r"
+                    mainText = mainText .. "\n|cffff0000✗|r|cffff0000Status: Quest not in Log.|r"
                 elseif questComplete then
-                    mainText = mainText .. "\n|cff00ff00✓|r|cff00ff00Status: Ready|r"
+                    mainText = mainText .. "\n|cff00ff00✓|r|cff00ff00Status: Ready.|r"
                 else
-                    mainText = mainText .. "\n|cffffff00○|r|cffffff00Status: Noch nicht fertig|r"
+                    mainText = mainText .. "\n|cffffff00○|r|cffffff00Status: Not Ready.|r"
                 end
             end
         end
@@ -514,13 +515,12 @@ local function createGuideButtons()
 	local guideButtons = {}
 	local yOffset = 0
 	
-	-- Manual order (pairs() doesn't guarantee order in Lua 5.1)
 	local guideList = {
 		"Undead 1-6.lua", "Durotar 1-12.lua", "Wetlands 24-27.lua", "Duskwood 28-30.lua",
 		"Wetlands 30.lua", "Hillsbrad 30-31.lua", "Thousand Needles 31-32.lua", "Stranglethorn 32.lua",
 		"Hillsbrad 32-33.lua", "Balor 33-34.lua", "Stranglethorn 36-37.lua", "Alterac 37-38.lua",
 		"Arathi 38-39.lua", "Badlands 39-40.lua", "Stranglethorn 40-42.lua", "Swamp of Sorrows 42-43.lua",
-		"Tanaris 43-44.lua", "Gilneas 44-46.lua", "Feralas 46-48.lua"
+		"Tanaris 43-44.lua", "Gilneas 44-46.lua", "Feralas 46-47.lua", "Hinterlands 47.lua"
 	}
 	
 	for i, filename in ipairs(guideList) do

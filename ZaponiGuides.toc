@@ -20,5 +20,6 @@ Stranglethorn 40-42.lua
 Swamp of Sorrows 42-43.lua
 Tanaris 43-44.lua
 Gilneas 44-46.lua
-Feralas 46-48.lua
+Feralas 46-47.lua
+Hinterlands 47.lua
 ZaponiGuides.lua
