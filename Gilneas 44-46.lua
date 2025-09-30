@@ -114,7 +114,7 @@ LevelingGuide_Gilneas = {
     { action="turnin", quest=40927, name="Securing Gilneas II", npc="Corporal Ranworth", coords={x=59.5,y=72.6}, note="TurtleWoW specific." },
     { action="turnin", quest=40947, name="Spitecrest Decursions", npc="Dockwatcher Vorren", coords={x=62.0,y=73.3}, note="TurtleWoW specific." },   
     { action="info", name="Assaulting Freyshear Keep", note="Cross the bridge.", coords={x=58.6,y=53.3} },
-    { action="accept", quest=40929, name="The Gilneas Lighthouse", npc="Elaroth Ranworth", coords={x=65.0,y=57.0}, note="TurtleWoW specific." }, 
+    { action="accept", quest=40929, name="The Gilneas Lighthouse", npc="Elaroth Ranworth", coords={x=64.4,y=57.3}, note="TurtleWoW specific." },
     { action="kill", quest=40955, name="Assaulting Freyshear Keep", mob={"Greymane Preserver","Cannoneer Rileson"}, coords={x=66.6,y=65.6}, note="TurtleWoW specific." }, 
     { action="turnin", quest=40955, name="Assaulting Freyshear Keep", npc="Lord Darius Ravenwood", coords={x=58.4,y=67.6}, note="TurtleWoW specific." }, 
     { action="info", name="Gadgetzan", note="Use Hearthstone to return to Gadgetzan.", coords={x=62.0,y=73.3} },

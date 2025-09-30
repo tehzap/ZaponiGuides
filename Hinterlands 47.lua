@@ -1,84 +1,63 @@
 LevelingGuide_Hinterlands = {
   steps = {
-    -- Arriving at Aerie Peak
     { action="turnin", quest=1449, name="To The Hinterlands", npc="Falstad Wildhammer", coords={x=11.8,y=46.7} },
     { action="accept", quest=1450, name="Gryphon Master Talonaxe", npc="Falstad Wildhammer", coords={x=11.8,y=46.7} },
-    
-    -- Get flight path
-    { action="info", note="Get the Aerie Peak flightpoint at Guthrum Thunderfist.", coords={x=11.1,y=46.1} },
-    
-    -- Turn in and accept quests at Gryphon Master Talonaxe
+    { action="info", name="Get Flight Path", note="Get the Aerie Peak Flight Path.", coords={x=11.1,y=46.1} },
     { action="turnin", quest=1450, name="Gryphon Master Talonaxe", npc="Gryphon Master Talonaxe", coords={x=9.7,y=44.3} },
     { action="accept", quest=1451, name="Rhapsody Shindigger", npc="Gryphon Master Talonaxe", coords={x=9.7,y=44.3} },
     { action="accept", quest=2988, name="Witherbark Cages", npc="Gryphon Master Talonaxe", coords={x=9.7,y=44.3} },
-    
-    -- Wildhammer Keep quests
     { action="accept", quest=2877, name="Skulk Rock Clean-up", npc="Fraggar Thundermantle", coords={x=14.8,y=44.6} },
     { action="accept", quest=2880, name="Troll Necklace Bounty", npc="Fraggar Thundermantle", coords={x=14.8,y=44.6} },
-    
-    -- Set hearthstone
-    { action="info", note="Bind your Hearthstone to Wildhammer Keep at Innkeeper Thulfram.", coords={x=14.1,y=41.3} },
-    
-    -- Go to Shindigger's Camp
+    { action="accept", quest=60071, name="Cracking the Witherbark", npc="Drakin Swiftaxe", coords={x=14.8,y=44.4}, note="TurtleWoW specific." },
+    { action="info", name="Hearthstone", note="Bind your Hearthstone to Wildhammer Keep at Innkeeper Thulfram. He is upstairs.", coords={x=13.6,y=41.7} },
+    { action="accept", quest=40664, name="Protecting Aerie Peak", npc="Claira Kindfeather", coords={x=16.4,y=47.6}, note="TurtleWoW specific." },
     { action="turnin", quest=1451, name="Rhapsody Shindigger", npc="Rhapsody Shindigger", coords={x=26.9,y=48.5} },
     { action="accept", quest=1452, name="Rhapsody's Kalimdor Kocktail", npc="Rhapsody Shindigger", coords={x=26.9,y=48.5} },
-    
-    -- Complete Witherbark Cages at Zun'watha
-    { action="collect", quest=2988, name="Witherbark Cages", item="First Witherbark Cage", coords={x=23,y=58}, note="Loot First Witherbark Cage at Zun'watha." },
-    { action="collect", quest=2988, name="Witherbark Cages", item="Second Witherbark Cage", coords={x=23,y=58}, note="Loot Second Witherbark Cage at Zun'watha." },
-    
-    -- Go to Hiri'watha and finish Witherbark Cages
-    { action="collect", quest=2988, name="Witherbark Cages", item="Third Witherbark Cage", coords={x=32,y=57}, note="Loot Third Witherbark Cage at Hiri'watha." },
-    
-    -- Complete Troll Necklace Bounty
-    { action="kill", quest=2880, name="Troll Necklace Bounty", mob="Witherbark Troll", coords={x=32,y=57} },
-    { action="collect", quest=2880, name="Troll Necklace Bounty", item="Troll Tribal Necklace", coords={x=32,y=57}, note="Kill Witherbark trolls for 5 Troll Tribal Necklaces." },
-    
-    -- Collect Wildkin Feathers while grinding northwest
-    { action="collect", quest=3661, name="Favored of Elune?", item="Wildkin Feather", coords={x=25,y=45}, note="Loot 15 Wildkin Feathers from Wildkin while grinding northwest." },
-    
-    -- Return to Wildhammer Keep
+    { action="info", quest=2988, name="Witherbark Cages", coords={x=23.3,y=58.7}, note="Click First Witherbark Cage." },
+    { action="info", quest=2988, name="Witherbark Cages", coords={x=23.1,y=58.8}, note="Click Second Witherbark Cage." },
+    { action="info", quest=2988, name="Witherbark Cages", coords={x=32.0,y=57.4}, note="Click Third Witherbark Cage." },
+    { action="collect", quest=2880, name="Troll Necklace Bounty", item="Troll Tribal Necklace", coords={x=25.8,y=58.0}, note="Kill Witherbark trolls to pick up Troll Tribal Necklaces." },
+    { action="kill", quest=60071, name="Cracking the Witherbark", mob={"Witherbark Scalper","Witherbark Zealot","Witherbark Venomblood"}, coords={x=25.8,y=58.0}, note="TurtleWoW specific." },
+    { action="collect", quest=40664, name="Protecting Aerie Peak", item="Silvermane Pelt", coords={x=35.5,y=51.4}, note="TurtleWoW specific." },
+    { action="collect", quest=3661, name="Favored of Elune?", item="Wildkin Feather", coords={x=35.5,y=51.4}, note="Click Wildkin Feather on the ground to pick it up." },
+    { action="turnin", quest=40664, name="Protecting Aerie Peak", npc="Claira Kindfeather", coords={x=16.4,y=47.6}, note="TurtleWoW specific." },
+    { action="turnin", quest=60071, name="Cracking the Witherbark", npc="Drakin Swiftaxe", coords={x=14.8,y=44.4}, note="TurtleWoW specific." },
+    { action="accept", quest=60072, name="Trimming the Vilebranch", npc="Drakin Swiftaxe", coords={x=14.8,y=44.4}, note="TurtleWoW specific." },
     { action="turnin", quest=2880, name="Troll Necklace Bounty", npc="Fraggar Thundermantle", coords={x=14.8,y=44.6} },
-    
-    -- Turn in Witherbark Cages and accept The Altar of Zul
     { action="turnin", quest=2988, name="Witherbark Cages", npc="Gryphon Master Talonaxe", coords={x=9.7,y=44.3} },
     { action="accept", quest=2989, name="The Altar of Zul", npc="Gryphon Master Talonaxe", coords={x=9.7,y=44.3} },
-    
-    -- Go to The Altar of Zul
-    { action="info", note="Search the Altar of Zul at the very top of the temple, then run for your life!", coords={x=49,y=68} },
-    { action="collect", quest=2989, name="The Altar of Zul", item="Altar Search", coords={x=49,y=68}, note="Search the Altar of Zul at the top of the temple." },
-    
-    -- Clean up oozes at various locations
-    { action="kill", quest=2877, name="Skulk Rock Clean-up", mob={"Green Sludge", "Jade Ooze"}, coords={x=50,y=53}, note="Kill 10 Green Sludge and 10 Jade Ooze at The Creeping Ruin." },
-    { action="kill", quest=2877, name="Skulk Rock Clean-up", mob={"Green Sludge", "Jade Ooze"}, coords={x=47,y=40}, note="Continue at Agol'watha." },
-    { action="kill", quest=2877, name="Skulk Rock Clean-up", mob={"Green Sludge", "Jade Ooze"}, coords={x=58,y=39}, note="Finish at Skulk Rock." },
-    
-    -- Go to Jintha'Alor area for Whiskey Slim's Lost Grog
-    { action="collect", quest=580, name="Whiskey Slim's Lost Grog", item="Pupellyverbos Port", coords={x=80,y=67}, note="Loot 12 Pupellyverbos Port from barrels at the shore east of Jintha'Alor." },
-    
-    -- Go to waterfall for Cortello's Riddle
-    { action="collect", quest=626, name="Cortello's Riddle", item="Cortello's Treasure", coords={x=80,y=46}, note="Underwater at the waterfall, loot Cortello's Treasure." },
-    { action="turnin", quest=626, name="Cortello's Riddle", npc="Cortello's Treasure", coords={x=80,y=46}, note="Grants Explorer's Knapsack." },
-    
-    -- Hearth back to Wildhammer Keep
-    { action="info", note="Hearth to Wildhammer Keep.", coords={x=14.1,y=41.3} },
-    
-    -- Turn in completed quests
+    { action="accept", quest=41140, name="Proving A Point", npc="Brok Thunderforge", coords={x=10.0,y=48.7}, note="TurtleWoW specific." },
+    { action="info", quest=2989, name="The Altar of Zul", note="Run up to the Altar of Zul until you discovered it, then run for your life!", coords={x=49,y=68} },
+    { action="kill", quest=60072, name="Trimming the Vilebranch", mob={"Vilebranch Soothsayer","Vilebranch Scalper"}, coords={x=47.0,y=64.4}, note="TurtleWoW specific." },
+    { action="info", note="Continue killing Vilebranch Trolls until you reach Neutral reputation with Wildhammer Clan. TurtleWoW specific.", coords={x=47.0,y=64.4}  },
+    { action="kill", quest=2877, name="Skulk Rock Clean-up", mob={"Green Sludge", "Jade Ooze"}, coords={x=50,y=53} },
+    { action="collect", quest=41140, name="Proving A Point", item="Etched Mithril Shard", coords={x=50,y=53}, note="Kill Oozes to pick up Etched Mithril Shard. TurtleWoW specific." },
+    { action="accept", quest=40540, name="An Unusual Find", npc="Murloc Tadpole", coords={x=79.6,y=62.6}, note="TurtleWoW specific." },
+    { action="collect", quest=40540, name="An Unusual Find", item="Turtle Meat", coords={x=78.8,y=63.7}, note="Kill Saltwater Turtles to pick up Turtle Meat. TurtleWoW specific." },
+    { action="collect", quest=580, name="Whiskey Slim's Lost Grog", item="Pupellyverbos Port", coords={x=80.0,y=61.5}, note="Click Pupellyverbos Port on the ground to pick it up." },
+    { action="turnin", quest=40540, name="An Unusual Find", npc="Murloc Tadpole", coords={x=79.6,y=62.6}, note="TurtleWoW specific." },
+    { action="accept", quest=40541, name="Family Above All", npc="Murloc Tadpole", coords={x=79.6,y=62.6}, note="TurtleWoW specific." },
+    { action="info", quest=40541, name="Family Above All", coords={x=82.4,y=52.3}, note="Click the Murloc Hut and the Murloc Nest. TurtleWoW specific." },
+    { action="turnin", quest=40541, name="Family Above All", npc="Murloc Tadpole", coords={x=79.6,y=62.6}, note="TurtleWoW specific." },
+    { action="accept", quest=40542, name="Loneliest Murloc in the World", npc="Murloc Tadpole", coords={x=79.6,y=62.6}, note="TurtleWoW specific." },
+    { action="turnin", quest=626, name="Cortello's Riddle", coords={x=80.8,y=46.8}, note="Click Cortello's Treasure underwater to turn-in the Quest." },
+    { action="info", name="Wildhammer Keep", note="Use Hearthstone to return to Wildhammer Keep.", coords={x=80.8,y=46.8} },
+    { action="turnin", quest=40542, name="Loneliest Murloc in the World", npc="Agnar Beasttamer", coords={x=14.2,y=43.6}, note="TurtleWoW specific." },
+    { action="turnin", quest=60072, name="Trimming the Vilebranch", npc="Drakin Swiftaxe", coords={x=14.8,y=44.4}, note="TurtleWoW specific." },
+    --{ action="accept", quest=60074, name="Bring Down the Priestess!", npc="Drakin Swiftaxe", coords={x=14.8,y=44.4}, note="TurtleWoW specific." },
+    --{ action="accept", quest=60073, name="Decimate Their Ranks", npc="Drakin Swiftaxe", coords={x=14.8,y=44.4}, note="TurtleWoW specific." },
     { action="turnin", quest=2877, name="Skulk Rock Clean-up", npc="Fraggar Thundermantle", coords={x=14.8,y=44.6} },
+    { action="turnin", quest=41140, name="Proving A Point", npc="Brok Thunderforge", coords={x=10.0,y=48.7}, note="TurtleWoW specific." },
     { action="turnin", quest=2989, name="The Altar of Zul", npc="Gryphon Master Talonaxe", coords={x=9.7,y=44.3} },
     { action="accept", quest=2990, name="Thadius Grimshade", npc="Gryphon Master Talonaxe", coords={x=9.7,y=44.3} },
-    
-    -- Go to Ironforge
-    { action="info", note="Fly from Aerie Peak to Ironforge.", coords={x=11.1,y=46.1} },
-    { action="info", note="At the Bank or Auction House, withdraw 15 Silk Cloth.", coords={x=33.8,y=37.8} },
-    
-    -- Go to Thelsamar
-    { action="info", note="Fly from Ironforge to Thelsamar.", coords={x=55.5,y=47.7} },
-    { action="info", note="Bind your Hearthstone to Thelsamar at Innkeeper Hearthstove.", coords={x=34.9,y=48.1} },
-    
-    -- Head to next zone
-    { action="info", note="Run southeast to the Badlands, then southwest to Searing Gorge.", coords={x=34.9,y=48.1} },
-    
+    { action="info", name="Gilneas", note="Fly to Gilneas.", coords={x=11.1,y=46.1} },
+    { action="turnin", quest=40931, name="The Gilneas Lighthouse III", npc="Elaroth Ranworth", coords={x=64.4,y=57.3}, note="TurtleWoW specific." },
+    { action="info", name="Ironforge", note="Use Teleport: Ironforge or fly to Ironforge.", coords={x=62.0,y=74.0} },
+    { action="info", name="Bank", note="Withdraw from Bank: 15x Silk Cloth.", coords={x=35.5,y=60.6} },
+    { action="info", name="Loch Modan", note="Fly to Loch Modan.", coords={x=55.5,y=47.7} },
+    { action="info", name="Bind Hearthstone", note="Bind your Hearthstone to Thelsamar at Innkeeper Hearthstove.", coords={x=34.9,y=48.1} },
+    { action="info", name="Badlands", note="Go to the Badlands.", coords={x=47.2,y=81.8} },
+    { action="info", name="Searing Gorge", note="Go to the Searing Gorge.", coords={x=0.8,y=63.1} },
     { nextGuide = "Searing Gorge 46-48.lua" }
   }
 }
