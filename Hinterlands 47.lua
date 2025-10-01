@@ -58,6 +58,6 @@ LevelingGuide_Hinterlands = {
     { action="info", name="Bind Hearthstone", note="Bind your Hearthstone to Thelsamar at Innkeeper Hearthstove.", coords={x=34.9,y=48.1} },
     { action="info", name="Badlands", note="Go to the Badlands.", coords={x=47.2,y=81.8} },
     { action="info", name="Searing Gorge", note="Go to the Searing Gorge.", coords={x=0.8,y=63.1} },
-    { nextGuide = "Searing Gorge 46-48.lua" }
+    { nextGuide = "Searing Gorge 47-49.lua" }
   }
 }

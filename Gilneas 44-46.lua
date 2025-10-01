@@ -57,7 +57,7 @@ LevelingGuide_Gilneas = {
     --{ action="accept", quest=41033, name="A Bloody Solution", npc="Ethan Ravencroft", coords={x=33.1,y=76.0}, note="TurtleWoW specific." },
     { action="collect", quest=41032, name="To Numb the Pain", item="Hollow Web Venom", coords={x=41.0,y=75.1}, note="Kill Hollow Web Spiders to pick up Hollow Web Venom. TurtleWoW specific." },
     { action="turnin", quest=41032, name="To Numb the Pain", npc="Mother Tanya", coords={x=32.9,y=75.6}, note="Down in the crypt. TurtleWoW specific." },
-    { action="accept", quest=40940, name="Font of Arcana", npc="Magus Orelius", coords={x=57.7,y=68.6}, note="TurtleWoW specific." },
+    --{ action="accept", quest=40940, name="Font of Arcana", npc="Magus Orelius", coords={x=57.7,y=68.6}, note="TurtleWoW specific." },
     { action="turnin", quest=40944, name="Onward to Ravenshire", npc="Clerk Ebonmere", coords={x=57.7,y=68.1}, note="TurtleWoW specific." },
     { action="accept", quest=40967, name="Ravenwood Keep", npc="Lord Darius Ravenwood", coords={x=58.4,y=67.6}, note="TurtleWoW specific." },
     { action="accept", quest=40972, name="The Rebellion", npc="Lord Darius Ravenwood", coords={x=58.4,y=67.6}, note="TurtleWoW specific." },
