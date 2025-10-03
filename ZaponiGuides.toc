@@ -23,4 +23,6 @@ Gilneas 44-46.lua
 Feralas 46-47.lua
 Hinterlands 47.lua
 Searing Gorge 47-49.lua
+Blasted Lands 49-50.lua
+Lapidis Isle 50-51.lua
 ZaponiGuides.lua
