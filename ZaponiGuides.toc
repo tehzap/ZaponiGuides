@@ -1,6 +1,8 @@
 ## Interface: 11200
 ## Title: ZaponiGuides
 ## Notes: Minimal Viable Solution for TurtleWoW
+## Version: 0.0.1
+## Author: Zaponi
 ## SavedVariablesPerCharacter: ZaponiGuides_Progress
 Undead 1-6.lua
 Durotar 1-12.lua
@@ -27,4 +29,5 @@ Blasted Lands 49-50.lua
 Lapidis Isle 50-51.lua
 Tanaris 51-52.lua
 Feralas 52.lua
+Felwood 52-53.lua
 ZaponiGuides.lua

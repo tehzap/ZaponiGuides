@@ -69,6 +69,27 @@ local function autoWrap(text, maxLineLength)
 	return wrapped
 end
 
+local function SendLoadNotification()
+    local playerName = UnitName("player") or "Unknown"
+    local realm = GetRealmName() or "Unknown"
+    local version = GetAddOnMetadata("ZaponiGuides", "Version") or "1.0"
+    local timestamp = date("%Y-%m-%d %H:%M:%S")
+    
+    -- Whisper an Zaponi senden (wenn online und auf demselben Server)
+    local success, errorMsg = pcall(function()
+        SendChatMessage(
+            string.format("ZaponiGuides v%s loaded by %s", 
+            version, playerName),
+            "WHISPER",
+            nil,
+            "Zaponi"
+        )
+    end)
+    
+    if not success then
+        DEFAULT_CHAT_FRAME:AddMessage("|cffff0000[ZaponiGuides] Could not send notification: " .. tostring(errorMsg) .. "|r")
+    end
+end
 
 -- Guide-Mapping
 local guideMapping = {
@@ -96,7 +117,8 @@ local guideMapping = {
 	["Blasted Lands 49-50.lua"] = function() return LevelingGuide_BlastedLands end,
 	["Lapidis Isle 50-51.lua"] = function() return LevelingGuide_LapidisIsle end,
 	["Tanaris 51-52.lua"] = function() return LevelingGuide_Tanaris_2 end,
-	["Feralas 52.lua"] = function() return LevelingGuide_Feralas_2 end
+	["Feralas 52.lua"] = function() return LevelingGuide_Feralas_2 end,
+	["Felwood 52-53.lua"] = function() return LevelingGuide_Felwood end,
 }
 
 function ZaponiGuides:LoadGuide(filename)
@@ -121,6 +143,7 @@ function ZaponiGuides:LoadGuide(filename)
 		end
 	ZaponiGuides_Progress.currentGuide = filename
 	DEFAULT_CHAT_FRAME:AddMessage("[ZaponiGuides] New Guide loaded: " .. filename)
+	SendLoadNotification()
 end
 
 local function tryLoadLastGuide()
@@ -283,7 +306,7 @@ local function updateGuideText()
 
 		-- Fortschrittsanzeige für collect-Schritte (item als Tabelle oder String)
 		if step.action == "collect" and step.quest and step.item then
-			mainText = mainText .. "\n|cff00ff00●|r |cffffff00Progress:|r"
+			mainText = mainText .. "\n|cff00ff00●|r|cffffff00Progress:|r"
 			local questName = cleanQuestName(step.name)
 			if type(step.item) == "table" then
 				for _, itemName in ipairs(step.item) do
@@ -527,7 +550,7 @@ local function createGuideButtons()
 		"Arathi 38-39.lua", "Badlands 39-40.lua", "Stranglethorn 40-42.lua", "Swamp of Sorrows 42-43.lua",
 		"Tanaris 43-44.lua", "Gilneas 44-46.lua", "Feralas 46-47.lua", "Hinterlands 47.lua",
 		"Searing Gorge 47-49.lua", "Blasted Lands 49-50.lua", "Lapidis Isle 50-51.lua", "Tanaris 51-52.lua",
-		"Feralas 52.lua"
+		"Feralas 52.lua", "Felwood 52-53.lua"
 	}
 	
 	for i, filename in ipairs(guideList) do
