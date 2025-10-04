@@ -93,6 +93,7 @@ end
 
 -- Guide-Mapping
 local guideMapping = {
+	["Dun Morogh 1-11.lua"] = function() return LevelingGuide_DunMorogh end,
 	["Undead 1-6.lua"] = function() return LevelingGuide_Undead end,
 	["Durotar 1-12.lua"] = function() return LevelingGuide_Durotar end,
 	["Wetlands 24-27.lua"] = function() return LevelingGuide_Wetlands end,
@@ -138,7 +139,10 @@ function ZaponiGuides:LoadGuide(filename)
 	end
 	LevelingGuide = loadedGuide
 	guide = LevelingGuide
-		if ZaponiGuides_Progress.currentGuide ~= filename then
+		if not ZaponiGuides_Progress then
+			ZaponiGuides_Progress = {}
+			ZaponiGuides_Progress.currentStep = 1
+		elseif ZaponiGuides_Progress.currentGuide ~= filename then
 			ZaponiGuides_Progress.currentStep = 1
 		end
 	ZaponiGuides_Progress.currentGuide = filename
@@ -544,7 +548,7 @@ local function createGuideButtons()
 	local yOffset = 0
 	
 	local guideList = {
-		"Undead 1-6.lua", "Durotar 1-12.lua", "Wetlands 24-27.lua", "Duskwood 28-30.lua",
+		"Dun Morogh 1-11.lua","Undead 1-6.lua", "Durotar 1-12.lua", "Wetlands 24-27.lua", "Duskwood 28-30.lua",
 		"Wetlands 30.lua", "Hillsbrad 30-31.lua", "Thousand Needles 31-32.lua", "Stranglethorn 32.lua",
 		"Hillsbrad 32-33.lua", "Balor 33-34.lua", "Stranglethorn 36-37.lua", "Alterac 37-38.lua",
 		"Arathi 38-39.lua", "Badlands 39-40.lua", "Stranglethorn 40-42.lua", "Swamp of Sorrows 42-43.lua",

@@ -1,38 +1,19 @@
 LevelingGuide_Felwood = {
   steps = {
     { action="accept", quest=5155, name="Forces of Jaedenar", npc="Greta Mosshoof", coords={x=51.2,y=82.1} },
-    { action="accept", quest=4421, name="The Corruption of the Jadefire", npc="Eridan Bluewind", coords={x=51.4,y=82.0} },
+    { action="accept", quest=4421, name="The Corruption of the Jadefire", npc="Eridan Bluewind", coords={x=51.3,y=81.5} },
     { action="accept", quest=8460, name="Timbermaw Ally", npc="Grazle", coords={x=51.0,y=85.0} },
-    { action="kill", quest=8460, name="Timbermaw Ally", mob={"Deadwood Warrior","Deadwood Pathfinder","Deadwood Gardener"}, coords={x=48.0,y=88.0} },
+    { action="kill", quest=8460, name="Timbermaw Ally", mob={"Deadwood Warrior","Deadwood Pathfinder","Deadwood Gardener"}, coords={x=48.8,y=91.0} },
     { action="turnin", quest=8460, name="Timbermaw Ally", npc="Grazle", coords={x=51.0,y=85.0} },
-    
-    -- Become Unfriendly with Timbermaw (continue killing)
-    { action="info", name="Reputation", note="Continue killing Deadwood furbolgs until you become Unfriendly with Timbermaw Hold.", coords={x=48.0,y=88.0} },
-    
-    -- Cursed Ooze collection
-    { action="info", name="Ruins of Constellas", note="Run north to the pond at Ruins of Constellas.", coords={x=41.0,y=67.0} },
-    { action="collect", quest=4512, name="A Little Slime Goes a Long Way", item="Cursed Ooze", coords={x=41.0,y=67.0}, note="Use Package of Empty Ooze Containers. Kill 6 Cursed Oozes and use Empty Cursed Ooze Jar on their corpses." },
-    
-    -- Jadefire corruption quest
-    { action="info", name="Group Required", note="The next quest requires a group of 2+ players.", coords={x=32.0,y=67.0} },
-    { action="info", name="Jadefire Camp", note="Grind west to Xavathras.", coords={x=32.0,y=67.0} },
-    { action="kill", quest=4421, name="The Corruption of the Jadefire", mob={"Xavathras","Jadefire Felsworn","Jadefire Shadowstalker","Jadefire Rogue"}, coords={x=32.0,y=67.0}, note="Kill Xavathras, 11 Felsworn, 9 Shadowstalkers (stealth), 9 Rogues." },
-    
-    -- Tainted Ooze collection
-    { action="info", name="Jaedenar Ponds", note="Run north along the road to the ponds outside Jaedenar.", coords={x=35.0,y=60.0} },
-    { action="collect", quest=4512, name="A Little Slime Goes a Long Way", item="Tainted Ooze", coords={x=35.0,y=60.0}, note="Kill 6 Tainted Oozes and use Empty Cursed Ooze Jar on their corpses." },
-    
-    -- Forces of Jaedenar
-    { action="info", name="Jaedenar Valley", note="Run into the valley of Jaedenar.", coords={x=37.0,y=59.0} },
-    { action="kill", quest=5155, name="Forces of Jaedenar", mob={"Jaedenar Hound","Jaedenar Guardian","Jaedenar Adept","Jaedenar Cultist"}, coords={x=37.0,y=59.0}, note="Kill 4 Hounds, 4 Guardians, 6 Adepts (deadly!), 6 Cultists." },
-    
-    -- Turn-ins at Emerald Sanctuary
-    { action="turnin", quest=5155, name="Forces of Jaedenar", npc="Greta Mosshoof", coords={x=51.2,y=82.1}, note="Run southeast to Emerald Sanctuary." },
+    { action="info", name="Grind", note="Kill Deadwood Furbolgs until you become Unfriendly with Timbermaw Hold.", coords={x=48.0,y=88.0} },
+    { action="collect", quest=4512, name="A Little Slime Goes a Long Way", item="Cursed Ooze", coords={x=41.0,y=67.0}, note="Use Package of Empty Ooze Containers. Kill Cursed Oozes and use Empty Cursed Ooze Jar on their corpses." },
+    { action="kill", quest=4421, name="The Corruption of the Jadefire", mob={"Xavathras","Jadefire Felsworn","Jadefire Shadowstalker","Jadefire Rogue"}, coords={x=32.0,y=67.0} },
+    { action="collect", quest=4512, name="A Little Slime Goes a Long Way", item="Tainted Ooze", coords={x=35.0,y=60.0}, note="Kill Tainted Oozes and use Empty Cursed Ooze Jar on their corpses." },
+    { action="kill", quest=5155, name="Forces of Jaedenar", mob={"Jaedenar Hound","Jaedenar Guardian","Jaedenar Adept","Jaedenar Cultist"}, coords={x=37.0,y=59.0} },
+    { action="turnin", quest=5155, name="Forces of Jaedenar", npc="Greta Mosshoof", coords={x=51.2,y=82.1} },
     { action="accept", quest=5157, name="Collection of the Corrupt Water", npc="Greta Mosshoof", coords={x=51.2,y=82.1} },
-    { action="turnin", quest=4421, name="The Corruption of the Jadefire", npc="Eridan Bluewind", coords={x=51.4,y=82.0}, note="In the house." },
-    
-    -- Corrupted Moonwell
-    { action="info", name="Corrupted Moonwell", note="Run northwest back to Jaedenar, then to the corrupted moonwell.", coords={x=35.0,y=59.0} },
+    { action="turnin", quest=4421, name="The Corruption of the Jadefire", npc="Eridan Bluewind", coords={x=51.3,y=81.5} },
+
     { action="collect", quest=5157, name="Collection of the Corrupt Water", item="Corrupt Water", coords={x=35.0,y=59.0}, note="At the corrupted moonwell, use Empty Canteen." },
     
     -- Final turn-in

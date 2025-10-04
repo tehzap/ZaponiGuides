@@ -4,6 +4,7 @@
 ## Version: 0.0.1
 ## Author: Zaponi
 ## SavedVariablesPerCharacter: ZaponiGuides_Progress
+Dun Morogh 1-11.lua
 Undead 1-6.lua
 Durotar 1-12.lua
 Wetlands 24-27.lua
