@@ -46,6 +46,8 @@ LevelingGuide_Tanaris = {
     { action="turnin", quest=8366, name="Southsea Shakedown", npc="Security Chief Bilgewhizzle", coords={x=67.1,y=23.9} },
     { action="turnin", quest=2873, name="Stoley's Shipment", npc="Stoley", coords={x=67.1,y=24.0} },
     { action="accept", quest=2874, name="Deliver to MacKinley", npc="Stoley", coords={x=67.1,y=24.0} },
+    { action="accept", quest=40589, name="Chasing Sand", npc="Baggle Hackrust", coords={x=66.8,y=24.1}, note="TurtleWoW specific." },
+    { action="accept", quest=40592, name="The Gusting Vortex", npc="Ginlo Taxxo", coords={x=66.7,y=24.0}, note="TurtleWoW specific." },
     --{ action="info", name="Ship Schedule", note="If you found Ship Schedule, use it to accept and complete Ship Schedules quest", coords={x=67.1,y=24.0} },
     --{ action="info", name="Grind", note="Grind until Level 44 and 15 bars.", coords={x=75.8,y=45.6} },
     { nextGuide = "Gilneas 44-46.lua" },

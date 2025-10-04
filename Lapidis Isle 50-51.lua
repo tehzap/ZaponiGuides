@@ -50,12 +50,14 @@ LevelingGuide_LapidisIsle = {
     { action="turnin", quest=40162, name="The Evil Deeptide", npc="Smallgill", coords={x=47.4,y=75.4}, note="TurtleWoW specific." },
     { action="accept", quest=40210, name="The Hermit", npc="Insom'ni", coords={x=56.2,y=16.2}, note="TurtleWoW specific." }, 
     { action="turnin", quest=40210, name="The Hermit", npc="Insom'ni", coords={x=56.2,y=16.2}, note="Talk to Insom'ni, wait for RPG, then turn-in the Quest. TurtleWoW specific." }, 
-    { action="info", name="Lapidis Isle", note="Go to Lapidis Isle.", coords={x=50.7,y=7.1} },
+    { action="info", name="Lapidis Isle", note="Go to Lapidis Isle.", coords={x=50.7,y=7.1}, note="TurtleWoW specific." },
     { action="turnin", quest=40152, name="Faelon's Folly", npc="Devon Harkwave", coords={x=61.0,y=43.6}, note="He is upstairs. TurtleWoW specific." },
     { action="turnin", quest=40143, name="Smashing the Southsea!", npc="Colonel Hardinus", coords={x=61.2,y=41.4}, note="TurtleWoW specific." },
     { action="turnin", quest=40150, name="Drowning Deeptide", npc="Eliza Caldwell", coords={x=58.1,y=40.9}, note="TurtleWoW specific." },
     { action="turnin", quest=40153, name="An Extravagant Book", npc="Father Benofar", coords={x=57.1,y=43.1}, note="TurtleWoW specific." },
-    { action="info", name="Booty Bay", note="Fly to Booty Bay.", coords={x=60.2,y=43.0} },
-    --{ nextGuide = "Tanaris 51-52.lua" }
+    { action="info", name="Booty Bay", note="Fly to Booty Bay.", coords={x=60.2,y=43.0}, note="TurtleWoW specific." },
+    { action="info", name="Ratchet", note="Take the boat to Ratchet.", coords={x=26.1,y=73.2} },
+    { action="info", name="Tanaris", note="Fly to Gadgetzan.", coords={x=63.1,y=37.2} },
+    { nextGuide = "Tanaris 51-52.lua" }
     }
 }

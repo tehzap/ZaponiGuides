@@ -95,6 +95,8 @@ local guideMapping = {
 	["Searing Gorge 47-49.lua"] = function() return LevelingGuide_SearingGorge end,
 	["Blasted Lands 49-50.lua"] = function() return LevelingGuide_BlastedLands end,
 	["Lapidis Isle 50-51.lua"] = function() return LevelingGuide_LapidisIsle end,
+	["Tanaris 51-52.lua"] = function() return LevelingGuide_Tanaris_2 end,
+	["Feralas 52.lua"] = function() return LevelingGuide_Feralas_2 end
 }
 
 function ZaponiGuides:LoadGuide(filename)
@@ -524,7 +526,8 @@ local function createGuideButtons()
 		"Hillsbrad 32-33.lua", "Balor 33-34.lua", "Stranglethorn 36-37.lua", "Alterac 37-38.lua",
 		"Arathi 38-39.lua", "Badlands 39-40.lua", "Stranglethorn 40-42.lua", "Swamp of Sorrows 42-43.lua",
 		"Tanaris 43-44.lua", "Gilneas 44-46.lua", "Feralas 46-47.lua", "Hinterlands 47.lua",
-		"Searing Gorge 47-49.lua", "Blasted Lands 49-50.lua", "Lapidis Isle 50-51.lua"
+		"Searing Gorge 47-49.lua", "Blasted Lands 49-50.lua", "Lapidis Isle 50-51.lua", "Tanaris 51-52.lua",
+		"Feralas 52.lua"
 	}
 	
 	for i, filename in ipairs(guideList) do
@@ -593,6 +596,7 @@ function PrintSavedVariables()
     PrintTable(ZaponiGuides_Progress)
 end
 
+--[[
 DEFAULT_CHAT_FRAME:AddMessage("[ZaponiGuides] Addon geladen. Typ ZaponiGuides_Progress: "..type(ZaponiGuides_Progress))
 if type(ZaponiGuides_Progress) == "table" then
     DEFAULT_CHAT_FRAME:AddMessage("[ZaponiGuides] completedQuests Typ: "..type(ZaponiGuides_Progress.completedQuests))
@@ -604,6 +608,7 @@ if type(ZaponiGuides_Progress) == "table" then
         DEFAULT_CHAT_FRAME:AddMessage(keys)
     end
 end
+
 
 local startupFrame = CreateFrame("Frame")
 startupFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
@@ -653,3 +658,4 @@ startupFrame:SetScript("OnEvent", function()
     updateGuideText()
     startupFrame:UnregisterEvent("PLAYER_ENTERING_WORLD")
 end)
+--]]
