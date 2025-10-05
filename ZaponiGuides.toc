@@ -31,4 +31,5 @@ Lapidis Isle 50-51.lua
 Tanaris 51-52.lua
 Feralas 52.lua
 Felwood 52-53.lua
+Azshara 53.lua
 ZaponiGuides.lua

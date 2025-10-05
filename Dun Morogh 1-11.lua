@@ -3,49 +3,31 @@ LevelingGuide_DunMorogh = {
     { action="accept", quest=179, name="Dwarven Outfitters", npc="Sten Stoutarm", coords={x=29.9,y=71.2} },
     { action="collect", quest=179, name="Dwarven Outfitters", item="Tough Wolf Meat", coords={x=29.0,y=74.1}, note="Kill Wolves to pick up Tough Wolf Meat." },
     { action="turnin", quest=179, name="Dwarven Outfitters", npc="Sten Stoutarm", coords={x=29.9,y=71.2} },
-    
-    -- Class-specific starting quests
-    { action="info", name="Class Quests", note="Accept your class-specific quest from Sten Stoutarm based on your class.", coords={x=29.7,y=71.2} },
+    { action="accept", name="Class Quest", npc="Sten Stoutarm", note="Accept your class-specific Quest based on your class and race.", coords={x=29.9,y=71.2} },
     { action="accept", quest=233, name="Coldridge Valley Mail Delivery", npc="Sten Stoutarm", coords={x=29.7,y=71.2} },
-    
-    -- Trogg area
-    { action="accept", quest=170, name="A New Threat", npc="Balir Frosthammer", coords={x=29.7,y=71.6} },
-    { action="info", name="Vendor", note="Buy food/water and ammunition from Adlin Pridedrift if needed.", coords={x=30.0,y=71.5} },
-    { action="kill", quest=170, name="A New Threat", mob={"Rockjaw Trogg","Burly Rockjaw Trogg"}, coords={x=32.0,y=75.0}, note="Kill 6 Rockjaw Troggs and 6 Burly Rockjaw Troggs southeast of the camp." },
-    { action="turnin", quest=170, name="A New Threat", npc="Balir Frosthammer", coords={x=29.7,y=71.6} },
-    
-    -- Level 3 - Move to Anvilmar
-    { action="info", name="Level 3", note="You should reach Level 3. Head northwest to Anvilmar.", coords={x=22.6,y=71.4} },
-    { action="info", name="Class Training", note="Turn in your class-specific quest and learn new spells at Anvilmar.", coords={x=22.6,y=71.4} },
-    { action="accept", quest=3361, name="A Refugee's Quandary", npc="Felix Whindlebolt", coords={x=22.6,y=71.9}, note="In Anvilmar." },
-    
-    -- Mail delivery chain
-    { action="turnin", quest=233, name="Coldridge Valley Mail Delivery", npc="Talin Keeneye", coords={x=25.0,y=75.7}, note="Grind west along the road." },
-    { action="accept", quest=234, name="Coldridge Valley Mail Delivery", npc="Talin Keeneye", coords={x=25.0,y=75.7} },
-    { action="accept", quest=183, name="The Boar Hunter", npc="Talin Keeneye", coords={x=25.0,y=75.7} },
-    { action="kill", quest=183, name="The Boar Hunter", mob="Small Crag Boar", coords={x=25.0,y=75.0}, note="Kill 12 Small Crag Boars around the area." },
-    { action="turnin", quest=183, name="The Boar Hunter", npc="Talin Keeneye", coords={x=25.0,y=75.7} },
-    
-    -- Level 4 - Grelin Whitebeard area
-    { action="info", name="Level 4", note="You should reach Level 4 now.", coords={x=25.0,y=75.7} },
-    { action="turnin", quest=234, name="Coldridge Valley Mail Delivery", npc="Grelin Whitebeard", coords={x=25.1,y=76.2}, note="Grind southeast to Grelin Whitebeard." },
-    { action="accept", quest=182, name="The Troll Cave", npc="Grelin Whitebeard", coords={x=25.1,y=76.2} },
-    
-    -- Collect Felix's items
-    { action="collect", quest=3361, name="A Refugee's Quandary", item="Felix's Box", coords={x=22.0,y=80.0}, note="Grind west and loot Felix's Box." },
-    { action="collect", quest=3361, name="A Refugee's Quandary", item="Felix's Chest", coords={x=26.0,y=79.0}, note="Grind southeast to the hut and loot Felix's Chest." },
-    { action="collect", quest=3361, name="A Refugee's Quandary", item="Felix's Bucket of Bolts", coords={x=30.0,y=80.0}, note="Grind east to the cave and loot Felix's Bucket of Bolts." },
-    { action="kill", quest=182, name="The Troll Cave", mob="Frostmane Troll Whelp", coords={x=30.0,y=80.0}, note="Kill 14 Frostmane Troll Whelps in and around the cave." },
-    
-    { action="turnin", quest=182, name="The Troll Cave", npc="Grelin Whitebeard", coords={x=25.1,y=76.2}, note="Return to Grelin Whitebeard." },
-    { action="accept", quest=218, name="The Stolen Journal", npc="Grelin Whitebeard", coords={x=25.1,y=76.2} },
-    { action="accept", quest=3364, name="Scalding Mornbrew Delivery", npc="Nori Pridedrift", coords={x=25.1,y=76.0} },
-    
-    -- Return to Anvilmar
-    { action="info", name="Hearthstone", note="Use Hearthstone to return to Anvilmar.", coords={x=25.1,y=76.0} },
-    { action="turnin", quest=3364, name="Scalding Mornbrew Delivery", npc="Durnan Furcutter", coords={x=22.1,y=71.4}, note="In Anvilmar." },
-    { action="accept", quest=3365, name="Bring Back the Mug", npc="Durnan Furcutter", coords={x=22.1,y=71.4} },
-    { action="turnin", quest=3361, name="A Refugee's Quandary", npc="Felix Whindlebolt", coords={x=22.6,y=71.9} },
+    { action="accept", quest=170, name="A New Threat", npc="Balir Frosthammer", coords={x=29.7,y=71.3} },
+    { action="kill", quest=170, name="A New Threat", mob={"Rockjaw Trogg","Burly Rockjaw Trogg"}, coords={x=31.5,y=75.7} },
+    { action="turnin", quest=170, name="A New Threat", npc="Balir Frosthammer", coords={x=29.7,y=71.3} },
+    { action="info", name="Class Quest", note="Turn in your class-specific Quest in Anvilmar.", coords={x=28.6,y=67.8} },
+    { action="accept", quest=3361, name="A Refugee's Quandary", npc="Felix Whindlebolt", coords={x=28.5,y=67.6} },
+    { action="turnin", quest=233, name="Coldridge Valley Mail Delivery", npc="Talin Keeneye", coords={x=22.6,y=71.4} },
+    { action="accept", quest=234, name="Coldridge Valley Mail Delivery", npc="Talin Keeneye", coords={x=22.6,y=71.4}  },
+    { action="accept", quest=183, name="The Boar Hunter", npc="Talin Keeneye", coords={x=22.6,y=71.4} },
+    { action="kill", quest=183, name="The Boar Hunter", mob="Small Crag Boar", coords={x=22.1,y=72.2} },
+    { action="turnin", quest=183, name="The Boar Hunter", npc="Talin Keeneye", coords={x=22.6,y=71.4} },
+    { action="turnin", quest=234, name="Coldridge Valley Mail Delivery", npc="Grelin Whitebeard", coords={x=25.1,y=75.7} },
+    { action="accept", quest=182, name="The Troll Cave", npc="Grelin Whitebeard", coords={x=25.1,y=75.7} },
+    { action="collect", quest=3361, name="A Refugee's Quandary", item="Felix's Box", coords={x=20.9,y=76.1}, note="Click Felix's Box to pick it up." },
+    { action="collect", quest=3361, name="A Refugee's Quandary", item="Felix's Chest", coords={x=22.7,y=79.7}, note="Click Felix's Chest to pick it up." },
+    { action="collect", quest=3361, name="A Refugee's Quandary", item="Felix's Bucket of Bolts", coords={x=26.3,y=79.3}, note="Click Felix's Bucket of Bolts to pick it up." },
+    { action="kill", quest=182, name="The Troll Cave", mob="Frostmane Troll Whelp", coords={x=26.3,y=79.3} },
+    { action="turnin", quest=182, name="The Troll Cave", npc="Grelin Whitebeard", coords={x=25.1,y=75.7} },
+    { action="accept", quest=218, name="The Stolen Journal", npc="Grelin Whitebeard", coords={x=25.1,y=75.7} },
+    { action="accept", quest=3364, name="Scalding Mornbrew Delivery", npc="Nori Pridedrift", coords={x=25.0,y=76.0} },
+    { action="info", name="Hearthstone", note="Use Hearthstone to return to Anvilmar.", coords={x=25.0,y=76.0} },
+    { action="turnin", quest=3364, name="Scalding Mornbrew Delivery", npc="Durnan Furcutter", coords={x=28.8,y=66.4} },
+    { action="accept", quest=3365, name="Bring Back the Mug", npc="Durnan Furcutter", coords={x=28.8,y=66.4}, note="Wait for RPG, then accept Quest." },
+    { action="turnin", quest=3361, name="A Refugee's Quandary", npc="Felix Whindlebolt", coords={x=28.5,y=67.6} },
     
     -- Level 4 training
     { action="info", name="Training", note="Learn new spells from your class trainer.", coords={x=22.6,y=71.4} },
@@ -59,8 +41,8 @@ LevelingGuide_DunMorogh = {
     { action="kill", quest=218, name="The Stolen Journal", mob="Grik'nir the Cold", coords={x=30.5,y=80.8}, note="Kill Grik'nir the Cold for Grelin Whitebeard's Journal. He moves slowly!" },
     { action="collect", quest=1599, name="Beginnings", item="Feather Charm", coords={x=30.5,y=80.8}, note="Warlock only: Kill Frostmane Novices for 3 Feather Charms." },
     
-    { action="turnin", quest=218, name="The Stolen Journal", npc="Grelin Whitebeard", coords={x=25.1,y=76.2} },
-    { action="accept", quest=282, name="Senir's Observations", npc="Grelin Whitebeard", coords={x=25.1,y=76.2} },
+    { action="turnin", quest=218, name="The Stolen Journal", npc="Grelin Whitebeard", coords={x=25.1,y=75.7} },
+    { action="accept", quest=282, name="Senir's Observations", npc="Grelin Whitebeard", coords={x=25.1,y=75.7} },
     { action="turnin", quest=1599, name="Beginnings", npc="Alamar Grimm", coords={x=22.6,y=71.1}, note="Warlock only: In Anvilmar." },
     
     -- Leave Coldridge Valley
