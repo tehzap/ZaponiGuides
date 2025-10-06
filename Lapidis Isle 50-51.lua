@@ -31,7 +31,7 @@ LevelingGuide_LapidisIsle = {
     { action="accept", quest=40163, name="The Tower of Lapidis", npc="Colonel Hardinus", coords={x=61.2,y=41.4}, note="TurtleWoW specific." },
     { action="accept", quest=40143, name="Smashing the Southsea!", npc="Colonel Hardinus", coords={x=61.2,y=41.4}, note="TurtleWoW specific." },
     { action="turnin", quest=40163, name="The Tower of Lapidis", npc="Hydromancer Flakereef", coords={x=59.2,y=43.8}, note="TurtleWoW specific." },
-    { action="accept", quest=40164, name="The Tower of Lapidis II", npc="Hydromancer Flakereef", coords={x=59.2,y=43.8}, note="TurtleWoW specific." },
+    --{ action="accept", quest=40164, name="The Tower of Lapidis II", npc="Hydromancer Flakereef", coords={x=59.2,y=43.8}, note="TurtleWoW specific." },
     { action="accept", quest=40160, name="Bengal Fangs", npc="Primalist Palaz", coords={x=51.9,y=51.9}, note="TurtleWoW specific." },
     { action="accept", quest=40161, name="Hazu Leaf", npc="Primalist Yango", coords={x=53.1,y=52.5}, note="TurtleWoW specific." },
     { action="collect", quest=40160, name="Bengal Fangs", item="Bengal Fang", coords={x=65.2,y=60.9}, note="Kill Bengal Tigers to pick up Bengal Fangs. TurtleWoW specific." },

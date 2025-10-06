@@ -4,7 +4,7 @@ LevelingGuide_Tanaris_2 = {
     { action="info", name="Bind Hearthstone", note="Bind your Hearthstone to Gadgetzan at Innkeeper Fizzgrimble.", coords={x=52.5,y=27.9} },
     { action="accept", quest=5863, name="The Dunemaul Compound", npc="Andi Lynn", coords={x=52.8,y=27.4} },
     { action="turnin", quest=2941, name="The Borrower", npc="Curgle Cranklehop", coords={x=52.4,y=26.9} },
-    { action="accept", quest=2944, name="The Super Snapper FX", npc="Curgle Cranklehop", coords={x=52.4,y=26.9} },
+    --{ action="accept", quest=2944, name="The Super Snapper FX", npc="Curgle Cranklehop", coords={x=52.4,y=26.9} },
     { action="accept", quest=3022, name="Handle With Care", npc="Curgle Cranklehop", coords={x=52.4,y=26.9} },
     { action="info", quest=2741, name="The Super Egg-O-Matic", npc="Egg-O-Matic", coords={x=52.4,y=27.0}, note="You need to have a Hippogryph Egg in your inventory. Click Egg-O-Matic to turn-in this Quest." },
     --{ action="turnin", quest=2749, name="An Ordinary Egg", npc="Curgle Cranklehop", coords={x=52.4,y=26.9} },
