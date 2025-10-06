@@ -58,6 +58,7 @@ LevelingGuide_LapidisIsle = {
     { action="info", name="Booty Bay", note="Fly to Booty Bay.", coords={x=60.2,y=43.0}, note="TurtleWoW specific." },
     { action="info", name="Ratchet", note="Take the boat to Ratchet.", coords={x=26.1,y=73.2} },
     { action="info", name="Tanaris", note="Fly to Gadgetzan.", coords={x=63.1,y=37.2} },
+    { action="info", name="Battlegrounds", note="TurtleWoW specific: It is recommended to mix in Alterac Valley and Arathi Basin Battlegrounds.", coords={x=63.1,y=37.2} },
     { nextGuide = "Tanaris 51-52.lua" }
     }
 }

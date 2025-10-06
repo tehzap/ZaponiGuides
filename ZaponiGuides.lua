@@ -122,6 +122,7 @@ local guideMapping = {
 	["Felwood 52-53.lua"] = function() return LevelingGuide_Felwood end,
 	["Azshara 53.lua"] = function() return LevelingGuide_Azshara end,
 	["Western Plaguelands 53-54.lua"] = function() return LevelingGuide_WesternPlaguelands end,
+	["Burning Steppes 54-55.lua"] = function() return LevelingGuide_BurningSteppes end,
 }
 
 function ZaponiGuides:LoadGuide(filename)
@@ -556,7 +557,8 @@ local function createGuideButtons()
 		"Arathi 38-39.lua", "Badlands 39-40.lua", "Stranglethorn 40-42.lua", "Swamp of Sorrows 42-43.lua",
 		"Tanaris 43-44.lua", "Gilneas 44-46.lua", "Feralas 46-47.lua", "Hinterlands 47.lua",
 		"Searing Gorge 47-49.lua", "Blasted Lands 49-50.lua", "Lapidis Isle 50-51.lua", "Tanaris 51-52.lua",
-		"Feralas 52.lua", "Felwood 52-53.lua", "Azshara 53.lua", "Western Plaguelands 53-54.lua"
+		"Feralas 52.lua", "Felwood 52-53.lua", "Azshara 53.lua", "Western Plaguelands 53-54.lua",
+		"Burning Steppes 54-55.lua"
 	}
 	
 	for i, filename in ipairs(guideList) do
