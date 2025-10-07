@@ -38,7 +38,7 @@ LevelingGuide_WesternPlaguelands = {
     { action="turnin", quest=2801, name="A Tale of Sorrow", npc="Fallen Hero of the Horde", coords={x=34.3,y=66.0}, note="Talk to Fallen Hero of the Horde, click through the dialogue, then turn-in the Quest." },
     { action="info", name="Blasted Lands", note="Go to Blasted Lands.", coords={x=33.1,y=68.1} },
     { action="info", name="Lakeshire", note="Fly to Lakeshire.", coords={x=65.5,y=24.3} },
-    { action="info", name="Burning Steppes", note="Go to Burning Steppes.", coords={x=84.6,y=69.3} },
-    { nextGuide = "Burning Steppes 54-55.lua" }
+    { action="info", name="Burning Steppes", note="Go to Burning Steppes.", coords={x=46.4,y=6.7} },
+    { nextGuide = "Burning Steppes 54.lua" }
   }
 }

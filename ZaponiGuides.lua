@@ -122,7 +122,7 @@ local guideMapping = {
 	["Felwood 52-53.lua"] = function() return LevelingGuide_Felwood end,
 	["Azshara 53.lua"] = function() return LevelingGuide_Azshara end,
 	["Western Plaguelands 53-54.lua"] = function() return LevelingGuide_WesternPlaguelands end,
-	["Burning Steppes 54-55.lua"] = function() return LevelingGuide_BurningSteppes end,
+	["Burning Steppes 54.lua"] = function() return LevelingGuide_BurningSteppes end,
 }
 
 function ZaponiGuides:LoadGuide(filename)
@@ -228,88 +228,28 @@ local function updateGuideText()
 			ZaponiGuides:LoadGuide(step.nextGuide)
 			return
 		end
-		--DEFAULT_CHAT_FRAME:AddMessage("[DEBUG] Aktueller Schritt #"..RXPGuidesMVS_Progress.currentStep..": "..step.action.." Quest "..step.quest.." - "..step.name)
+		
 		local mainText = autoWrap(formatStep(step), maxChars)
-		-- Fortschrittsanzeige für kill-Schritte (mob als Tabelle oder String)
-		if step.action == "kill" and step.quest then
-            mainText = mainText .. "\n|cffffff00⚔|r |cffffff00Progress:|r"
-			local questName = cleanQuestName(step.name)
-			if type(step.mob) == "table" then
-				for _, mobName in ipairs(step.mob) do
-					local mobProgress = "no progress"
-					for i=1, GetNumQuestLogEntries() do
-						local title = cleanQuestName(GetQuestLogTitle(i))
-						if title == questName then
-							local numObjectives = GetNumQuestLeaderBoards(i)
-							for obj=1, numObjectives do
-								local desc, type, done = GetQuestLogLeaderBoard(obj, i)
-								if (type == "monster" or type == "object" or type == "item") and desc and mobName then
-									local lowerDesc = string.lower(desc or "")
-									local lowerMobName = string.lower(mobName or "")
-									-- Prüfe ob der Mob-Name GENAU in der Beschreibung vorkommt
-									if string.find(lowerDesc, lowerMobName, 1, true) then
-										-- Zusätzliche Prüfung: Stelle sicher, dass es der richtige Mob ist
-										local isExactMatch = false
-										-- Prüfe verschiedene Formate
-										if string.find(lowerDesc, "^" .. lowerMobName .. " ") or 
-										   string.find(lowerDesc, "^" .. lowerMobName .. ":") or
-										   string.find(lowerDesc, "^" .. lowerMobName .. " slain") or
-										   string.find(lowerDesc, "^" .. lowerMobName .. " killed") then
-											isExactMatch = true
-										end
-										
-										if isExactMatch then
-											local startPos, endPos = string.find(desc or "", "%d+/%d+")
-											local numbers = nil
-											if startPos and endPos then
-												numbers = string.sub(desc, startPos, endPos)
-											end
-											mobProgress = numbers or desc
-											break
-										end
-									end
-								end
-							end
-							if mobProgress ~= "no progress" then
-								break
-							end
-						end
-					end
-					-- Debug-Ausgabe entfernt, nur Zahlen anzeigen
-					local displayProgress = mobProgress
-					if mobProgress ~= "no progress" then
-						-- Extrahiere nur die Zahlen (z.B. "3/8") aus dem kompletten Text
-						local startPos, endPos = string.find(mobProgress, "%d+/%d+")
-						if startPos and endPos then
-							displayProgress = string.sub(mobProgress, startPos, endPos)
-						end
-					end
-					mainText = mainText .. "\n- " .. mobName .. ": " .. displayProgress
-				end
-			else
-				local mobName = step.mob or ""
-				local mobProgress = "(no progress)"
-				for i=1, GetNumQuestLogEntries() do
-					local title = cleanQuestName(GetQuestLogTitle(i))
-					if title == questName then
-						local numObjectives = GetNumQuestLeaderBoards(i)
-						for obj=1, numObjectives do
-							local desc, type, done = GetQuestLogLeaderBoard(obj, i)
-							if (type == "monster" or type == "object" or type == "item") and desc and mobName and string.find(string.lower(desc or ""), string.lower(mobName or ""), 1, true) then
-								local startPos, endPos = string.find(desc or "", "%d+/%d+")
-								local numbers = nil
-								if startPos and endPos then
-									numbers = string.sub(desc, startPos, endPos)
-								end
-								mobProgress = numbers or desc
-								break
-							end
-						end
-					end
-				end
-				mainText = mainText .. "\n- " .. mobName .. ": " .. mobProgress
-			end
-		end
+
+        if step.action == "kill" and step.quest then
+            mainText = mainText .. "\n|cffffff00⚔|r|cffffff00Progress:|r"
+            local questName = cleanQuestName(step.name)
+            for i=1, GetNumQuestLogEntries() do
+                local title = cleanQuestName(GetQuestLogTitle(i))
+                if title == questName then
+                    local numObjectives = GetNumQuestLeaderBoards(i)
+                    for obj=1, numObjectives do
+                        local desc, type, done = GetQuestLogLeaderBoard(obj, i)
+                        if desc then
+						-- remove " slain" from desc for cleaner display
+                            local cleanDesc = string.gsub(desc, " slain", "")
+                            mainText = mainText .. "\n- " .. cleanDesc
+                        end
+                    end
+                    break
+                end
+            end
+        end
 
 		-- Fortschrittsanzeige für collect-Schritte (item als Tabelle oder String)
 		if step.action == "collect" and step.quest and step.item then
@@ -558,7 +498,7 @@ local function createGuideButtons()
 		"Tanaris 43-44.lua", "Gilneas 44-46.lua", "Feralas 46-47.lua", "Hinterlands 47.lua",
 		"Searing Gorge 47-49.lua", "Blasted Lands 49-50.lua", "Lapidis Isle 50-51.lua", "Tanaris 51-52.lua",
 		"Feralas 52.lua", "Felwood 52-53.lua", "Azshara 53.lua", "Western Plaguelands 53-54.lua",
-		"Burning Steppes 54-55.lua"
+		"Burning Steppes 54.lua"
 	}
 	
 	for i, filename in ipairs(guideList) do

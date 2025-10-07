@@ -50,6 +50,7 @@ LevelingGuide_Tanaris_2 = {
     { action="accept", quest=113, name="Insect Part Analysis", npc="Alchemist Pestlezugg", coords={x=50.9,y=27.0} },
     { action="turnin", quest=113, name="Insect Part Analysis", npc="Senior Surveyor Fizzledowser", coords={x=50.2,y=27.5} },
     { action="accept", quest=162, name="Rise of the Silithid", npc="Senior Surveyor Fizzledowser", coords={x=50.2,y=27.5} },
+    { action="accept", quest=4324, name="Yuka Screwspigot", npc="Yorba Screwspigot", coords={x=67.0,y=24.0} },
     -- Zul'Farrak dungeon quests (optional)
     --{ action="accept", quest=2865, name="Scarab Shells", npc="Tran'rek", coords={x=51.6,y=26.8}, note="Dungeon quest for Zul'Farrak." },
     --{ action="accept", quest=2768, name="Divino-matic Rod", npc="Chief Engineer Bilgewhizzle", coords={x=52.5,y=28.5}, note="Dungeon quest for Zul'Farrak." },

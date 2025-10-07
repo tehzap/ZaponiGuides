@@ -1,25 +1,14 @@
 LevelingGuide_BurningSteppes = {
   steps = {
-    -- Morgan's Vigil arrival and setup
-    { action="info", name="Morgan's Vigil", note="Run east to Morgan's Vigil.", coords={x=85.8,y=68.8} },
-    { action="info", name="Flight Point", note="Get the Morgan's Vigil flight point from Borgus Stoutarm.", coords={x=84.3,y=68.2} },
-    { action="accept", quest=3823, name="Extinguish the Firegut", npc="Oralius", coords={x=84.7,y=68.8} },
-    { action="accept", quest=4182, name="Dragonkin Menace", npc="Helendis Riverhorn", coords={x=84.3,y=68.2}, note="Onyxia Attunement quest." },
-    { action="info", name="Repair/Vendor", note="Repair and sell at Felder Stover.", coords={x=84.7,y=69.3} },
-    
-    -- Dreadmaul Rock area
-    { action="info", name="Dreadmaul Rock", note="Grind north to Dreadmaul Rock.", coords={x=81.0,y=45.0} },
-    { action="kill", quest=3823, name="Extinguish the Firegut", mob={"Firegut Ogre Mage","Firegut Ogre","Firegut Brute"}, coords={x=81.0,y=45.0}, note="Kill some Firegut Ogres. You need 15 Mages, 7 Ogres, and 7 Brutes total." },
-    
-    -- Flamecrest area
-    { action="info", name="Flamecrest", note="Grind northwest to Flamecrest.", coords={x=65.0,y=24.0} },
+    { action="info", name="Get Flight Path", note="Get the Morgan's Vigil Flight Path.", coords={x=84.3,y=68.2} },
+    { action="accept", quest=3823, name="Extinguish the Firegut", npc="Oralius", coords={x=84.6,y=68.7} },
+    { action="accept", quest=4182, name="Dragonkin Menace", npc="Helendis Riverhorn", coords={x=85.8,y=69.0}, note="Onyxia Attunement Quest." },
+    { action="kill", quest=3823, name="Extinguish the Firegut", mob={"Firegut Ogre Mage","Firegut Ogre","Firegut Brute"}, coords={x=81.0,y=45.0} },
     { action="accept", quest=4726, name="Broodling Essence", npc="Tinkee Steamboil", coords={x=65.2,y=24.0} },
-    { action="turnin", quest=4324, name="Yuka Screwspigot", npc="Yuka Screwspigot", coords={x=65.0,y=25.4}, note="In the cave." },
+    { action="turnin", quest=4324, name="Yuka Screwspigot", npc="Yuka Screwspigot", coords={x=66.1,y=21.9}, note="She is in the cave." },
+    { action="collect", quest=4726, name="Broodling Essence", item="Broodling Essence", coords={x=72.0,y=28.0}, note="Use Draco-Incarcinatrix 900 on Broodlings. Kill them. If they spawn a Broodling Essence, click it to pick it up." },
     
-    -- Broodling Essence collection
-    { action="info", name="Black Broodlings", note="Grind east to find Black Broodlings.", coords={x=72.0,y=28.0} },
-    { action="collect", quest=4726, name="Broodling Essence", item="Broodling Essence", coords={x=72.0,y=28.0}, note="Use Draco-Incarcinatrix 900 on Broodlings, kill them, then loot essence. Need 8 total." },
-    { action="kill", quest=4182, name="Dragonkin Menace", mob="Black Broodling", coords={x=72.0,y=28.0}, note="Kill 15 Black Broodlings for the Onyxia attunement." },
+      { action="kill", quest=4182, name="Dragonkin Menace", mob="Black Broodling", coords={x=72.0,y=28.0}, note="Kill 15 Black Broodlings for the Onyxia attunement." },
     
     -- Return to Flamecrest
     { action="turnin", quest=4726, name="Broodling Essence", npc="Tinkee Steamboil", coords={x=65.2,y=24.0}, note="Run northwest back to Flamecrest." },
