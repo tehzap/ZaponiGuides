@@ -34,4 +34,6 @@ Felwood 52-53.lua
 Azshara 53.lua
 Western Plaguelands 53-54.lua
 Burning Steppes 54.lua
+Stranglethorn 54.lua
+Un'Goro Crater 54-56.lua
 ZaponiGuides.lua

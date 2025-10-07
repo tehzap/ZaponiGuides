@@ -123,6 +123,8 @@ local guideMapping = {
 	["Azshara 53.lua"] = function() return LevelingGuide_Azshara end,
 	["Western Plaguelands 53-54.lua"] = function() return LevelingGuide_WesternPlaguelands end,
 	["Burning Steppes 54.lua"] = function() return LevelingGuide_BurningSteppes end,
+	["Stranglethorn 54.lua"] = function() return LevelingGuide_Stranglethorn_4 end,
+	["Un'Goro Crater 54-56.lua"] = function() return LevelingGuide_UnGoroCrater end,
 }
 
 function ZaponiGuides:LoadGuide(filename)
@@ -239,11 +241,28 @@ local function updateGuideText()
                 if title == questName then
                     local numObjectives = GetNumQuestLeaderBoards(i)
                     for obj=1, numObjectives do
-                        local desc, type, done = GetQuestLogLeaderBoard(obj, i)
+                        local desc, objType, done = GetQuestLogLeaderBoard(obj, i)
                         if desc then
-						-- remove " slain" from desc for cleaner display
-                            local cleanDesc = string.gsub(desc, " slain", "")
-                            mainText = mainText .. "\n- " .. cleanDesc
+                            -- to prevent showing all kill objectives, only show those that should be killed within names in the step
+                            local shouldShow = false
+                            if type(step.mob) == "table" then
+                                for _, mobName in ipairs(step.mob) do
+                                    if string.find(string.lower(desc), string.lower(mobName), 1, true) then
+                                        shouldShow = true
+                                        break
+                                    end
+                                end
+                            elseif type(step.mob) == "string" then
+                                if string.find(string.lower(desc), string.lower(step.mob), 1, true) then
+                                    shouldShow = true
+                                end
+                            end
+                            
+                            if shouldShow then
+                                -- remove " slain" from desc for cleaner display
+                                local cleanDesc = string.gsub(desc, " slain", "")
+                                mainText = mainText .. "\n- " .. cleanDesc
+                            end
                         end
                     end
                     break
@@ -498,7 +517,7 @@ local function createGuideButtons()
 		"Tanaris 43-44.lua", "Gilneas 44-46.lua", "Feralas 46-47.lua", "Hinterlands 47.lua",
 		"Searing Gorge 47-49.lua", "Blasted Lands 49-50.lua", "Lapidis Isle 50-51.lua", "Tanaris 51-52.lua",
 		"Feralas 52.lua", "Felwood 52-53.lua", "Azshara 53.lua", "Western Plaguelands 53-54.lua",
-		"Burning Steppes 54.lua"
+		"Burning Steppes 54.lua", "Stranglethorn 54.lua", "Un'Goro Crater 54-56.lua"
 	}
 	
 	for i, filename in ipairs(guideList) do
