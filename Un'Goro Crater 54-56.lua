@@ -1,95 +1,52 @@
 LevelingGuide_UnGoroCrater = {
   steps = {
     -- Torwa Pathfinder entrance
-    { action="accept", quest=4289, name="The Apes of Un'Goro", npc="Torwa Pathfinder", coords={x=72.0,y=76.0}, note="Run north along the road to Torwa Pathfinder." },
-    { action="accept", quest=4290, name="The Fare of Lar'korwi", npc="Torwa Pathfinder", coords={x=72.0,y=76.0} },
-    { action="info", name="Empty Ooze Containers", note="Use Bag of Empty Ooze Containers from your inventory.", coords={x=72.0,y=76.0} },
-    
-    -- Collection objectives (ongoing throughout the zone)
-    { action="info", name="Ongoing Collections", note="Collect Un'Goro Soil, Power Crystals, and Ooze samples throughout the zone.", coords={x=70.0,y=60.0} },
-    { action="collect", quest=4496, name="Bungle in the Jungle", item="Un'Goro Soil", coords={x=70.0,y=60.0}, note="Loot Un'Goro Dirt Piles for 5 Un'Goro Soil." },
-    { action="collect", quest=3764, name="Un'Goro Soil", item="Un'Goro Soil", coords={x=70.0,y=60.0}, note="Loot Un'Goro Dirt Piles for 20 Un'Goro Soil." },
-    { action="collect", quest=4513, name="A Little Slime Goes a Long Way", item="Pure Sample Jar", coords={x=70.0,y=60.0}, note="Use 10 Empty Pure Sample Jars on Muculent/Primal Ooze corpses." },
-    { action="collect", name="Power Crystals", item={"Blue Power Crystal","Green Power Crystal","Red Power Crystal","Yellow Power Crystal"}, coords={x=70.0,y=60.0}, note="Collect 7 of each Power Crystal color throughout the zone." },
-    
-    -- Fresh Threshadon Carcass
-    { action="collect", quest=4290, name="The Fare of Lar'korwi", item="Fresh Threshadon Carcass", coords={x=69.0,y=57.0}, note="Run north and loot Fresh Threshadon Carcass." },
-    
-    -- Wrecked Raft secret quest
-    { action="collect", quest=3844, name="It's a Secret to Everybody", item="Carefully Folded Note", coords={x=63.0,y=69.0}, note="Run southwest and loot A Wrecked Raft." },
-    { action="accept", quest=3844, name="It's a Secret to Everybody", npc="Carefully Folded Note", coords={x=63.0,y=69.0}, note="Use the Carefully Folded Note." },
-    { action="collect", quest=3844, name="It's a Secret to Everybody", item="A Small Pack", coords={x=63.0,y=69.0}, note="Underwater, loot A Small Pack." },
-    { action="turnin", quest=3844, name="It's a Secret to Everybody", npc="A Small Pack", coords={x=63.0,y=69.0}, note="Use A Small Pack." },
-    { action="accept", quest=3845, name="It's a Secret to Everybody", npc="A Small Pack", coords={x=63.0,y=69.0} },
-    
-    -- Return to Torwa
-    { action="turnin", quest=4290, name="The Fare of Lar'korwi", npc="Torwa Pathfinder", coords={x=72.0,y=76.0}, note="Run southeast to Torwa Pathfinder." },
-    { action="accept", quest=4291, name="The Scent of Lar'korwi", npc="Torwa Pathfinder", coords={x=72.0,y=76.0} },
-    
-    -- Lar'korwi Mate hunt
-    { action="info", name="Raptor Eggs", note="Run northwest to the raptor area and step on raptor eggs to summon Lar'korwi Mates.", coords={x=68.0,y=73.0} },
-    { action="kill", quest=4291, name="The Scent of Lar'korwi", mob="Lar'korwi Mate", coords={x=68.0,y=73.0}, note="Kill Lar'korwi Mates for 2 Ravasaur Pheromone Glands." },
-    
-    -- Return to Torwa again
-    { action="turnin", quest=4291, name="The Scent of Lar'korwi", npc="Torwa Pathfinder", coords={x=72.0,y=76.0} },
-    { action="accept", quest=4292, name="The Bait for Lar'korwi", npc="Torwa Pathfinder", coords={x=72.0,y=76.0} },
-    
-    -- Marshal's Refuge
-    { action="info", name="Marshal's Refuge", note="Grind counter-clockwise around the edge to Marshal's Refuge.", coords={x=45.2,y=5.8} },
-    { action="info", name="Power Crystals", note="Finish collecting 7 of each Power Crystal color along the way.", coords={x=50.0,y=20.0} },
-    
-    -- Marshal's Refuge quests
-    { action="accept", quest=4243, name="Chasing A-Me 01", npc="Karna Remtravel", coords={x=45.2,y=5.8}, note="At the bottom of the ramp." },
-    { action="accept", quest=4501, name="Beware of Pterrordax", npc="Wanted Poster", coords={x=45.6,y=8.7}, note="North at the wanted poster." },
-    { action="accept", quest=3881, name="Expedition Salvation", npc="Williden Marshal", coords={x=43.9,y=7.2}, note="In the center of camp." },
-    { action="info", name="Repair/Vendor", note="Repair and sell at Gibbert.", coords={x=43.0,y=8.5} },
-    { action="info", name="Small Pack", note="Use A Small Pack from your inventory.", coords={x=44.7,y=8.1} },
-    { action="turnin", quest=3845, name="It's a Secret to Everybody", npc="Linken", coords={x=44.7,y=8.1}, note="In the tree trunk." },
-    { action="info", name="Destroy Item", note="Destroy Faded Photograph from your inventory.", coords={x=44.7,y=8.1} },
-    { action="accept", quest=4141, name="Muigin and Larion", npc="Muigin", coords={x=42.9,y=9.6}, note="Just west on the hill." },
-    { action="info", name="Flight Point", note="Get the Marshal's Refuge flight point from Gryfe.", coords={x=45.0,y=5.7} },
-    
-    -- Crystal cave quests
-    { action="accept", quest=4284, name="Crystals of Power", npc="J.D. Collie", coords={x=41.9,y=2.6}, note="Run north to the back of the crystal cave." },
+    { action="accept", quest=4289, name="The Apes of Un'Goro", npc="Torwa Pathfinder", coords={x=71.6,y=75.9} },
+    { action="accept", quest=4290, name="The Fare of Lar'korwi", npc="Torwa Pathfinder", coords={x=71.6,y=75.9} },
+    { action="info", name="Empty Ooze Containers", note="Use Bag of Empty Ooze Containers in your inventory.", coords={x=72.0,y=76.0} },
+    { action="info", name="Power Crystals", note="Collect 7 Green, 7 Red, 7 Yellow and 7 Blue Power Crystals during the next steps.", coords={x=72.0,y=76.0} },
+    { action="collect", quest=4290, name="The Fare of Lar'korwi", item="Piece of Threshadon Carcass", coords={x=69.0,y=57.0}, note="Click Piece of Threshadon Carcass to pick it up." },
+    --{ action="collect", quest=4496, name="Bungle in the Jungle", item="Un'Goro Soil", coords={x=70.0,y=60.0}, note="Loot Un'Goro Dirt Piles for 5 Un'Goro Soil." },
+    --{ action="collect", quest=3764, name="Un'Goro Soil", item="Un'Goro Soil", coords={x=70.0,y=60.0}, note="Loot Un'Goro Dirt Piles for 20 Un'Goro Soil." },
+    --{ action="collect", quest=4513, name="A Little Slime Goes a Long Way", item="Pure Sample Jar", coords={x=70.0,y=60.0}, note="Use 10 Empty Pure Sample Jars on Muculent/Primal Ooze corpses." },
+    { action="accept", quest=3844, name="It's a Secret to Everybody", npc="A Wrecked Raft", coords={x=63.0,y=68.6}, note="Click A Wrecked Raft to accept this Quest." },
+    { action="turnin", quest=3844, name="It's a Secret to Everybody", npc="A Small Pack", coords={x=63.1,y=69.0}, note="Click A Small Pack underwater to turn-in this Quest." },
+    { action="accept", quest=3845, name="It's a Secret to Everybody", npc="A Small Pack", coords={x=63.1,y=69.0} },
+    { action="turnin", quest=4290, name="The Fare of Lar'korwi", npc="Torwa Pathfinder", coords={x=71.6,y=75.9} },
+    { action="accept", quest=4291, name="The Scent of Lar'korwi", npc="Torwa Pathfinder", coords={x=71.6,y=75.9} },
+    { action="collect", quest=4291, name="The Scent of Lar'korwi", item="Ravasaur Pheromone Gland", coords={x=66.6,y=66.7}, note="Step on raptor eggs to summon Lar'korwi Mates. Kill Lar'korwi Mates to pick up Ravasaur Pheromone Glands." },
+    { action="turnin", quest=4291, name="The Scent of Lar'korwi", npc="Torwa Pathfinder", coords={x=71.6,y=75.9} },
+    { action="accept", quest=4292, name="The Bait for Lar'korwi", npc="Torwa Pathfinder", coords={x=71.6,y=75.9} },
+    { action="gather", name="Power Crystals", item={"Green Power Crystal", "Blue Power Crystal", "Red Power Crystal", "Yellow Power Crystal"}, target={7,7,7,7}, coords={x=46.4,y=13.4}, note="Finish collecting Power Crystals." },
+    { action="accept", quest=4243, name="Chasing A-Me 01", npc="Karna Remtravel", coords={x=46.4,y=13.4 } },
+    { action="accept", quest=4501, name="Beware of Pterrordax", npc="Wanted Poster", coords={x=43.5,y=8.4} },
+    { action="accept", quest=3881, name="Expedition Salvation", npc="Williden Marshal", coords={x=43.9,y=7.2} },
+    { action="info", name="Small Pack", note="Use A Small Pack in your inventory.", coords={x=43.9,y=7.2} },
+    { action="turnin", quest=3845, name="It's a Secret to Everybody", npc="Linken", coords={x=44.7,y=8.1} },
+    { action="info", name="Destroy Item", note="Destroy Faded Photograph in your inventory.", coords={x=44.7,y=8.1} },
+    { action="accept", quest=4141, name="Muigin and Larion", npc="Muigin", coords={x=42.9,y=9.6} },
+    { action="info", name="Get Flight Path", note="Get the Marshal's Refuge Flight Path.", coords={x=45.2,y=5.8} },
+    { action="info", name="Cave", note="Enter the cave.", coords={x=43.6,y=7.3} },
+    { action="accept", quest=4284, name="Crystals of Power", npc="J.D. Collie", coords={x=41.9,y=2.6} },
     { action="turnin", quest=4284, name="Crystals of Power", npc="J.D. Collie", coords={x=41.9,y=2.6} },
     { action="accept", quest=4285, name="The Northern Pylon", npc="J.D. Collie", coords={x=41.9,y=2.6} },
     { action="accept", quest=4287, name="The Eastern Pylon", npc="J.D. Collie", coords={x=41.9,y=2.6} },
-    { action="info", name="Destroy Crystals", note="Destroy all Power Crystals from your inventory (Blue, Green, Red, Yellow).", coords={x=41.9,y=2.6} },
-    
-    -- Williden's Journal (optional)
-    { action="accept", quest=3884, name="Williden's Journal", npc="A Mangled Journal", coords={x=43.9,y=7.2}, note="Use A Mangled Journal if you found one." },
-    { action="turnin", quest=3884, name="Williden's Journal", npc="Williden Marshal", coords={x=43.9,y=7.2}, note="Turn in if you have it." },
-    
-    -- Bloodpetal collection
-    { action="kill", quest=4141, name="Muigin and Larion", mob="Bloodpetal Flayer", coords={x=30.0,y=10.0}, note="Kill Bloodpetal Flayers for 15 Bloodpetals." },
-    
-    -- Northern Crystal Pylon
-    { action="info", name="Northern Pylon", note="Grind east to the Northern Crystal Pylon.", coords={x=56.5,y=12.5} },
-    { action="collect", quest=4285, name="The Northern Pylon", item="Northern Pylon Crystal", coords={x=56.5,y=12.5}, note="Loot the Northern Crystal Pylon." },
-    
-    -- Fungal Rock and A-Me 01
-    { action="info", name="Fungal Rock", note="Grind east to the cave at Fungal Rock.", coords={x=65.0,y=16.0} },
-    { action="kill", quest=4289, name="The Apes of Un'Goro", mob={"Un'Goro Gorilla","Un'Goro Stomper","Un'Goro Thunderer"}, coords={x=65.0,y=16.0}, note="Kill gorillas for 2 pelts each." },
-    { action="info", name="A-Me 01", note="Look for A-Me 01 inside the cave. Quest marker visible from outside if spawned.", coords={x=65.0,y=16.0} },
-    { action="turnin", quest=4243, name="Chasing A-Me 01", npc="A-Me 01", coords={x=65.0,y=16.0}, note="Inside the cave." },
-    { action="accept", quest=4244, name="Chasing A-Me 01", npc="A-Me 01", coords={x=65.0,y=16.0} },
-    { action="turnin", quest=4244, name="Chasing A-Me 01", npc="A-Me 01", coords={x=65.0,y=16.0} },
-    { action="accept", quest=4245, name="Chasing A-Me 01", npc="A-Me 01", coords={x=65.0,y=16.0} },
-    { action="collect", quest=4245, name="Chasing A-Me 01", item="A-Me 01 Escort", coords={x=65.0,y=16.0}, note="Escort A-Me 01 out of the cave to Marshal's Refuge." },
-    
-    -- Return to Marshal's Refuge
-    { action="turnin", quest=4245, name="Chasing A-Me 01", npc="Karna Remtravel", coords={x=45.2,y=5.8}, note="At Marshal's Refuge." },
-    { action="accept", quest=4503, name="Shizzle's Flyer", npc="Shizzle", coords={x=45.3,y=8.7}, note="Up the hill." },
-    { action="accept", quest=3882, name="Roll the Bones", npc="Spark Nilminer", coords={x=43.9,y=7.2}, note="In the center of camp." },
+    { action="info", name="Destroy Crystals", note="Destroy all Power Crystals in your inventory.", coords={x=41.9,y=2.6} },
+    { action="accept", quest=3884, name="Williden's Journal", npc="A Mangled Journal", coords={x=43.9,y=7.2}, note="Optional: If you found A Mangled Journal, use it to accept this Quest." },
+    { action="turnin", quest=3884, name="Williden's Journal", npc="Williden Marshal", coords={x=43.9,y=7.2} },
+    { action="collect", quest=4141, name="Muigin and Larion", item="Bloodpetal", coords={x=52.8,y=15.6}, note="Kill Bloodpetal Flayers to pick up Bloodpetals." },
+    { action="info", quest=4285, name="The Northern Pylon", coords={x=56.5,y=12.4}, note="Click Northern Crystal Pylon to discover it." },
+    { action="collect", quest=4289, name="The Apes of Un'Goro", item={"Un'Goro Gorilla Pelt","Un'Goro Stomper Pelt","Un'Goro Thunderer Pelt"}, coords={x=63.4,y=16.6}, note="Kill Gorillas for Gorilla Pelts, Stompers for Stomper Pelts and Thunderers for Thunderer Pelts. Thunderers can be found in the cave." },
+    { action="turnin", quest=4243, name="Chasing A-Me 01", npc="A-Me 01", coords={x=67.7,y=16.8}, note="He is inside the cave." },
+    { action="accept", quest=4244, name="Chasing A-Me 01", npc="A-Me 01", coords={x=67.7,y=16.8} },
+    { action="turnin", quest=4244, name="Chasing A-Me 01", npc="A-Me 01", coords={x=67.7,y=16.8} },
+    { action="accept", quest=4245, name="Chasing A-Me 01", npc="A-Me 01", coords={x=67.7,y=16.8} },
+    { action="info", quest=4245, name="Chasing A-Me 01", coords={x=46.4,y=13.4}, note="Escort A-Me 01 out of the cave to Marshal's Refuge." },
+    { action="turnin", quest=4245, name="Chasing A-Me 01", npc="Karna Remtravel", coords={x=46.4,y=13.4} },
+    { action="accept", quest=4503, name="Shizzle's Flyer", npc="Shizzle", coords={x=44.2,y=11.6} },
+    { action="accept", quest=3882, name="Roll the Bones", npc="Spark Nilminer", coords={x=43.5,y=7.4} },
     { action="accept", quest=3883, name="Alien Ecology", npc="Hol'anyee Marshal", coords={x=43.9,y=7.2} },
-    { action="info", name="Repair/Vendor", note="Repair and sell at Gibbert.", coords={x=43.0,y=8.5} },
-    
-    -- Level 55 achievement
-    { action="info", name="Level 55", note="You should reach Level 55 now.", coords={x=43.0,y=8.5} },
-    
-    -- Lakkari Tar Pits
-    { action="info", name="Tar Pits", note="Grind south around Lakkari Tar Pits.", coords={x=50.0,y=80.0} },
-    { action="kill", quest=4504, name="Super Sticky", mob={"Tar Lord","Tar Lurker"}, coords={x=50.0,y=80.0}, note="Kill Tar creatures for 12 Super Sticky Tar." },
+    { action="collect", quest=4504, name="Super Sticky", item="Super Sticky Tar", coords={x=47.5,y=21.9}, note="Kill Tar Lords and Lurkers to pick up Super Sticky Tar." },
     
     -- Diemetradon area
     { action="info", name="Fire Plume Ridge", note="Grind southeast of Fire Plume Ridge.", coords={x=60.0,y=70.0} },
@@ -112,9 +69,9 @@ LevelingGuide_UnGoroCrater = {
     { action="kill", quest=4292, name="The Bait for Lar'korwi", mob="Lar'korwi", coords={x=79.0,y=49.0}, note="Kill Lar'korwi for Lar'korwi's Head." },
     
     -- Return to Torwa
-    { action="turnin", quest=4292, name="The Bait for Lar'korwi", npc="Torwa Pathfinder", coords={x=72.0,y=76.0}, note="Run south to Torwa Pathfinder." },
-    { action="turnin", quest=4289, name="The Apes of Un'Goro", npc="Torwa Pathfinder", coords={x=72.0,y=76.0} },
-    { action="accept", quest=4301, name="The Mighty U'cha", npc="Torwa Pathfinder", coords={x=72.0,y=76.0} },
+    { action="turnin", quest=4292, name="The Bait for Lar'korwi", npc="Torwa Pathfinder", coords={x=71.6,y=75.9}, note="Run south to Torwa Pathfinder." },
+    { action="turnin", quest=4289, name="The Apes of Un'Goro", npc="Torwa Pathfinder", coords={x=71.6,y=75.9} },
+    { action="accept", quest=4301, name="The Mighty U'cha", npc="Torwa Pathfinder", coords={x=71.6,y=75.9} },
     
     -- Pterrordax hunting
     { action="info", name="Pterrordax Cliffs", note="Run southwest to the cliffs.", coords={x=57.0,y=86.0} },
@@ -169,7 +126,7 @@ LevelingGuide_UnGoroCrater = {
     { action="collect", quest=3881, name="Expedition Salvation", item="Research Equipment", coords={x=38.5,y=66.0}, note="Run southeast and loot Research Equipment." },
     
     -- Return to Torwa for U'cha
-    { action="turnin", quest=4301, name="The Mighty U'cha", npc="Torwa Pathfinder", coords={x=72.0,y=76.0}, note="Run far southeast to Torwa Pathfinder." },
+    { action="turnin", quest=4301, name="The Mighty U'cha", npc="Torwa Pathfinder", coords={x=71.6,y=75.9}, note="Run far southeast to Torwa Pathfinder." },
     { action="info", name="Equip Reward", note="Paladins/Warriors: Equip Beastslayer. Rogues: Equip Beastsmasher mainhand.", coords={x=72.0,y=76.0} },
     
     -- Gorishi Queen (Group content)

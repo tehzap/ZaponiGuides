@@ -28,28 +28,14 @@ LevelingGuide_DunMorogh = {
     { action="turnin", quest=3364, name="Scalding Mornbrew Delivery", npc="Durnan Furcutter", coords={x=28.8,y=66.4} },
     { action="accept", quest=3365, name="Bring Back the Mug", npc="Durnan Furcutter", coords={x=28.8,y=66.4}, note="Wait for RPG, then accept Quest." },
     { action="turnin", quest=3361, name="A Refugee's Quandary", npc="Felix Whindlebolt", coords={x=28.5,y=67.6} },
-    
-    -- Level 4 training
-    { action="info", name="Training", note="Learn new spells from your class trainer.", coords={x=22.6,y=71.4} },
-    { action="accept", quest=1599, name="Beginnings", npc="Alamar Grimm", coords={x=22.6,y=71.1}, note="Warlock quest only." },
-    
-    { action="turnin", quest=3365, name="Bring Back the Mug", npc="Nori Pridedrift", coords={x=25.1,y=76.0}, note="Return to Nori Pridedrift." },
-    
-    -- Level 5 - The Stolen Journal
-    { action="info", name="Level 5", note="You should reach Level 5. Use better food/water now.", coords={x=25.1,y=76.0} },
-    { action="info", name="Troll Cave", note="Enter the cave and go deep along the left path.", coords={x=30.0,y=80.0} },
-    { action="kill", quest=218, name="The Stolen Journal", mob="Grik'nir the Cold", coords={x=30.5,y=80.8}, note="Kill Grik'nir the Cold for Grelin Whitebeard's Journal. He moves slowly!" },
-    { action="collect", quest=1599, name="Beginnings", item="Feather Charm", coords={x=30.5,y=80.8}, note="Warlock only: Kill Frostmane Novices for 3 Feather Charms." },
-    
+    { action="turnin", quest=3365, name="Bring Back the Mug", npc="Nori Pridedrift", coords={x=25.0,y=76.0} },
+    { action="info", name="Cave", note="Enter the cave.", coords={x=26.7,y=79.5} },
+    { action="collect", quest=218, name="The Stolen Journal", item="Grelin Whitebeard's Journal", coords={x=30.5,y=80.1}, note="Kill Grik'nir the Cold to pick up Grelin Whitebeard's Journal." },
     { action="turnin", quest=218, name="The Stolen Journal", npc="Grelin Whitebeard", coords={x=25.1,y=75.7} },
     { action="accept", quest=282, name="Senir's Observations", npc="Grelin Whitebeard", coords={x=25.1,y=75.7} },
-    { action="turnin", quest=1599, name="Beginnings", npc="Alamar Grimm", coords={x=22.6,y=71.1}, note="Warlock only: In Anvilmar." },
-    
-    -- Leave Coldridge Valley
-    { action="info", name="Leave Valley", note="Grind east to the tunnel leading out of Coldridge Valley.", coords={x=33.8,y=72.2} },
-    { action="turnin", quest=282, name="Senir's Observations", npc="Mountaineer Thalos", coords={x=33.8,y=72.2}, note="At the tunnel entrance." },
-    { action="accept", quest=420, name="Senir's Observations", npc="Mountaineer Thalos", coords={x=33.8,y=72.2} },
-    { action="accept", quest=2160, name="Supplies to Tannok", npc="Hands Springsprocket", coords={x=33.9,y=72.1} },
+    { action="turnin", quest=282, name="Senir's Observations", npc="Mountaineer Thalos", coords={x=33.5,y=71.8} },
+    { action="accept", quest=420, name="Senir's Observations", npc="Mountaineer Thalos", coords={x=33.5,y=71.8} },
+    { action="accept", quest=2160, name="Supplies to Tannok", npc="Hands Springsprocket", coords={x=33.8,y=72.2} },
     
     -- Road to Kharanos
     { action="info", name="Kharanos", note="Grind northeast along the road toward Kharanos. Kill Crag Boars for meat and ribs.", coords={x=46.0,y=52.0} },

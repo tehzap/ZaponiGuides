@@ -182,14 +182,8 @@ local function formatStep(step)
 		end
 		txt = icon .. "|cffff4444Kill:|r |cffffd700" .. mobText .. "|r"
 	elseif step.action == "collect" then
-		icon = "|cff00FF00●|r "  -- Grüner Punkt für Items
 		local itemText = ""
-		if type(step.item) == "table" then
-			itemText = table.concat(step.item, ", ")
-		else
-			itemText = step.item or ""
-		end
-		txt = icon .. "|cff9966ffCollect:|r |cffffffff" .. itemText .. "|r"
+		txt = "|cff9966ffCollect:|r|cffffffff" .. itemText .. "|r"
 	elseif step.action == "info" then
 		txt = "|cff00ccffInfo:|r "  -- Hellblauer Pfeil für Info
 	end
@@ -200,6 +194,37 @@ local function formatStep(step)
 		txt = txt .. "\nNote: " .. (step.note or "")
 	end
 	return txt
+end
+
+function GetCleanItemName(itemLink)
+    if not itemLink or type(itemLink) ~= "string" then
+        return nil
+    end
+    
+    -- remove [ and ] from item link
+    local temp = string.gsub(itemLink, ".*%[", "")
+    local itemName = string.gsub(temp, "%].*", "")
+    
+    return itemName
+end
+
+local function CountItemInInventory(stepItemName)
+    -- scan through all bags (0-4)
+    for bag = 0, 4 do
+		--  read number of slots in the bag
+        local numSlots = GetContainerNumSlots(bag)
+		-- scan through all slots in the bag
+		for slot = 0, numSlots do
+			-- get the item link and name of the item in this slot
+			local itemLink = GetContainerItemLink(bag, slot)
+			local itemName = GetCleanItemName(itemLink)
+			if itemName == stepItemName then
+				-- get the item count in this slot
+				local _, itemCount = GetContainerItemInfo(bag, slot)
+				return itemCount
+			end
+		end
+    end
 end
 
 -- updateGuideText direkt nach den Hilfsvariablen, vor den Buttons
@@ -396,6 +421,33 @@ local function updateGuideText()
                 end
             end
         end
+
+		if step.action == "gather" and step.item then
+			mainText = mainText .. "\n|cff9966ff◆|r|cffffff00Progress:|r"
+			
+			if type(step.item) == "table" then
+				for i, itemName in ipairs(step.item) do
+					local currentCount = CountItemInInventory(itemName)
+					local targetCount = (step.target and step.target[i]) or 1
+					
+					local color = "|cffff0000" -- red if not enough
+					if currentCount >= targetCount then
+						color = "|cff00ff00" -- green if enough
+					elseif currentCount > 0 then
+						color = "|cffffff00" -- yellow if partially
+					end
+					
+					mainText = mainText .. "\n- " .. itemName .. ": " .. color .. currentCount .. "/" .. targetCount .. "|r"
+				end
+			else
+				local itemName = step.item
+				local currentCount = CountItemInInventory(itemName)
+				local targetCount = step.target or 1
+				
+				local color = currentCount >= targetCount and "|cff00ff00" or "|cffff0000"
+				mainText = mainText .. "\n- " .. itemName .. ": " .. color .. currentCount .. "/" .. targetCount .. "|r"
+			end
+		end
 		-- TomTom-Kommandotext wird nicht mehr angezeigt
 		guideText:SetText(deathStatus .. mainText)
 		-- TomTom-Pfeil für aktuellen Schritt anzeigen, falls Koordinaten vorhanden
@@ -427,6 +479,7 @@ updateFrame:SetScript("OnUpdate", function(self)
     if elapsed >= 1 then  -- Alle 1 Sekunde
         elapsed = 0
         updateGuideText()
+		--ScanInventory()
     end
 end)
 
